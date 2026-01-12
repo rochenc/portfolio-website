@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Transform SQL Server Modernization - Your Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500&family=Montserrat+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <h1>AWS Transform SQL Server Modernization</h1>
+            <p>AI-assisted cloud migration and modernization tool for full-stack SQL Server to Aurora PostgreSQL transformation</p>
+        </section>
+
+        <section class="project-detail">
+            <div class="project-image-large"></div>
+            
+            <div class="project-info-detail">
+                <div class="project-meta">
+                    <div>
+                        <h3>Timeline</h3>
+                        <p>June 2024 → GA Launch December 1, 2024</p>
+                    </div>
+                    <div>
+                        <h3>Role</h3>
+                        <p>Lead UX Designer</p>
+                    </div>
+                    <div>
+                        <h3>Scope</h3>
+                        <p>End-to-end database and application modernization workflow</p>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <h2>Summary</h2>
+                    <p>I led UX for a 0→1 Agentic SQL Server modernization workflow within AWS Transform, launched at <a href="#" style="color: #007acc; text-decoration: underline;">re:Invent 2025</a>. The challenge was designing an efficient experience for enterprise customers to speed up their database migrations. As UX lead, I defined the workflow from assessment, wave planning to modernization execution in a chat driven experience.</p>
+                    <p><a href="#" style="color: #007acc; text-decoration: underline;">View interactive demo</a></p>
+                    
+                    <h2>Problem</h2>
+                    <p>SQL Server to PostgreSQL modernization is a critical but daunting initiative for enterprises. Traditional approaches take months of manual work and require deep technical expertise across databases, applications, and infrastructure.</p>
+                    
+                    <div class="placeholder-image">
+                        <p>[Users and jobs to be done]</p>
+                    </div>
+                    
+                    <h2>Challenge</h2>
+                    <p>How might we guide users through highly technical modernization workflows so they can act faster, with clarity and control—without being overwhelmed?</p>
+                    <p>This challenge centers on two major shifts:</p>
+                    <p><strong>🧠 Designing for domain complexity and cognitive load:</strong> Managing technical complexity without overwhelming users with information.</p>
+                    <p><strong>💬 Moving from traditional console workflows to an agent-assisted, chat-centric experience:</strong> Transitioning from familiar UI patterns to conversational AI interactions.</p>
+                    
+                    <h2>Process</h2>
+                    <p>To address the complexity of designing highly technical, iterative workflows, I used rapid mockups, PM-eng-UX sync-ups, and technical SA reviews, then validated with 15+ customers. I partnered with platform designers to define key agentic UX patterns and prototyped new interaction models to validate usability with users.</p>
+                    
+                    <div class="placeholder-image">
+                        <p>[Design process and timeline]</p>
+                    </div>
+                    
+                    <h3>💡 Key research insights</h3>
+                    <p><strong>Users need guided, not fully automated, experiences:</strong> While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</p>
+                    <p><strong>Chat alone isn't enough:</strong> Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</p>
+                    
+                    <h2>Final result</h2>
+                    <p>Designed an AI-assisted workflow that guides users through four key phases of SQL Server modernization, each optimized for specific user needs and technical requirements.</p>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-image">
+                            <div class="placeholder-image">
+                                <p>[Assess]</p>
+                            </div>
+                        </div>
+                        <div class="pattern-content">
+                            <h4>Assess</h4>
+                            <p>AI automatically analyzes SQL Server databases and .NET applications to identify complexity, dependencies, and modernization readiness. Users receive comprehensive assessment reports with clear recommendations for next steps.</p>
+                            <p><strong>Design decision:</strong> Applied progressive disclosure - chat provides high-level summaries while detailed dependency tables are available in structured UI panels. This prevents cognitive overload during the discovery phase.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-image">
+                            <div class="placeholder-image">
+                                <p>[Wave plan]</p>
+                            </div>
+                        </div>
+                        <div class="pattern-content">
+                            <h4>Wave plan</h4>
+                            <p>Based on assessment results, the system generates prioritized migration waves that group databases and applications by complexity and dependencies. Users can adjust plans through chat or bulk operations.</p>
+                            <p><strong>Design decision:</strong> Implemented chat-first paradigm for quick plan adjustments ("move db2 to wave 3") while providing UI-based bulk editing for complex reorganization. This hybrid approach matches user mental models for different types of planning tasks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-image">
+                            <div class="placeholder-image">
+                                <p>[Schema conversion]</p>
+                            </div>
+                        </div>
+                        <div class="pattern-content">
+                            <h4>Schema conversion</h4>
+                            <p>Automated conversion of SQL Server schemas and stored procedures to PostgreSQL-compatible formats. Human-in-the-loop decision points handle complex mappings and validation before proceeding.</p>
+                            <p><strong>Design decision:</strong> Applied HITL pattern at critical decision points where AI confidence is low or business logic requires human judgment. Users review and approve schema mappings before irreversible transformations, maintaining control over technical decisions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-image">
+                            <div class="placeholder-image">
+                                <p>[Data migration]</p>
+                            </div>
+                        </div>
+                        <div class="pattern-content">
+                            <h4>Data migration</h4>
+                            <p>Streamlined data transfer from SQL Server to Aurora PostgreSQL with real-time progress tracking, validation checkpoints, and rollback capabilities for production-ready migrations.</p>
+                            <p><strong>Design decision:</strong> Combined all three patterns - chat for status updates and quick queries, structured UI for detailed progress monitoring, and HITL checkpoints for validation before final cutover. This ensures users maintain visibility and control during high-stakes data operations.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Impact & outcomes</h3>
+                    <p><strong>Adoption success:</strong> 117 customers adopted SQL Server modernization with 167 active users and 205 workspaces created since GA launch.</p>
+                    <p><strong>Efficiency gains:</strong> 911,676 lines of code analyzed and transformed across 11,674 servers with 90 completed jobs and 0 failed jobs.</p>
+                    <p><strong>Enterprise impact:</strong> Reduced modernization timeline from months to weeks, serving major customers including Accenture, Canadian Pacific Railway, and Commonwealth Bank of Australia.</p>
+                </div>
+            </div>
+            
+        </section>
+        
+        <nav class="tabs">
+            <a href="index.html">← Back to Work</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">Dribbble</a>
+            <a href="#">Behance</a>
+        </div>
+    </footer>
+</body>
+</html>
