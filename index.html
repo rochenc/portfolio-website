@@ -14,9 +14,11 @@
     <main>
         <section class="hero">
             <h1 id="typingText">Hi, I'm Ruobing</h1>
-            <p>UX Designer crafting meaningful digital experiences</p>
-            <p>Currently <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank" style="color: #d4a373; text-decoration: none; font-weight: 500;">Senior UX designer at AWS</a> working on Agentic AI UX.</p>
-            <p>Based in Boston, MA.</p>
+            <div id="heroContent" style="opacity: 0; transition: opacity 0.6s ease-in-out;">
+                <p>UX Designer crafting meaningful digital experiences</p>
+                <p>Currently <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank" style="color: #d4a373; text-decoration: none; font-weight: 500;">Senior UX designer at AWS</a> working on Agentic AI UX.</p>
+                <p>Based in Boston, MA.</p>
+            </div>
         </section>
 
         <nav class="tabs">
@@ -85,6 +87,7 @@
     <script>
         // Typing effect
         const typingText = document.getElementById('typingText');
+        const heroContent = document.getElementById('heroContent');
         const fullText = "Hi, I'm Ruobing";
         let index = 0;
         
@@ -95,12 +98,15 @@
             if (index < fullText.length) {
                 typingText.textContent += fullText.charAt(index);
                 index++;
-                setTimeout(typeText, 60); // Adjust speed here (milliseconds)
+                setTimeout(typeText, 40); // Faster typing (40ms per character)
+            } else {
+                // Show the rest of the content after typing completes
+                heroContent.style.opacity = '1';
             }
         }
         
         // Start typing after a short delay
-        setTimeout(typeText, 300);
+        setTimeout(typeText, 200);
     </script>
 </body>
 </html>
