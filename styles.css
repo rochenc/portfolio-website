@@ -5,60 +5,70 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    line-height: 1.8;
+    color: #3a3a3a;
+    background: #fefcf9;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat Condensed', sans-serif;
-    font-weight: 700;
+    font-family: inherit;
+    font-weight: 600;
+    color: #2d2d2d;
 }
 
 .tabs {
-    padding: 2rem;
+    padding: 3rem 2rem 2rem;
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 4rem;
     position: sticky;
     top: 0;
-    background: white;
+    background: #fefcf9;
     z-index: 100;
     opacity: 0;
     transform: translateY(30px);
     animation: slideUp 0.5s ease forwards;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.08);
 }
 
 .tabs a {
     text-decoration: none;
-    color: #666;
+    color: #8a8a8a;
     font-weight: 500;
-    padding-bottom: 0.5rem;
+    font-size: 0.95rem;
+    padding-bottom: 0.75rem;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
 .tabs a:hover {
-    color: #333;
+    color: #3a3a3a;
 }
 
 .tabs a.active {
-    color: #333;
-    border-bottom: 2px solid #007acc;
+    color: #3a3a3a;
+    border-bottom: 2px solid #d4a373;
 }
 
 .hero {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem;
     text-align: center;
-    background: #f8f9fa;
+    background: #fefcf9;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1.05rem;
+    color: #6a6a6a;
+    margin-bottom: 1rem;
+    line-height: 1.8;
 }
 
 @keyframes fadeInUp {
@@ -76,18 +86,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .projects {
-    padding: 2rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    max-width: 50%;
+    gap: 5rem;
+    max-width: 55%;
     margin: 0 auto;
 }
 
 .project {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(30px);
     animation: slideUp 0.5s ease forwards;
@@ -98,8 +107,8 @@ h1, h2, h3, h4, h5, h6 {
 .project-image {
     width: 100%;
     aspect-ratio: 5/3;
-    background-color: #ccc;
-    border-radius: 8px;
+    background-color: #e8e1d8;
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -214,31 +223,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 footer {
-    margin-top: 4rem;
-    padding: 2rem;
-    background: #f8f9fa;
+    margin-top: 6rem;
+    padding: 4rem 2rem;
+    background: #fefcf9;
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(61, 61, 61, 0.08);
 }
 
 footer p {
-    margin-bottom: 1rem;
-    color: #666;
+    margin-bottom: 2rem;
+    color: #6a6a6a;
+    font-size: 0.95rem;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .social-links a {
-    color: #666;
+    color: #6a6a6a;
     text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #007acc;
+    color: #d4a373;
 }
 
 .users-jobs-visualization {
