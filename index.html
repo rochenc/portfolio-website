@@ -13,7 +13,7 @@
 <body>
     <main>
         <section class="hero">
-            <h1>Ruobing Chen</h1>
+            <h1 id="typingText">Hi, I'm Ruobing</h1>
             <p>UX Designer crafting meaningful digital experiences</p>
             <p>Currently <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank" style="color: #d4a373; text-decoration: none; font-weight: 500;">Senior UX designer at AWS</a> working on Agentic AI UX.</p>
             <p>Based in Boston, MA.</p>
@@ -81,5 +81,26 @@
             <a href="#">Behance</a>
         </div>
     </footer>
+
+    <script>
+        // Typing effect
+        const typingText = document.getElementById('typingText');
+        const fullText = "Hi, I'm Ruobing";
+        let index = 0;
+        
+        // Clear the text first
+        typingText.textContent = '';
+        
+        function typeText() {
+            if (index < fullText.length) {
+                typingText.textContent += fullText.charAt(index);
+                index++;
+                setTimeout(typeText, 60); // Adjust speed here (milliseconds)
+            }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeText, 300);
+    </script>
 </body>
 </html>
