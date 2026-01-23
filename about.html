@@ -10,6 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="auth.js"></script>
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
@@ -21,46 +33,51 @@
         </section>
 
         <nav class="tabs">
-            <a href="index.html">Work</a>
+            <a href="home.html">Home</a>
             <a href="about.html" class="active">About</a>
         </nav>
 
-        <section style="padding: 4rem 2rem; max-width: 80%; margin: 0 auto;">
-            <div style="display: flex; justify-content: center; margin-bottom: 3rem;">
+        <section class="fade-in-section" style="padding: 4rem 2rem; max-width: 80%; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 200px; gap: 3rem; align-items: flex-start; margin-bottom: 3rem;">
+                <div>
+                    <h2 style="margin-bottom: 2.5rem; font-size: 2rem;">My Story</h2>
+                    <p style="margin-bottom: 2.5rem; color: #6a6a6a; font-size: 1.05rem; line-height: 1.9;">
+                        I'm a passionate UX designer with 8 years of experience creating user-centered digital experiences. 
+                        I believe in the power of design to solve real problems and make technology more accessible to end users.
+                    </p>
+                </div>
                 <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, #d4a373 0%, #a8a8a8 100%); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
                     <img src="headshot.jpeg" alt="Ruobing Chen" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.style.display='none'">
                 </div>
             </div>
-            <h2 style="margin-bottom: 2.5rem; font-size: 2rem;">My Story</h2>
-            <p style="margin-bottom: 2.5rem; color: #6a6a6a; font-size: 1.05rem; line-height: 1.9;">
-                I'm a passionate UX designer with [X] years of experience creating user-centered digital experiences. 
-                I believe in the power of design to solve real problems and make technology more accessible to everyone.
-            </p>
-            
-            <h2 style="margin-bottom: 2.5rem; font-size: 2rem;">Skills & Expertise</h2>
+
+            <h2 style="margin-top: 3rem; margin-bottom: 2.5rem; font-size: 2rem;">Skills & Expertise</h2>
             <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
-                <li>User Research & Testing</li>
+                <li>User Research & User Testing</li>
                 <li>Wireframing & Prototyping</li>
-                <li>Design Systems</li>
-                <li>Interaction Design</li>
-                <li>Figma, Sketch, Adobe Creative Suite</li>
+                <li>Design Systems & Component Libraries</li>
+                <li>Interaction Design & Animations</li>
+                <li>Information Architecture</li>
+                <li>Usability Testing & Analytics</li>
+                <li>Figma, Adobe XD, Sketch</li>
+                <li>HTML, CSS, Basic JavaScript</li>
             </ul>
 
-            <div style="margin-top: 3rem;">
-                <a href="headshot.jpeg" target="_blank" style="display: inline-block; padding: 0.8rem 1.6rem; background-color: #3a3a3a; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s; font-size: 0.95rem;">View Resume</a>
-            </div>
-
-            <h2 style="margin-top: 4rem; margin-bottom: 2.5rem; font-size: 2rem;">Experience</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+            <h2 style="margin-top: 3rem; margin-bottom: 2.5rem; font-size: 2rem;">Experience</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; justify-items: end;">
                 <div>
                     <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.9;">I've worked with great people that inspires me and taught me about design and collaboration to solve problems and innovate for end users.</p>
                 </div>
-                <div style="color: #6a6a6a; font-size: 1.05rem; line-height: 2;">
+                <div style="color: #6a6a6a; font-size: 1.05rem; line-height: 2; text-align: right;">
                     <p><strong>AWS</strong> — Senior UX Designer, 2022–current</p>
                     <p><strong>Citizens Bank</strong> — UX Designer, 2021–2022</p>
                     <p><strong>Infosys</strong> — Senior UX Designer, 2018–2021</p>
                     <p><strong>Kohler</strong> — Industrial Designer, 2016–2018</p>
                 </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="Resume_Ruobing_Chen_2025.pdf" target="_blank" style="display: inline-block; padding: 0.8rem 1.6rem; background-color: #3a3a3a; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s; font-size: 0.95rem;">View Resume</a>
             </div>
         </section>
     </main>
@@ -68,7 +85,7 @@
     <footer>
         <div class="footer-left">
             <nav class="footer-nav">
-                <a href="index.html">Home</a>
+                <a href="home.html">Home</a>
                 <a href="about.html">About</a>
             </nav>
             <p class="footer-copyright">&copy; 2025 Ruobing Chen. All rights reserved.</p>
@@ -82,5 +99,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Scroll animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-section elements
+        document.querySelectorAll('.fade-in-section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
