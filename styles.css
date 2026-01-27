@@ -165,11 +165,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-image:hover .project-overlay {
-    opacity: 1;
+    opacity: 0;
 }
 
 .project-image:hover .project-info {
-    opacity: 1;
+    opacity: 0;
 }
 
 .project a {
@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.8);
-    opacity: 0;
+    opacity: 0 !important;
     transition: opacity 0.3s ease;
 }
 
@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     color: white;
-    opacity: 0;
+    opacity: 0 !important;
     transition: opacity 0.3s ease;
     z-index: 10;
     width: 700px;
