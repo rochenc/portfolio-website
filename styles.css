@@ -91,6 +91,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes slideUp {
     to {
         opacity: 1;
@@ -105,6 +111,19 @@ h1, h2, h3, h4, h5, h6 {
     50% {
         transform: translateY(8px);
     }
+}
+
+#selected-work {
+    padding: 0.75rem 2rem;
+    margin: 1rem auto 0;
+    max-width: 80%;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-in-out 0.8s forwards;
+}
+
+#selected-work h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .projects {
@@ -128,17 +147,36 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-image {
     width: 100%;
-    aspect-ratio: 4/3;
-    background-color: #e8e1d8;
+    aspect-ratio: 16/9;
+    background-color: transparent;
     border-radius: 12px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+.project-image:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-image:hover .project-info {
+    opacity: 1;
 }
 
 .project a {
     text-decoration: none;
     color: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-overlay {
@@ -148,45 +186,87 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.project-image:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-overlay h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-overlay .year {
-    color: #ccc;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.project-overlay p {
-    color: #ddd;
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
-}
-
-.view-project {
+.project-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    width: 700px;
+    margin: auto;
+}
+
+.view-project-btn {
+    background: #d4a373;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 25px;
     font-weight: 600;
-    font-size: 1rem;
-    margin-top: auto;
+    font-size: 0.95rem;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.view-project-btn:hover {
+    background: #e8b88d;
+    transform: scale(1.05);
+}
+
+.project-title-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    margin-bottom: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.project-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: white;
+    white-space: nowrap;
+}
+
+.pipe {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    display: inline;
+    margin: 0 0.35rem;
+}
+
+.project-info .year {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    margin: 0;
+    display: inline;
+    white-space: nowrap;
+}
+
+.project-info p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .project-detail {
-    max-width: 800px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -197,6 +277,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #ccc;
     border-radius: 8px;
     margin-bottom: 3rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .project-meta {
