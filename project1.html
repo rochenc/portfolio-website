@@ -28,7 +28,7 @@
                 <div class="project-meta">
                     <div>
                         <h3>Timeline</h3>
-                        <p>June 2024 → GA Launch December 1, 2024</p>
+                        <p>Jun 2025 - Dec 2025</p>
                     </div>
                     <div>
                         <h3>Role</h3>
@@ -42,32 +42,97 @@
                 
                 <div class="project-content">
                     <h2>Summary</h2>
-                    <p>I led UX for a 0→1 Agentic SQL Server modernization workflow within AWS Transform, launched at <a href="#" style="color: #007acc; text-decoration: underline;">re:Invent 2025</a>. The challenge was designing an efficient experience for enterprise customers to speed up their database migrations. As UX lead, I defined the workflow from assessment, wave planning to modernization execution in a chat driven experience.</p>
-                    <p><a href="#" style="color: #007acc; text-decoration: underline;">View interactive demo</a></p>
+                    <p>I led UX for a 0→1 Agentic SQL Server modernization workflow within AWS Transform, launched at <a href="https://aws.amazon.com/transform/windows/sql-server/" style="color: #d4a373; text-decoration: underline;">re:Invent 2025</a>. The challenge was designing an efficient experience for enterprise customers to speed up their database migrations. As UX lead, I defined the workflow from assessment, wave planning to modernization execution in a chat driven experience.</p>
+                    <p>My impact lies in streamlining user workflows, defining information architecture, crafting chat content design, leading interaction design, and developing prototypes. I validated concepts through usability testing with customers to ensure the solution addressed real customer needs and delivered an intuitive experience for this complex technical domain.</p>
+                    <p><a href="https://app.storylane.io/share/xfh6mssbmgua?refid=ee0a6709-ee17-4d66-bdfe-b5b0661b8e3e" style="color: #d4a373; text-decoration: underline;">View interactive demo</a></p>
                     
                     <h2>Problem</h2>
                     <p>SQL Server to PostgreSQL modernization is a critical but daunting initiative for enterprises. Traditional approaches take months of manual work and require deep technical expertise across databases, applications, and infrastructure.</p>
                     
-                    <div class="placeholder-image">
-                        <p>[Users and jobs to be done]</p>
+                    <div class="problem-points">
+                        <div class="problem-point">
+                            <img src="icons/noun-services-2132664 1.svg" alt="Expertise icon">
+                            <div>
+                                <h4>Lack of expertise</h4>
+                                <p>Teams struggle to navigate migration and operations in AWS cloud and understand the modernization process</p>
+                            </div>
+                        </div>
+                        <div class="problem-point">
+                            <img src="icons/noun-cloud-2132604 1.svg" alt="Manual process icon">
+                            <div>
+                                <h4>Manual process</h4>
+                                <p>90% schema conversion will still requires manual conversion, even with automation tools</p>
+                            </div>
+                        </div>
+                        <div class="problem-point">
+                            <img src="icons/noun-connection-2132656 1.svg" alt="Interdependencies icon">
+                            <div>
+                                <h4>Interdependencies</h4>
+                                <p>Identifying dependencies on repositories is challenging—without this, modernizing SQL will break applications</p>
+                            </div>
+                        </div>
+                        <div class="problem-point">
+                            <img src="icons/noun-expand-2132652 1.svg" alt="Scale icon">
+                            <div>
+                                <h4>Scale</h4>
+                                <p>Enterprises need to modernize hundreds of databases across teams</p>
+                            </div>
+                        </div>
+                        <div class="problem-point">
+                            <img src="icons/noun-bubble-2132615 1.svg" alt="Consistency icon">
+                            <div>
+                                <h4>Consistency</h4>
+                                <p>Inconsistent practices and implementations slow down progress and</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <h2>Challenge</h2>
-                    <p>How might we guide users through highly technical modernization workflows so they can act faster, with clarity and control—without being overwhelmed?</p>
-                    <p>This challenge centers on two major shifts:</p>
-                    <p><strong>🧠 Designing for domain complexity and cognitive load:</strong> Managing technical complexity without overwhelming users with information.</p>
-                    <p><strong>💬 Moving from traditional console workflows to an agent-assisted, chat-centric experience:</strong> Transitioning from familiar UI patterns to conversational AI interactions.</p>
-                    
-                    <h2>Process</h2>
-                    <p>To address the complexity of designing highly technical, iterative workflows, I used rapid mockups, PM-eng-UX sync-ups, and technical SA reviews, then validated with 15+ customers. I partnered with platform designers to define key agentic UX patterns and prototyped new interaction models to validate usability with users.</p>
-                    
-                    <div class="placeholder-image">
-                        <p>[Design process and timeline]</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                        <div>
+                            <h3 style="font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1.5rem;">How might we guide users through highly technical modernization workflows so they can act faster, with clarity and control—without being overwhelmed?</h3>
+                        </div>
+                        <div>
+                            <p style="margin-top: 0;">This challenge centers on two major shifts:</p>
+                            <p><strong>1. Designing for domain complexity and cognitive load</strong><br>Managing technical complexity without overwhelming users with information.</p>
+                            <p><strong>2. Moving from traditional console workflows to an agent-assisted, chat-centric experience</strong><br>Transitioning from familiar UI patterns to conversational AI interactions.</p>
+                        </div>
                     </div>
                     
-                    <h3>💡 Key research insights</h3>
-                    <p><strong>Users need guided, not fully automated, experiences:</strong> While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</p>
-                    <p><strong>Chat alone isn't enough:</strong> Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</p>
+                    <h2>Key research insights</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                        <div>
+                            <p>From interviewing with 10 migration and modernization practitioners, we learned that some of our assumptions are wrong.</p>
+                        </div>
+                        <div>
+                            <p><strong>1. Users need guided, not fully automated, experiences</strong><br>While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</p>
+                            <p><strong>2. Chat alone isn't enough</strong><br>Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</p>
+                        </div>
+                    </div>
+                    
+                    <h2>How does this impact the experience?</h2>
+                    <div class="experience-section">
+                        <div class="experience-item">
+                            <h4>Guided job plan</h4>
+                            <p>Sarah is presented a guided job plan with a customized job plan based on her modernization needs.</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Full control</h4>
+                            <p>Users have full control over the transformation progress, with each step she is always presented before agent take actions.</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Smart defaults & drill-down</h4>
+                            <p>As Sarah going through these steps, smart defaults and recommendations save time and minimize errors. She can drill down to details about these information as needed.</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Contextual alerts & guidance</h4>
+                            <p>Sarah is prompted with the latest status of transformation via contextual alerts, and recommended resolutions.</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Agent as partner</h4>
+                            <p>Agent as partner, answers questions about the what, why and how, learning about best practices and modernize with confidence.</p>
+                        </div>
+                    </div>
                     
                     <h2>Final result</h2>
                     <p>Designed an AI-assisted workflow that automatically analyzes SQL Server databases and .NET applications, converts schemas, migrates data, and refactors application code while maintaining human oversight at critical decision points.</p>
