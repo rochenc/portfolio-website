@@ -10,6 +10,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500&family=Montserrat+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="auth.js"></script>
+    <style>
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f1f1f1;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #d4a373;
+        }
+        
+        .clickable-image {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        
+        .clickable-image:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -50,23 +115,88 @@
                     <h2>Problem</h2>
                     <p>Enterprise customers want comprehensive code assessments to make confident transformation plans, but the current experience doesn't provide nearly enough information for that.</p>
                     
-                    <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
-                        <li><strong>Plans without explanation:</strong> The current experience makes the transformation plan without showing the "why"</li>
-                        <li><strong>Insufficient assessment information:</strong> Current transformation plans are recommended only based on limited metadata such as last modified date and basic repo info, leaving customers uncertain about actual complexity and dependencies</li>
-                        <li><strong>Difficult data discovery:</strong> Customers need help to get actionable insights from the rich technical data about their repo, which is difficult to discover and navigate</li>
-                        <li><strong>Manual assessment burden:</strong> Manual repository assessment requires weeks of manual work using spreadsheets, which is error-prone and labor intensive</li>
-                    </ul>
+                    <div style="display: flex; gap: 2rem; margin: 2rem 0;">
+                        <div style="flex: 1;">
+                            <div class="placeholder-image clickable-image" onclick="openModal('code-assess-before.jpg')" style="background-image: url('code-assess-before.jpg'); background-size: cover; background-position: center; height: 300px; border: none; padding: 0; margin: 0; border-radius: 8px;">
+                                <p style="display: none;"></p>
+                            </div>
+                            <p style="font-size: 0.95rem; color: #999; font-style: italic; margin: 0.5rem 0 1.5rem 0;">Before: Assessment process is hidden in worklog, many customers were confused about what's happening</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="placeholder-image clickable-image" onclick="openModal('assess-before-2.jpg')" style="background-image: url('assess-before-2.jpg'); background-size: cover; background-position: center; height: 300px; border: none; padding: 0; margin: 0; border-radius: 8px;">
+                                <p style="display: none;"></p>
+                            </div>
+                            <p style="font-size: 0.95rem; color: #999; font-style: italic; margin: 0.5rem 0 1.5rem 0;">Before: Limited visibility into assessment results and data accessibility issues</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 2rem; margin: 2rem 0;">
+                        <div style="flex: 1;">
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Transparency</strong></p>
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 1rem 0;">The current experience makes the transformation plan without showing the "why"</p>
+                            
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Discoverability</strong></p>
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0;">Customers need help to get actionable insights from the rich technical data about their repo, which is difficult to discover and navigate</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Uncertainty</strong></p>
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 1rem 0;">Current transformation plans are recommended only based on limited metadata such as last modified date and basic repo info, leaving customers uncertain about actual complexity and dependencies</p>
+                            
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Manual</strong></p>
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0;">Current repository assessment requires weeks of manual work using downloaded spreadsheets, which is error-prone and labor intensive</p>
+                        </div>
+                    </div>
                     
                     <h2>Challenge</h2>
-                    <p>It was clear that an automated assessment would bring great value to our customers, but due to the scale of the operation and the amount of data we need to analyze and report, there were several UX challenges I needed to resolve:</p>
+                    <p>There were several UX challenges I needed to resolve during each step of the assessment process:</p>
                     
-                    <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
-                        <li><strong>Assessment wait times:</strong> 15+ minutes per repository creates bottlenecks when assessing 100+ repositories in parallel</li>
-                        <li><strong>Selection friction:</strong> UI limitations force users to select repositories one page at a time instead of bulk operations</li>
-                        <li><strong>Dependency parsing:</strong> Raw text reports are hard to parse; visual representations would be more helpful</li>
-                        <li><strong>Flexibility:</strong> Users who already have assessments elsewhere can't jump directly to transformation planning</li>
-                        <li><strong>Accessibility of rich data:</strong> Make critical information (incompatible packages, platform dependencies) discoverable and easy to find across multi-repository assessments</li>
-                    </ul>
+                    <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 1.5rem 0 1rem 0;"><strong>Code Assessment User Flow</strong></p>
+                    
+                    <div style="display: flex; align-items: center; gap: 1rem; margin: 2rem 0; overflow-x: auto;">
+                        <div class="flow-step" id="discover-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #d4a373; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'discover')" onmouseout="hideChallenge(this)">
+                            <p style="color: #fff; font-size: 1rem; font-weight: 600; margin: 0;">Discover Repo</p>
+                        </div>
+                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.5rem; font-weight: 300;">→</div>
+                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'select')" onmouseout="hideChallenge(this)">
+                            <p style="color: #2d2d2d; font-size: 1rem; font-weight: 600; margin: 0;">Select Repos</p>
+                        </div>
+                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.5rem; font-weight: 300;">→</div>
+                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'start')" onmouseout="hideChallenge(this)">
+                            <p style="color: #2d2d2d; font-size: 1rem; font-weight: 600; margin: 0;">Start Assessment</p>
+                        </div>
+                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.5rem; font-weight: 300;">→</div>
+                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'results')" onmouseout="hideChallenge(this)">
+                            <p style="color: #2d2d2d; font-size: 1rem; font-weight: 600; margin: 0;">View Results</p>
+                        </div>
+                    </div>
+                    
+                    <div id="challengeText" style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 2rem 0; padding: 1.5rem; background-color: #f5f3f0; border-radius: 4px; min-height: 60px; display: block;">
+                        Users who already have assessments elsewhere can't jump directly to transformation planning
+                    </div>
+                    
+                    <script>
+                        const challenges = {
+                            discover: "<img src=\"frown.svg\" alt=\"frown\" style=\"width: 1.2rem; height: 1.2rem; display: block; margin-bottom: 0.5rem; filter: invert(53%) sepia(7%) saturate(367%) hue-rotate(196deg) brightness(90%) contrast(87%);\"> Users who already have assessments elsewhere can't jump directly to transformation planning",
+                            select: "<img src=\"frown.svg\" alt=\"frown\" style=\"width: 1.2rem; height: 1.2rem; display: block; margin-bottom: 0.5rem; filter: invert(53%) sepia(7%) saturate(367%) hue-rotate(196deg) brightness(90%) contrast(87%);\"> UI limitations force users to select repositories one page at a time instead of bulk operations",
+                            start: "<img src=\"frown.svg\" alt=\"frown\" style=\"width: 1.2rem; height: 1.2rem; display: block; margin-bottom: 0.5rem; filter: invert(53%) sepia(7%) saturate(367%) hue-rotate(196deg) brightness(90%) contrast(87%);\"> 15+ minutes per repository creates bottlenecks when assessing 100+ repositories in parallel",
+                            results: "<img src=\"frown.svg\" alt=\"frown\" style=\"width: 1.2rem; height: 1.2rem; display: block; margin-bottom: 0.5rem; filter: invert(53%) sepia(7%) saturate(367%) hue-rotate(196deg) brightness(90%) contrast(87%);\"> 1. Raw text reports are hard to parse; visual representations would be more helpful to identify repo dependencies<br/><br/>2. Make critical information (incompatible packages, platform dependencies) discoverable and easy to find across multi-repository assessments"
+                        };
+                        
+                        function showChallenge(element, type) {
+                            const challengeDiv = document.getElementById('challengeText');
+                            challengeDiv.innerHTML = challenges[type];
+                            challengeDiv.style.display = 'block';
+                            element.style.backgroundColor = '#d4a373';
+                            element.style.color = '#fff';
+                            element.querySelector('p').style.color = '#fff';
+                        }
+                        
+                        function hideChallenge(element) {
+                            const challengeDiv = document.getElementById('challengeText');
+                            element.style.backgroundColor = '#fefcf9';
+                            element.querySelector('p').style.color = '#2d2d2d';
+                        }
+                    </script>
                     
                     <h2>Process</h2>
                     <p>I conducted discovery interviews with 8+ enterprise customers and solutions architects to understand how teams currently assess and plan .NET modernization initiatives.</p>
@@ -136,7 +266,36 @@
         <nav class="tabs">
             <a href="index.html">← Back to Work</a>
         </nav>
+        
+        <div id="imageModal" class="image-modal" onclick="closeModal(event)">
+            <div class="modal-content" onclick="event.stopPropagation();">
+                <img id="modalImage" src="" alt="Full size image">
+            </div>
+        </div>
     </main>
+    
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(event) {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
     
     <footer>
         <div class="footer-left">
