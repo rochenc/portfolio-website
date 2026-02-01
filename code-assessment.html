@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruobing Chen - UX Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500&family=Montserrat+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+    <main>
+        <section class="project-detail" style="padding-top: 100px;">
+            <div style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; padding-top: 2rem;">
+                <img src="aws-logo.png" alt="AWS" style="height: 3rem; width: auto; align-self: flex-start;">
+                <div>
+                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Improving code assessment experience for .NET modernization</h1>
+                    <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8; max-width: 90%;">Intelligent .NET repository assessment and transformation planning for modernizing legacy applications to cross-platform .NET</p>
+                </div>
+            </div>
+            
+            <div class="project-image-large" style="background-image: url('code-assessment-hero.jpg'); margin-bottom: 3rem;"></div>
+            
+            <div class="project-info-detail" style="max-width: 75%; margin: 0 auto;">
+                <div class="project-meta">
+                    <div>
+                        <h3>Timeline</h3>
+                        <p>Jun 2025 → Jul 2025</p>
+                    </div>
+                    <div>
+                        <h3>Role</h3>
+                        <p>Lead UX Designer</p>
+                    </div>
+                    <div>
+                        <h3>Scope</h3>
+                        <p>New repository assessment and reporting workflow in .NET modernization</p>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <h2>Summary</h2>
+                    <p>I led the UX design for an AI-powered .NET code assessment capability with complexity, compatibility, and dependency analysis to help customers gain deep insight about their resources so they can gain confidence in their modernization planning.</p>
+                    
+                    <h2>Impact</h2>
+                    <p>By enabling developers to do parallel assessment of 100+ repositories and providing actionable insights, the code assessment capability has increased developer satisfaction and reduced modernization planning time from weeks to days.</p>
+                    
+                    <h2>Problem</h2>
+                    <p>Enterprise customers want comprehensive code assessments to make confident transformation plans, but the current experience doesn't provide nearly enough information for that.</p>
+                    
+                    <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
+                        <li><strong>Plans without explanation:</strong> The current experience makes the transformation plan without showing the "why"</li>
+                        <li><strong>Insufficient assessment information:</strong> Current transformation plans are recommended only based on limited metadata such as last modified date and basic repo info, leaving customers uncertain about actual complexity and dependencies</li>
+                        <li><strong>Difficult data discovery:</strong> Customers need help to get actionable insights from the rich technical data about their repo, which is difficult to discover and navigate</li>
+                        <li><strong>Manual assessment burden:</strong> Manual repository assessment requires weeks of manual work using spreadsheets, which is error-prone and labor intensive</li>
+                    </ul>
+                    
+                    <h2>Challenge</h2>
+                    <p>It was clear that an automated assessment would bring great value to our customers, but due to the scale of the operation and the amount of data we need to analyze and report, there were several UX challenges I needed to resolve:</p>
+                    
+                    <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
+                        <li><strong>Assessment wait times:</strong> 15+ minutes per repository creates bottlenecks when assessing 100+ repositories in parallel</li>
+                        <li><strong>Selection friction:</strong> UI limitations force users to select repositories one page at a time instead of bulk operations</li>
+                        <li><strong>Dependency parsing:</strong> Raw text reports are hard to parse; visual representations would be more helpful</li>
+                        <li><strong>Flexibility:</strong> Users who already have assessments elsewhere can't jump directly to transformation planning</li>
+                        <li><strong>Accessibility of rich data:</strong> Make critical information (incompatible packages, platform dependencies) discoverable and easy to find across multi-repository assessments</li>
+                    </ul>
+                    
+                    <h2>Process</h2>
+                    <p>I conducted discovery interviews with 8+ enterprise customers and solutions architects to understand how teams currently assess and plan .NET modernization initiatives.</p>
+                    
+                    <h3>Key Research Insights:</h3>
+                    <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
+                        <li>Teams need to assess repository dependencies at multiple levels (repository, project, package) to build accurate transformation plans</li>
+                        <li>Assessment results must surface specific blockers (incompatible packages, platform-specific dependencies) that inform transformation strategy</li>
+                        <li>Natural language queries help non-technical stakeholders understand technical results ("Which repos have private packages?")</li>
+                        <li>Teams want to see assessment progress in real-time and customize transformation plans based on business priorities</li>
+                        <li>Related repositories should be automatically selected during transformation planning based on dependency graphs</li>
+                    </ul>
+                    
+                    <h3>Design Principles:</h3>
+                    <p>Based on this research, I designed the assessment workflow with three core design principles:</p>
+                    <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
+                        <li><strong>Transparency:</strong> Show assessment progress and status in real-time</li>
+                        <li><strong>Accessibility:</strong> Make assessment data queryable through natural language and filterable through UI</li>
+                        <li><strong>Agency:</strong> Allow teams to view assessment results before committing to transformation, customize plans based on requirements</li>
+                    </ul>
+                    
+                    <h2>Final Result</h2>
+                    <p>I designed a multi-phase assessment and planning workflow that gives users control, transparency, and actionable insights:</p>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-content">
+                            <h4>1. In-Progress Assessment Viewing</h4>
+                            <p>Real-time status updates reduce anxiety and give users control over the assessment process. Users can monitor progress as repositories are being analyzed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-content">
+                            <h4>2. Bulk Selection Capabilities</h4>
+                            <p>Bulk selection capabilities allow assessing 100+ repositories in parallel without manual one-by-one selection, eliminating UI friction and enabling teams to assess their entire portfolio efficiently.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-content">
+                            <h4>3. Multi-Format Reporting</h4>
+                            <p>Assessment results are presented in multiple formats—JSON-formatted detailed reports at repository and project levels, natural language summaries via AI, and visual dependency graphs. This allows both technical teams and stakeholders to understand assessment findings in their preferred format.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-content">
+                            <h4>4. Natural Language Query Interface</h4>
+                            <p>AI-powered natural language queries help teams find insights quickly ("Which repos have incompatible packages?") and make complex technical data accessible to non-technical stakeholders.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="full-width-pattern">
+                        <div class="pattern-content">
+                            <h4>5. Real-Time Monitoring & Reporting</h4>
+                            <p>Once transformation planning is finalized, users can monitor progress across all repositories, view real-time status updates, and query results through natural language. The system provides detailed logs at both repository and project levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html#selected-work" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 3rem; margin-bottom: 2rem; color: #666; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">
+                <span>←</span> Back to Work
+            </a>
+            </section>
+        
+        <nav class="tabs">
+            <a href="index.html">← Back to Work</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <div class="footer-left">
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+            <p class="footer-copyright">&copy; 2025 Ruobing Chen. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-right">
+            <h3>Let's connect</h3>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                <a href="mailto:rchen02@risd.edu">Email me</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
