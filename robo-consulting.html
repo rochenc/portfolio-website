@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruobing Chen - UX Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500&family=Montserrat+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js"></script>
+    <style>
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f1f1f1;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #d4a373;
+        }
+        
+        .clickable-image {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        
+        .clickable-image:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="project-detail" style="padding-top: 100px;">
+            <div style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; padding-top: 2rem;">
+                <div>
+                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Robo Consulting</h1>
+                    <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8; max-width: 90%;">Concept design for customer project consulting experience and consultant builder experience</p>
+                </div>
+            </div>
+            
+            <div class="project-image-large" style="background-image: url('Robo-consulting.jpg'); margin-bottom: 3rem;"></div>
+            
+            <div class="project-info-detail" style="max-width: 75%; margin: 0 auto;">
+                <div class="project-meta">
+                    <div>
+                        <h3>Timeline</h3>
+                        <p>Apr 2024 → Jun 2024</p>
+                    </div>
+                    <div>
+                        <h3>Role</h3>
+                        <p>Lead UX Designer</p>
+                    </div>
+                    <div>
+                        <h3>Scope</h3>
+                        <p>Concept design for customer project consulting experience and consultant builder experience</p>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
+                    <p>More details currently being updated. Coming soon.</p>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
+                    <p>More details currently being updated. Coming soon.</p>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Problem</h2>
+                    <p>More details currently being updated. Coming soon.</p>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
+                    <p>More details currently being updated. Coming soon.</p>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Process</h2>
+                    <p>More details currently being updated. Coming soon.</p>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Final Result</h2>
+                    <p>More details currently being updated. Coming soon.</p>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h2>
+                    <p>More details currently being updated. Coming soon.</p>
+                    
+                    <p style="margin-top: 3rem; font-size: 1.1rem; color: #6a6a6a; font-style: italic;">Thanks for reading!</p>
+                </div>
+            </div>
+            
+            <a href="index.html#selected-work" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 3rem; margin-bottom: 2rem; color: #666; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">
+                <span>←</span> Back to Work
+            </a>
+        </section>
+        
+        <nav class="tabs">
+            <a href="index.html">← Back to Work</a>
+        </nav>
+        
+        <div id="imageModal" class="image-modal" onclick="closeModal(event)">
+            <div class="modal-content" onclick="closeModal(event)">
+                <img id="modalImage" src="" alt="Full size image">
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(event) {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+    
+    <footer>
+        <div class="footer-left">
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+            <p class="footer-copyright">&copy; 2025 Ruobing Chen. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-right">
+            <h3>Let's connect</h3>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                <a href="mailto:rchen02@risd.edu">Email me</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
