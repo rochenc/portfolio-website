@@ -36,6 +36,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
         
         .modal-content img {
@@ -45,6 +46,7 @@
             height: auto;
             border-radius: 8px;
             object-fit: contain;
+            display: block;
         }
         
         .modal-close {
@@ -80,14 +82,14 @@
     <main>
         <section class="project-detail" style="padding-top: 100px;">
             <div style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; padding-top: 2rem;">
-                <img src="aws-logo.png" alt="AWS" style="height: 3rem; width: auto; align-self: flex-start;">
+                <img src="code-assessment-assets/aws-logo.png" alt="AWS" style="height: 3rem; width: auto; align-self: flex-start;">
                 <div>
                     <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Improving code assessment experience for .NET modernization</h1>
                     <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8; max-width: 90%;">Intelligent .NET repository assessment and transformation planning for modernizing legacy applications to cross-platform .NET</p>
                 </div>
             </div>
             
-            <div class="project-image-large" style="background-image: url('code-assessment-hero.jpg'); margin-bottom: 3rem;"></div>
+            <div class="project-image-large" style="background-image: url('code-assessment-assets/code-assessment-hero.jpg'); margin-bottom: 3rem;"></div>
             
             <div class="project-info-detail" style="max-width: 75%; margin: 0 auto;">
                 <div class="project-meta">
@@ -106,24 +108,24 @@
                 </div>
                 
                 <div class="project-content">
-                    <h2>Summary</h2>
+                    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
                     <p>I led the UX design for an AI-powered .NET code assessment capability with complexity, compatibility, and dependency analysis to help customers gain deep insight about their resources so they can gain confidence in their modernization planning.</p>
                     
-                    <h2>Impact</h2>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
                     <p>By enabling developers to do parallel assessment of 100+ repositories and providing actionable insights, the code assessment capability has increased developer satisfaction and reduced modernization planning time from weeks to days.</p>
                     
-                    <h2>Problem</h2>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Problem</h2>
                     <p>Enterprise customers want comprehensive code assessments to make confident transformation plans, but the current experience doesn't provide nearly enough information for that.</p>
                     
                     <div style="display: flex; gap: 2rem; margin: 2rem 0;">
                         <div style="flex: 1;">
-                            <div class="placeholder-image clickable-image" onclick="openModal('code-assess-before.jpg')" style="background-image: url('code-assess-before.jpg'); background-size: cover; background-position: center; height: 300px; border: none; padding: 0; margin: 0; border-radius: 8px;">
+                            <div class="placeholder-image clickable-image" onclick="openModal('code-assessment-assets/code-assess-before.jpg')" style="background-image: url('code-assessment-assets/code-assess-before.jpg'); background-size: cover; background-position: center; height: 300px; border: none; padding: 0; margin: 0; border-radius: 8px;">
                                 <p style="display: none;"></p>
                             </div>
                             <p style="font-size: 0.95rem; color: #999; font-style: italic; margin: 0.5rem 0 1.5rem 0;">Before: Assessment process is hidden in worklog, many customers were confused about what's happening</p>
                         </div>
                         <div style="flex: 1;">
-                            <div class="placeholder-image clickable-image" onclick="openModal('assess-before-2.jpg')" style="background-image: url('assess-before-2.jpg'); background-size: cover; background-position: center; height: 300px; border: none; padding: 0; margin: 0; border-radius: 8px;">
+                            <div class="placeholder-image clickable-image" onclick="openModal('code-assessment-assets/assess-before-2.jpg')" style="background-image: url('code-assessment-assets/assess-before-2.jpg'); background-size: cover; background-position: center; height: 300px; border: none; padding: 0; margin: 0; border-radius: 8px;">
                                 <p style="display: none;"></p>
                             </div>
                             <p style="font-size: 0.95rem; color: #999; font-style: italic; margin: 0.5rem 0 1.5rem 0;">Before: Limited visibility into assessment results and data accessibility issues</p>
@@ -132,22 +134,22 @@
                     
                     <div style="display: flex; gap: 2rem; margin: 2rem 0;">
                         <div style="flex: 1;">
-                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Transparency</strong></p>
-                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 1rem 0;">The current experience makes the transformation plan without showing the "why"</p>
+                            <p style="color: #2d2d2d; font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem 0;">Transparency</p>
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 1.5rem 0;">The current experience makes the transformation plan without showing the "why"</p>
                             
-                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Discoverability</strong></p>
+                            <p style="color: #2d2d2d; font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem 0;">Discoverability</p>
                             <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0;">Customers need help to get actionable insights from the rich technical data about their repo, which is difficult to discover and navigate</p>
                         </div>
                         <div style="flex: 1;">
-                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Uncertainty</strong></p>
-                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 1rem 0;">Current transformation plans are recommended only based on limited metadata such as last modified date and basic repo info, leaving customers uncertain about actual complexity and dependencies</p>
+                            <p style="color: #2d2d2d; font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem 0;">Uncertainty</p>
+                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 1.5rem 0;">Current transformation plans are recommended only based on limited metadata such as last modified date and basic repo info, leaving customers uncertain about actual complexity and dependencies</p>
                             
-                            <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0 0 0.5rem 0;"><strong>Manual</strong></p>
+                            <p style="color: #2d2d2d; font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem 0;">Manual</p>
                             <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 0;">Current repository assessment requires weeks of manual work using downloaded spreadsheets, which is error-prone and labor intensive</p>
                         </div>
                     </div>
                     
-                    <h2>Challenge</h2>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
                     <p>There were several UX challenges I needed to resolve during each step of the assessment process:</p>
                     
                     <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 1.5rem 0 1rem 0;"><strong>Code Assessment User Flow</strong></p>
@@ -171,7 +173,7 @@
                     </div>
                     
                     <div id="challengeText" style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 2rem 0; padding: 1.5rem; background-color: #f5f3f0; border-radius: 4px; min-height: 60px; display: block;">
-                        Users who already have assessments elsewhere can't jump directly to transformation planning
+                        <img src="frown.svg" alt="frown" style="width: 1.2rem; height: 1.2rem; display: block; margin-bottom: 0.5rem; filter: invert(53%) sepia(7%) saturate(367%) hue-rotate(196deg) brightness(90%) contrast(87%);"> UI limitations force users to select repositories one page at a time instead of bulk operations
                     </div>
                     
                     <script>
@@ -198,63 +200,86 @@
                         }
                     </script>
                     
-                    <h2>Process</h2>
-                    <p>I conducted discovery interviews with 8+ enterprise customers and solutions architects to understand how teams currently assess and plan .NET modernization initiatives.</p>
-                    
-                    <h3>Key Research Insights:</h3>
-                    <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
-                        <li>Teams need to assess repository dependencies at multiple levels (repository, project, package) to build accurate transformation plans</li>
-                        <li>Assessment results must surface specific blockers (incompatible packages, platform-specific dependencies) that inform transformation strategy</li>
-                        <li>Natural language queries help non-technical stakeholders understand technical results ("Which repos have private packages?")</li>
-                        <li>Teams want to see assessment progress in real-time and customize transformation plans based on business priorities</li>
-                        <li>Related repositories should be automatically selected during transformation planning based on dependency graphs</li>
-                    </ul>
-                    
-                    <h3>Design Principles:</h3>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Process</h2>
                     <p>Based on this research, I designed the assessment workflow with three core design principles:</p>
                     <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
                         <li><strong>Transparency:</strong> Show assessment progress and status in real-time</li>
                         <li><strong>Accessibility:</strong> Make assessment data queryable through natural language and filterable through UI</li>
-                        <li><strong>Agency:</strong> Allow teams to view assessment results before committing to transformation, customize plans based on requirements</li>
                     </ul>
                     
-                    <h2>Final Result</h2>
+                    <div style="display: flex; gap: 2rem; margin: 2rem 0;">
+                        <div style="flex: 1;">
+                            <div class="placeholder-image clickable-image" onclick="openModal('code-assessment-assets/report-draft.png')" style="background-image: url('code-assessment-assets/report-draft.png'); background-size: cover; background-position: center; height: 250px; border-radius: 8px; margin-bottom: 1rem;"></div>
+                            <h4 style="color: #2d2d2d; font-size: 1.1rem; margin: 0 0 0.5rem 0;">Report structure</h4>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Teams need to assess repository dependencies at multiple levels (repository, project, package).</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="placeholder-image clickable-image" onclick="openModal('code-assessment-assets/inprogress.jpg')" style="background-image: url('code-assessment-assets/inprogress.jpg'); background-size: cover; background-position: center; height: 250px; border-radius: 8px; margin-bottom: 1rem;"></div>
+                            <h4 style="color: #2d2d2d; font-size: 1.1rem; margin: 0 0 0.5rem 0;">In-progress results</h4>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Worked with dev to propose in-progress pattern for long-running tasks.</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="placeholder-image clickable-image" onclick="openModal('code-assessment-assets/assess-iteration.png')" style="background-image: url('code-assessment-assets/assess-iteration.png'); background-size: cover; background-position: center; height: 250px; border-radius: 8px; margin-bottom: 1rem;"></div>
+                            <h4 style="color: #2d2d2d; font-size: 1.1rem; margin: 0 0 0.5rem 0;">Flow iterations</h4>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">User testing sessions with enterprise customers to validate design decisions and gather feedback, followed by refinement based on insights to optimize the experience for clarity, efficiency, and accessibility.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Final Result</h2>
                     <p>I designed a multi-phase assessment and planning workflow that gives users control, transparency, and actionable insights:</p>
                     
                     <div class="full-width-pattern">
-                        <div class="pattern-content">
-                            <h4>1. In-Progress Assessment Viewing</h4>
-                            <p>Real-time status updates reduce anxiety and give users control over the assessment process. Users can monitor progress as repositories are being analyzed.</p>
+                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center;">
+                            <div style="max-width: 600px;">
+                                <h4>1. Bulk Selection Capabilities</h4>
+                                <p>Bulk selection capabilities allow assessing 100+ repositories in parallel without manual one-by-one selection, eliminating UI friction and enabling teams to assess their entire portfolio efficiently.</p>
+                            </div>
+                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
+                                <img src="code-assessment-assets/bulk-select.gif" alt="Bulk Selection" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
+                            </div>
                         </div>
                     </div>
                     
                     <div class="full-width-pattern">
-                        <div class="pattern-content">
-                            <h4>2. Bulk Selection Capabilities</h4>
-                            <p>Bulk selection capabilities allow assessing 100+ repositories in parallel without manual one-by-one selection, eliminating UI friction and enabling teams to assess their entire portfolio efficiently.</p>
+                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center; flex-direction: row-reverse;">
+                            <div style="max-width: 600px;">
+                                <h4>2. In-Progress Assessment Viewing</h4>
+                                <p>Real-time status updates reduce anxiety and give users control over the assessment process. Users can monitor progress as repositories are being analyzed.</p>
+                            </div>
+                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
+                                <img src="code-assessment-assets/assess-in-progress.gif" alt="In-Progress Assessment" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
+                            </div>
                         </div>
                     </div>
                     
                     <div class="full-width-pattern">
-                        <div class="pattern-content">
-                            <h4>3. Multi-Format Reporting</h4>
-                            <p>Assessment results are presented in multiple formats—JSON-formatted detailed reports at repository and project levels, natural language summaries via AI, and visual dependency graphs. This allows both technical teams and stakeholders to understand assessment findings in their preferred format.</p>
+                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center;">
+                            <div style="max-width: 600px;">
+                                <h4>3. Multi-Level Reporting & Chat Query</h4>
+                                <p>Assessment results are presented at job and repository levels, with detailed project information available in downloadable CSV files. Users can <strong>ask questions through chat</strong> like "Which repos have incompatible packages?" allowing both technical teams and stakeholders to understand assessment findings.</p>
+                            </div>
+                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
+                                <img src="code-assessment-assets/reports.gif" alt="Multi-Format Reporting" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
+                            </div>
                         </div>
                     </div>
                     
                     <div class="full-width-pattern">
-                        <div class="pattern-content">
-                            <h4>4. Natural Language Query Interface</h4>
-                            <p>AI-powered natural language queries help teams find insights quickly ("Which repos have incompatible packages?") and make complex technical data accessible to non-technical stakeholders.</p>
+                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center; flex-direction: row-reverse;">
+                            <div style="max-width: 600px;">
+                                <h4>4. Visual Dependency Groups</h4>
+                                <p>Visual dependency maps and intelligent grouping help teams understand relationships between repositories and dependencies, enabling better transformation planning and reducing complexity.</p>
+                            </div>
+                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
+                                <img src="code-assessment-assets/groups-maps.gif" alt="Dependency Maps" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content">
-                            <h4>5. Real-Time Monitoring & Reporting</h4>
-                            <p>Once transformation planning is finalized, users can monitor progress across all repositories, view real-time status updates, and query results through natural language. The system provides detailed logs at both repository and project levels.</p>
-                        </div>
-                    </div>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h2>
+                    <p>Since launch in August 2025, we have heard improved customer feedback on the assessment experience. Customers such as Thomson Reuters are happy with the comprehensiveness of the assessment, providing them with the actionable insights to make proper modernization planning happen.</p>
+                    
+                    <p style="margin-top: 3rem; font-size: 1.1rem; color: #6a6a6a; font-style: italic;">Thanks for reading!</p>
                 </div>
             </div>
             
@@ -268,7 +293,7 @@
         </nav>
         
         <div id="imageModal" class="image-modal" onclick="closeModal(event)">
-            <div class="modal-content" onclick="event.stopPropagation();">
+            <div class="modal-content" onclick="closeModal(event)">
                 <img id="modalImage" src="" alt="Full size image">
             </div>
         </div>
