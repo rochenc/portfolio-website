@@ -782,6 +782,28 @@ footer .footer-right h3 {
         grid-template-columns: 1fr !important;
     }
     
+    /* Code Assessment Process section - convert 3 flex items to stacked */
+    div[style*="display: flex; gap: 2rem; margin: 2rem 0;"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    div[style*="display: flex; gap: 2rem; margin: 2rem 0;"] > div {
+        flex: 1 !important;
+    }
+    
+    /* Code Assessment Challenge section - convert horizontal scroll to vertical */
+    div[style*="overflow-x: auto"] {
+        overflow-x: visible !important;
+        flex-wrap: wrap !important;
+    }
+    
+    div[style*="overflow-x: auto"] > div {
+        flex-shrink: 1 !important;
+        min-width: auto !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
     .placeholder-image {
         min-height: 300px;
     }
@@ -868,6 +890,28 @@ footer .footer-right h3 {
     /* Journey map responsive - convert 4 columns to 1 column */
     div[style*="grid-template-columns: repeat(4, 1fr)"] {
         grid-template-columns: 1fr !important;
+    }
+    
+    /* Code Assessment Process section - convert 3 flex items to stacked */
+    div[style*="display: flex; gap: 2rem; margin: 2rem 0;"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    div[style*="display: flex; gap: 2rem; margin: 2rem 0;"] > div {
+        flex: 1 !important;
+    }
+    
+    /* Code Assessment Challenge section - convert horizontal scroll to vertical */
+    div[style*="overflow-x: auto"] {
+        overflow-x: visible !important;
+        flex-wrap: wrap !important;
+    }
+    
+    div[style*="overflow-x: auto"] > div {
+        flex-shrink: 1 !important;
+        min-width: auto !important;
+        margin-bottom: 0.5rem !important;
     }
     
     .work-grid {
