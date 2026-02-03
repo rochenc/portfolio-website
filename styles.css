@@ -777,8 +777,13 @@ footer .footer-right h3 {
         grid-template-columns: 1fr !important;
     }
     
-    /* Journey map responsive - convert 4 columns to 1 column */
-    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+    /* Journey map responsive - reorganize to show each step with its problem and capability */
+    div[style*="background-color: #f5f3f0"] {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    div[style*="background-color: #f5f3f0"] > div[style*="grid-template-columns: repeat(4, 1fr)"] {
         grid-template-columns: 1fr !important;
     }
     
