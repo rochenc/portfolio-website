@@ -813,7 +813,8 @@ footer .footer-right h3 {
     }
     
     .project-meta {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .project-content h2 {
@@ -825,12 +826,12 @@ footer .footer-right h3 {
     }
     
     .design-pattern {
-        grid-template-columns: 1.5fr 1fr;
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
     .pattern-image {
-        width: 85%;
+        width: 100%;
     }
     
     .pattern-content h4 {
@@ -839,21 +840,28 @@ footer .footer-right h3 {
     
     .full-width-pattern .pattern-content {
         gap: 1.5rem;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
     
     .full-width-pattern .pattern-content > div {
-        max-width: 45% !important;
-        flex: 1 1 45%;
-        min-width: 250px;
+        max-width: 100% !important;
+        flex: 1 1 100%;
+    }
+    
+    .full-width-pattern .pattern-content[style*="flex-direction: row-reverse"] {
+        flex-direction: column !important;
     }
     
     .full-width-pattern .pattern-content img {
         max-width: 100% !important;
     }
     
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+    
     .work-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 }
 
