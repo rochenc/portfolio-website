@@ -518,8 +518,8 @@ footer .footer-right h3 {
 
 .design-pattern {
     display: grid;
-    grid-template-columns: 2fr 0.8fr;
-    gap: 2rem;
+    grid-template-columns: 2.5fr 0.8fr;
+    gap: 1rem;
     margin: 2rem 0;
     align-items: start;
 }
