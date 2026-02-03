@@ -188,6 +188,17 @@
                         </div>
                     </div>
                     
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Key Research Insights</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                        <div>
+                            <p>From interviewing with 10 migration and modernization practitioners, we learned that some of our assumptions are wrong.</p>
+                        </div>
+                        <div>
+                            <p><strong>1. Users need guided, not fully automated, experiences</strong><br>While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</p>
+                            <p><strong>2. Chat alone isn't enough</strong><br>Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</p>
+                        </div>
+                    </div>
+                    
                     <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">How does this impact the experience?</h2>
                     <div class="experience-section">
                         <div class="experience-item">
@@ -220,7 +231,6 @@
                         <div style="display: flex; gap: 1rem; margin-bottom: 2rem; position: relative; z-index: 1; width: fit-content;">
                             <button onclick="showVersion('v1')" id="pill-v1" style="background-color: #d4a373; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: white; cursor: pointer;">V1</button>
                             <button onclick="showVersion('v2')" id="pill-v2" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">V2</button>
-                            <button onclick="showVersion('validate')" id="pill-validate" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">Validate</button>
                             <button onclick="showVersion('v3')" id="pill-v3" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">V3</button>
                         </div>
                         
@@ -244,17 +254,6 @@
                             </div>
                         </div>
                         
-                        <!-- Validate Content -->
-                        <div id="version-validate" style="display: none;">
-                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
-                                <div style="width: 90%; text-align: left;">
-                                    <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0;">From interviewing with 10 migration and modernization practitioners, we learned that some of our assumptions are wrong.</p>
-                                    <p style="margin: 0 0 0.75rem 0;"><strong>1. Users need guided, not fully automated, experiences</strong><br><span style="color: #6a6a6a; font-size: 1rem; line-height: 1.6;">While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</span></p>
-                                    <p style="margin: 0;"><strong>2. Chat alone isn't enough</strong><br><span style="color: #6a6a6a; font-size: 1rem; line-height: 1.6;">Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <!-- V3 Content -->
                         <div id="version-v3" style="display: none;">
                             <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
@@ -271,7 +270,6 @@
                             // Hide all versions
                             document.getElementById('version-v1').style.display = 'none';
                             document.getElementById('version-v2').style.display = 'none';
-                            document.getElementById('version-validate').style.display = 'none';
                             document.getElementById('version-v3').style.display = 'none';
                             
                             // Reset all pills
@@ -279,8 +277,6 @@
                             document.getElementById('pill-v1').style.color = '#2d2d2d';
                             document.getElementById('pill-v2').style.backgroundColor = 'white';
                             document.getElementById('pill-v2').style.color = '#2d2d2d';
-                            document.getElementById('pill-validate').style.backgroundColor = 'white';
-                            document.getElementById('pill-validate').style.color = '#2d2d2d';
                             document.getElementById('pill-v3').style.backgroundColor = 'white';
                             document.getElementById('pill-v3').style.color = '#2d2d2d';
                             
