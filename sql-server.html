@@ -41,16 +41,100 @@
                 </div>
                 
                 <div class="project-content">
-                    <h2>Summary</h2>
+                    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
                     <p>I led UX for a 0→1 Agentic SQL Server modernization workflow within AWS Transform, launched at <a href="https://aws.amazon.com/transform/windows/sql-server/" style="color: #d4a373; text-decoration: underline;">re:Invent 2025</a>. The challenge was designing an efficient experience for enterprise customers to speed up their database migrations. As UX lead, I defined the workflow from assessment, wave planning to modernization execution in a chat driven experience.</p>
-                    <p>My impact lies in streamlining user workflows, defining information architecture, crafting chat content design, leading interaction design, and developing prototypes. I validated concepts through usability testing with customers to ensure the solution addressed real customer needs and delivered an intuitive experience for this complex technical domain.</p>
+                    <p>My impact lies in making the agentic AI-driven experience useful and usable. This includes defining human-in-the-loop moments, crafting chat content design, and making new AI-human interaction clear and intuitive.</p>
                     <p><a href="https://app.storylane.io/share/xfh6mssbmgua?refid=ee0a6709-ee17-4d66-bdfe-b5b0661b8e3e" style="color: #d4a373; text-decoration: underline;">View interactive demo</a></p>
                     
-                    <h2>Impact</h2>
-                    <p>[TODO: Add impact metrics and outcomes for SQL Server modernization project]</p>
-                    <p>[TODO: Include adoption numbers, efficiency gains, customer testimonials, and business impact]</p>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
+                    <p>Since launching to AWS enterprise customers worldwide in December 2025, we've seen more than 46 customer-created jobs with a 20% job completion rate, reducing modernization time with the same scope from months to weeks. The solution has also eliminated SQL Server licensing fees and freed up significant developer time for higher-value work.</p>
                     
-                    <h2>Problem</h2>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Users & Jobs To Be Done</h2>
+                    <h3>Personas</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="persona.svg" alt="IT Generalist" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
+                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">IT Generalist</h4>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Owns the modernization initiative end-to-end. Creates transformation projects, defines the overall objectives, and invites specialists as collaborators.</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="personas-1.svg" alt="Database Administrator" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
+                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">Database Administrator (DBA)</h4>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Focused on database schema conversion, data migration oversight, and resolving any database-level transformation exceptions.</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="personas-2.svg" alt="Application Developer" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
+                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">Application Developer</h4>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Owns application code transformation, resolves flagged code changes, and runs functional tests.</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="personas.svg" alt="AWS Admin & DevOps Engineer" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
+                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">AWS Admin & DevOps Engineer</h4>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Plays a governance role providing necessary connector approvals upfront, manages CI/CD integration and deployment orchestration.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 3rem;">Modernization Journey</h3>
+                    <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">SQL Server to PostgreSQL modernization is a critical but daunting initiative for enterprises. Traditional approaches take months of manual work and require deep technical expertise across databases, applications, and infrastructure.</p>
+                    <div style="background-color: #f5f3f0; border-radius: 12px; padding: 2rem; margin: 2rem 0; position: relative;">
+                        <img src="journeymap.svg" alt="User Emotion & Confidence Journey Map" style="width: 100%; height: auto; display: block; margin-bottom: 1rem;">
+                        <p style="color: #999; font-size: 0.75rem; text-align: center; margin: 0 0 2rem 0;">User Emotion & Confidence</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e3dd;">
+                            <div>
+                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Connect</p>
+                            </div>
+                            <div>
+                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Assess</p>
+                            </div>
+                            <div>
+                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Plan</p>
+                            </div>
+                            <div>
+                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Modernize</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e3dd;">
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Lack of expertise in setting up secure connections to legacy systems.</p>
+                            </div>
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Identifying dependencies on repositories is challenging—without this, modernizing SQL will break applications.</p>
+                            </div>
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Complex wave sequencing and resource allocation across teams.</p>
+                            </div>
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">90% schema conversion will still require manual conversion, even with automation tools.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Guided connector setup with authentication management.</p>
+                            </div>
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">AI-powered schema analysis and dependency detection at scale.</p>
+                            </div>
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Intelligent wave planning with risk assessment recommendations.</p>
+                            </div>
+                            <div>
+                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Automated conversion with human-in-the-loop oversight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Problem</h2>
                     <p>SQL Server to PostgreSQL modernization is a critical but daunting initiative for enterprises. Traditional approaches take months of manual work and require deep technical expertise across databases, applications, and infrastructure.</p>
                     
                     <div class="problem-points">
@@ -91,30 +175,20 @@
                         </div>
                     </div>
                     
-                    <h2>Challenge</h2>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
                         <div>
-                            <h3 style="font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1.5rem;">How might we guide users through highly technical modernization workflows so they can act faster, with clarity and control—without being overwhelmed?</h3>
+                            <h3 style="font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1.5rem;">How might we guide users through a SQL database modernization journey with clarity, confidence and control—interacting with multiple AI agents?</h3>
                         </div>
                         <div>
-                            <p style="margin-top: 0;">This challenge centers on two major shifts:</p>
-                            <p><strong>1. Designing for domain complexity and cognitive load</strong><br>Managing technical complexity without overwhelming users with information.</p>
-                            <p><strong>2. Moving from traditional console workflows to an agent-assisted, chat-centric experience</strong><br>Transitioning from familiar UI patterns to conversational AI interactions.</p>
+                            <p style="margin-top: 0;">This challenge centers on three major areas:</p>
+                            <p><strong>1. Dealing with AI output hallucinations and inconsistencies</strong><br>Ensuring agents provide reliable, accurate results when handling complex database analysis and transformation logic.</p>
+                            <p><strong>2. Showing agent rationale and transparency</strong><br>Helping users understand why agents make recommendations and how they arrived at their conclusions.</p>
+                            <p><strong>3. Finetuning of agent-generated results</strong><br>Allowing users to review, modify, and improve agent outputs before execution to maintain control and quality.</p>
                         </div>
                     </div>
                     
-                    <h2>Key research insights</h2>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
-                        <div>
-                            <p>From interviewing with 10 migration and modernization practitioners, we learned that some of our assumptions are wrong.</p>
-                        </div>
-                        <div>
-                            <p><strong>1. Users need guided, not fully automated, experiences</strong><br>While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</p>
-                            <p><strong>2. Chat alone isn't enough</strong><br>Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</p>
-                        </div>
-                    </div>
-                    
-                    <h2>How does this impact the experience?</h2>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">How does this impact the experience?</h2>
                     <div class="experience-section">
                         <div class="experience-item">
                             <h4>Guided job plan</h4>
@@ -138,7 +212,88 @@
                         </div>
                     </div>
                     
-                    <h2>Final result</h2>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Design Iterations</h2>
+                    <p>One key workflow iteration happens where customers set the target input for each wave. The decision lies in enabling full automation for target configuration, or a step-by-step approach.</p>
+                    
+                    <div style="margin: 2rem 0; position: relative;">
+                        <!-- Pill labels as selectable buttons -->
+                        <div style="display: flex; gap: 1rem; margin-bottom: 2rem; position: relative; z-index: 1; width: fit-content;">
+                            <button onclick="showVersion('v1')" id="pill-v1" style="background-color: #d4a373; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: white; cursor: pointer;">V1</button>
+                            <button onclick="showVersion('v2')" id="pill-v2" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">V2</button>
+                            <button onclick="showVersion('validate')" id="pill-validate" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">Validate</button>
+                            <button onclick="showVersion('v3')" id="pill-v3" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">V3</button>
+                        </div>
+                        
+                        <!-- V1 Content -->
+                        <div id="version-v1" style="display: block;">
+                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem; width: 90%;">
+                                    <img src="v1-target.jpg" alt="V1 - Setup Target Per Step Per Wave" style="width: 100%; height: auto;">
+                                </div>
+                                <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0; width: 90%; text-align: left;">Initial approach where users configure target databases and applications for each step within every wave, providing granular control but requiring more manual input.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- V2 Content -->
+                        <div id="version-v2" style="display: none;">
+                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem; width: 90%;">
+                                    <img src="v2-target.jpg" alt="V2 - Setup as Part of Wave Plan Step" style="width: 100%; height: auto;">
+                                </div>
+                                <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0; width: 90%; text-align: left;">Consolidated approach where target configuration happens as part of the wave planning process, reducing friction and centralizing decisions within the wave workflow.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Validate Content -->
+                        <div id="version-validate" style="display: none;">
+                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="width: 90%; text-align: left;">
+                                    <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0;">From interviewing with 10 migration and modernization practitioners, we learned that some of our assumptions are wrong.</p>
+                                    <p style="margin: 0 0 0.75rem 0;"><strong>1. Users need guided, not fully automated, experiences</strong><br><span style="color: #6a6a6a; font-size: 1rem; line-height: 1.6;">While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</span></p>
+                                    <p style="margin: 0;"><strong>2. Chat alone isn't enough</strong><br><span style="color: #6a6a6a; font-size: 1rem; line-height: 1.6;">Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- V3 Content -->
+                        <div id="version-v3" style="display: none;">
+                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem; width: 90%;">
+                                    <img src="v3-target.jpg" alt="V3 - Configure Wave Step" style="width: 100%; height: auto;">
+                                </div>
+                                <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0; width: 90%; text-align: left;">Streamlined approach enabling full automation for target configuration, allowing users to apply wave-level settings across all databases and applications with a single action.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        function showVersion(version) {
+                            // Hide all versions
+                            document.getElementById('version-v1').style.display = 'none';
+                            document.getElementById('version-v2').style.display = 'none';
+                            document.getElementById('version-validate').style.display = 'none';
+                            document.getElementById('version-v3').style.display = 'none';
+                            
+                            // Reset all pills
+                            document.getElementById('pill-v1').style.backgroundColor = 'white';
+                            document.getElementById('pill-v1').style.color = '#2d2d2d';
+                            document.getElementById('pill-v2').style.backgroundColor = 'white';
+                            document.getElementById('pill-v2').style.color = '#2d2d2d';
+                            document.getElementById('pill-validate').style.backgroundColor = 'white';
+                            document.getElementById('pill-validate').style.color = '#2d2d2d';
+                            document.getElementById('pill-v3').style.backgroundColor = 'white';
+                            document.getElementById('pill-v3').style.color = '#2d2d2d';
+                            
+                            // Show selected version
+                            document.getElementById('version-' + version).style.display = 'block';
+                            
+                            // Highlight selected pill
+                            document.getElementById('pill-' + version).style.backgroundColor = '#d4a373';
+                            document.getElementById('pill-' + version).style.color = 'white';
+                        }
+                    </script>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Final result</h2>
                     <p>Designed an AI-assisted workflow that automatically analyzes SQL Server databases and .NET applications, converts schemas, migrates data, and refactors application code while maintaining human oversight at critical decision points.</p>
                     
                     <div class="design-pattern">
@@ -183,10 +338,8 @@
                         </div>
                     </div>
                     
-                    <h3>Impact & outcomes</h3>
-                    <p><strong>Adoption success:</strong> 117 customers adopted SQL Server modernization with 167 active users and 205 workspaces created since GA launch.</p>
-                    <p><strong>Efficiency gains:</strong> 911,676 lines of code analyzed and transformed across 11,674 servers with 90 completed jobs and 0 failed jobs.</p>
-                    <p><strong>Enterprise impact:</strong> Reduced modernization timeline from months to weeks, serving major customers including Accenture, Canadian Pacific Railway, and Commonwealth Bank of Australia.</p>
+                    <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h3>
+                    <p>The SQL Server modernization solution was featured as a key announcement at AWS re:Invent 2025, highlighting the power of agentic AI to accelerate enterprise cloud migration workflows.</p>
                 </div>
             </div>
             
