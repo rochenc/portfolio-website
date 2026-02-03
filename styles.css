@@ -777,6 +777,11 @@ footer .footer-right h3 {
         grid-template-columns: 1fr !important;
     }
     
+    /* Journey map responsive - convert 4 columns to 1 column */
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+    
     .placeholder-image {
         min-height: 300px;
     }
@@ -857,6 +862,11 @@ footer .footer-right h3 {
     }
     
     div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Journey map responsive - convert 4 columns to 1 column */
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
         grid-template-columns: 1fr !important;
     }
     
