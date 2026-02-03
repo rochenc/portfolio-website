@@ -518,7 +518,7 @@ footer .footer-right h3 {
 
 .design-pattern {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
     margin: 2rem 0;
     align-items: start;
@@ -535,6 +535,11 @@ footer .footer-right h3 {
 .pattern-content h4 {
     margin-bottom: 1rem;
     color: #333;
+    font-size: 1.1rem;
+}
+
+.pattern-content p {
+    font-size: 0.95rem;
 }
 
 .pattern-content ul {
@@ -544,6 +549,7 @@ footer .footer-right h3 {
 
 .pattern-content li {
     margin-bottom: 0.5rem;
+    font-size: 0.95rem;
 }
 
 .full-width-pattern {
