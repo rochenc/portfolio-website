@@ -79,6 +79,18 @@
     </style>
 </head>
 <body>
+    <!-- Top Navigation -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 2rem 3rem; z-index: 100; background: transparent; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html#project-robo-consulting" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">← Work</a>
+        <a href="about.html" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+    </nav>
+    
+    <!-- Side Navigation -->
+    <nav id="sideNav" style="position: fixed; top: 140px; left: 3rem; z-index: 99; display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="#summary" class="side-nav-link" style="text-decoration: none; color: #d4a373; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Summary</a>
+        <a href="#outcome" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Outcome</a>
+    </nav>
+    
     <main>
         <section class="project-detail" style="padding-top: 4rem;">
             <!-- Header Section -->
@@ -115,7 +127,7 @@
                 
                 <!-- Content -->
                 <div class="project-content">
-                    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
+                    <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
                     <p>Working with human consultants could be costly and usually requires a statement of work before starting the project. This involves both significant time and fee investments, creating barriers for customers who need quick consulting services.</p>
                     
                     <p>I led the UX design for this initiative directly with 2 AWS ProServe consultants to get funding for the project.</p>
@@ -135,7 +147,7 @@
                     <h2 style="margin-top: 3rem; margin-bottom: 1.5rem; display: none;">Final Result</h2>
                     <p style="display: none;">More details currently being updated. Coming soon.</p>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h2>
+                    <h2 id="outcome" style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h2>
                     <p>I reviewed the concept with AWS ProServe leadership and received positive feedback. Although development was placed on hold, the ideas explored for collaboration, agent workflow, and overall journey concept have served as the foundation and inspiration for upcoming AI-driven modernization projects.</p>
                     
                     <div style="margin-top: 2rem;">
@@ -203,5 +215,45 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Scroll spy for side navigation
+        const sections = document.querySelectorAll('h2[id]');
+        const navLinks = document.querySelectorAll('.side-nav-link');
+        
+        function updateActiveLink() {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.style.color = '#6a6a6a';
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.style.color = '#d4a373';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveLink);
+        window.addEventListener('load', updateActiveLink);
+        
+        // Smooth scroll for anchor links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

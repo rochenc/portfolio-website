@@ -79,6 +79,23 @@
     </style>
 </head>
 <body>
+    <!-- Top Navigation -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 2rem 3rem; z-index: 100; background: transparent; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html#project-code-assessment" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">← Work</a>
+        <a href="about.html" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+    </nav>
+    
+    <!-- Side Navigation -->
+    <nav id="sideNav" style="position: fixed; top: 140px; left: 3rem; z-index: 99; display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="#summary" class="side-nav-link" style="text-decoration: none; color: #d4a373; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Summary</a>
+        <a href="#impact" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Impact</a>
+        <a href="#problem" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Problem</a>
+        <a href="#challenge" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Challenge</a>
+        <a href="#process" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Process</a>
+        <a href="#final" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Final Result</a>
+        <a href="#outcome" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Outcome</a>
+    </nav>
+    
     <main>
         <section class="project-detail" style="padding-top: 4rem;">
             <!-- Header Section -->
@@ -115,13 +132,13 @@
                 
                 <!-- Content -->
                 <div class="project-content">
-                    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
+                    <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
                     <p>I led the UX design for an AI-powered .NET code assessment capability with complexity, compatibility, and dependency analysis to help customers gain deep insight about their resources so they can gain confidence in their modernization planning.</p>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
+                    <h2 id="impact" style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
                     <p>By enabling developers to do parallel assessment of 100+ repositories and providing actionable insights, the code assessment capability has increased developer satisfaction and reduced modernization planning time from weeks to days.</p>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Problem</h2>
+                    <h2 id="problem" style="margin-top: 3rem; margin-bottom: 1.5rem;">Problem</h2>
                     <p>Enterprise customers want comprehensive code assessments to make confident transformation plans, but the current experience doesn't provide nearly enough information for that.</p>
                     
                     <div style="display: flex; gap: 2rem; margin: 2rem 0;">
@@ -156,7 +173,7 @@
                         </div>
                     </div>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
+                    <h2 id="challenge" style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
                     <p>There were several UX challenges I needed to resolve during each step of the assessment process:</p>
                     
                     <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 1.5rem 0 1rem 0;"><strong>Code Assessment User Flow</strong></p>
@@ -207,7 +224,7 @@
                         }
                     </script>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Process</h2>
+                    <h2 id="process" style="margin-top: 3rem; margin-bottom: 1.5rem;">Process</h2>
                     <p>Based on this research, I designed the assessment workflow with three core design principles:</p>
                     <ul style="color: #6a6a6a; font-size: 1.05rem; margin-left: 1.5rem; line-height: 2.2;">
                         <li><strong>Transparency:</strong> Show assessment progress and status in real-time</li>
@@ -232,7 +249,7 @@
                         </div>
                     </div>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Final Result</h2>
+                    <h2 id="final" style="margin-top: 3rem; margin-bottom: 1.5rem;">Final Result</h2>
                     <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">I designed a multi-phase assessment and planning workflow that gives users control, transparency, and actionable insights:</p>
                     
                     <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
@@ -275,7 +292,7 @@
                         </div>
                     </div>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h2>
+                    <h2 id="outcome" style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h2>
                     <p>Since launch in August 2025, we have heard improved customer feedback on the assessment experience. Customers such as Thomson Reuters are happy with the comprehensiveness of the assessment, providing them with the actionable insights to make proper modernization planning happen.</p>
                     
                     <p style="margin-top: 3rem; font-size: 1.1rem; color: #6a6a6a; font-style: italic;">Thanks for reading!</p>
@@ -342,5 +359,45 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Scroll spy for side navigation
+        const sections = document.querySelectorAll('h2[id]');
+        const navLinks = document.querySelectorAll('.side-nav-link');
+        
+        function updateActiveLink() {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.style.color = '#6a6a6a';
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.style.color = '#d4a373';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveLink);
+        window.addEventListener('load', updateActiveLink);
+        
+        // Smooth scroll for anchor links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

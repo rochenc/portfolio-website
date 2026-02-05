@@ -12,6 +12,24 @@
     <script src="auth.js"></script>
 </head>
 <body>
+    <!-- Top Navigation -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 2rem 3rem; z-index: 100; background: transparent; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html#project-sql-server" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">← Work</a>
+        <a href="about.html" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+    </nav>
+    
+    <!-- Side Navigation -->
+    <nav id="sideNav" style="position: fixed; top: 140px; left: 3rem; z-index: 99; display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="#summary" class="side-nav-link" style="text-decoration: none; color: #d4a373; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Summary</a>
+        <a href="#impact" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Impact</a>
+        <a href="#users" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Users</a>
+        <a href="#challenge" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Challenge</a>
+        <a href="#research" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Research</a>
+        <a href="#iterations" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Iterations</a>
+        <a href="#final" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Final Result</a>
+        <a href="#outcome" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Outcome</a>
+    </nav>
+    
     <main>
         <section class="project-detail" style="padding-top: 4rem;">
             <!-- Header Section -->
@@ -48,15 +66,15 @@
                 
                 <!-- Content -->
                 <div class="project-content">
-                    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
+                    <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
                     <p>I led UX for a 0→1 Agentic SQL Server modernization workflow within AWS Transform, launched at <a href="https://aws.amazon.com/transform/windows/sql-server/" style="color: #d4a373; text-decoration: underline;">re:Invent 2025</a>. The challenge was designing an efficient experience for enterprise customers to speed up their database migrations. As UX lead, I defined the workflow from assessment, wave planning to modernization execution in a chat driven experience.</p>
                     <p>My impact lies in making the agentic AI-driven experience useful and usable. This includes defining human-in-the-loop moments, crafting chat content design, and making new AI-human interaction clear and intuitive.</p>
                     <p><a href="https://app.storylane.io/share/xfh6mssbmgua?refid=ee0a6709-ee17-4d66-bdfe-b5b0661b8e3e" style="color: #d4a373; text-decoration: underline;">View interactive demo</a></p>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
+                    <h2 id="impact" style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
                     <p>Since launching to AWS enterprise customers worldwide in December 2025, we've seen more than 46 customer-created jobs with a 20% job completion rate, reducing modernization time with the same scope from months to weeks. The solution has also eliminated SQL Server licensing fees and freed up significant developer time for higher-value work.</p>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Users & Jobs To Be Done</h2>
+                    <h2 id="users" style="margin-top: 3rem; margin-bottom: 1.5rem;">Users & Jobs To Be Done</h2>
                     <h3>Personas</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
                         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
@@ -182,7 +200,7 @@
                         </div>
                     </div>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
+                    <h2 id="challenge" style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
                         <div>
                             <h3 style="font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1.5rem;">How might we guide users through a SQL database modernization journey with clarity, confidence and control—interacting with multiple AI agents?</h3>
@@ -195,7 +213,7 @@
                         </div>
                     </div>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Key Research Insights</h2>
+                    <h2 id="research" style="margin-top: 3rem; margin-bottom: 1.5rem;">Key Research Insights</h2>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
                         <div>
                             <p>From interviewing with 10 migration and modernization practitioners, we learned that some of our assumptions are wrong.</p>
@@ -230,7 +248,7 @@
                         </div>
                     </div>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Design Iterations</h2>
+                    <h2 id="iterations" style="margin-top: 3rem; margin-bottom: 1.5rem;">Design Iterations</h2>
                     <p>One key workflow iteration happens where customers set the target input for each wave. The decision lies in enabling full automation for target configuration, or a step-by-step approach.</p>
                     
                     <div style="margin: 2rem 0; position: relative;">
@@ -296,7 +314,7 @@
                         }
                     </script>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Final result</h2>
+                    <h2 id="final" style="margin-top: 3rem; margin-bottom: 1.5rem;">Final result</h2>
                     <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Designed an AI-assisted workflow that automatically analyzes SQL Server databases and .NET applications, converts schemas, migrates data, and refactors application code while maintaining human oversight at critical decision points.</p>
                     
                     <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
@@ -329,7 +347,7 @@
                         </div>
                     </div>
                     
-                    <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h3>
+                    <h3 id="outcome" style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h3>
                     <p>The SQL Server modernization solution was featured as a key announcement at AWS re:Invent 2025, highlighting the power of agentic AI to accelerate enterprise cloud migration workflows.</p>
                 </div>
             </div>
@@ -362,5 +380,46 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Scroll spy for side navigation
+        const sections = document.querySelectorAll('h2[id], h3[id]');
+        const navLinks = document.querySelectorAll('.side-nav-link');
+        
+        function updateActiveLink() {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.style.color = '#6a6a6a';
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.style.color = '#d4a373';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveLink);
+        window.addEventListener('load', updateActiveLink);
+        
+        // Smooth scroll for anchor links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+```

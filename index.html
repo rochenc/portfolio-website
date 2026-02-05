@@ -12,6 +12,12 @@
     <script src="auth.js"></script>
 </head>
 <body>
+    <!-- Top Navigation -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 2rem 3rem; z-index: 100; background: transparent; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
+        <a href="about.html" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+    </nav>
+    
     <main>
         <section class="hero">
             <h1 id="typingText">Hi, I'm Ruobing</h1>
@@ -23,22 +29,22 @@
             </div>
         </section>
 
-        <nav class="tabs">
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-        </nav>
-
         <section id="selected-work">
             <h2 id="workSectionTitle" style="display: flex; align-items: center; gap: 0.75rem;">
-                Selected Works
+                Selected works
                 <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: bounce 2s infinite; color: #d4a373;">
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </h2>
+            <div style="display: flex; gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
+                <a href="#project-sql-server" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">AWS Transform Database Modernization</a>
+                <a href="#project-code-assessment" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">AWS Transform Code Assessment</a>
+                <a href="#project-robo-consulting" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Robo Consulting</a>
+            </div>
         </section>
 
         <section class="projects">
-            <div class="project">
+            <div class="project" id="project-sql-server">
                 <a href="sql-server.html" style="text-decoration: none; color: inherit;">
                     <div class="project-image" style="background-image: url('sql-server-hero.jpg');">
                         <div class="project-overlay"></div>
@@ -55,7 +61,7 @@
                 </a>
             </div>
             
-            <div class="project">
+            <div class="project" id="project-code-assessment">
                 <a href="code-assessment.html" style="text-decoration: none; color: inherit;">
                     <div class="project-image" style="background-image: url('code-assessment-assets/code-assessment-hero.jpg');">
                         <div class="project-overlay"></div>
@@ -72,7 +78,7 @@
                 </a>
             </div>
             
-            <div class="project">
+            <div class="project" id="project-robo-consulting">
                 <a href="robo-consulting.html" style="text-decoration: none; color: inherit;">
                     <div class="project-image" style="background-image: url('Robo-consulting.jpg');">
                         <div class="project-overlay"></div>
