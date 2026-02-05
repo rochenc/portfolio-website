@@ -80,18 +80,24 @@
 </head>
 <body>
     <main>
-        <section class="project-detail" style="padding-top: 100px;">
-            <div style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; padding-top: 2rem;">
-                <img src="code-assessment-assets/aws-logo.png" alt="AWS" style="height: 3rem; width: auto; align-self: flex-start;">
-                <div>
-                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Improving code assessment experience for .NET modernization</h1>
-                    <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8; max-width: 90%;">Intelligent .NET repository assessment and transformation planning for modernizing legacy applications to cross-platform .NET</p>
-                </div>
+        <section class="project-detail" style="padding-top: 4rem;">
+            <!-- Header Section -->
+            <div style="padding: 3rem 0;">
+                <img src="code-assessment-assets/aws-logo.png" alt="AWS" style="height: 3rem; width: auto; margin-bottom: 2rem;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Improving code assessment experience for .NET modernization</h1>
+                <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8;">Intelligent .NET repository assessment and transformation planning for modernizing legacy applications to cross-platform .NET</p>
             </div>
-            
-            <div class="project-image-large" style="background-image: url('code-assessment-assets/code-assessment-hero.jpg'); margin-bottom: 3rem;"></div>
-            
-            <div class="project-info-detail" style="max-width: 80%; margin: 0 auto;">
+        </section>
+        
+        <!-- Full Width Hero Image -->
+        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+            <div class="project-image-large" style="background-image: url('code-assessment-assets/code-assessment-hero.jpg');"></div>
+        </div>
+        
+        <section class="project-detail">
+            <!-- Content Section -->
+            <div style="padding: 3rem 0;">
+                <!-- Project Meta -->
                 <div class="project-meta">
                     <div>
                         <h3>Timeline</h3>
@@ -107,6 +113,7 @@
                     </div>
                 </div>
                 
+                <!-- Content -->
                 <div class="project-content">
                     <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
                     <p>I led the UX design for an AI-powered .NET code assessment capability with complexity, compatibility, and dependency analysis to help customers gain deep insight about their resources so they can gain confidence in their modernization planning.</p>
@@ -154,21 +161,21 @@
                     
                     <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.8; margin: 1.5rem 0 1rem 0;"><strong>Code Assessment User Flow</strong></p>
                     
-                    <div style="display: flex; align-items: center; gap: 1rem; margin: 2rem 0; overflow-x: auto;">
-                        <div class="flow-step" id="discover-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #d4a373; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'discover')" onmouseout="hideChallenge(this)">
-                            <p style="color: #fff; font-size: 1rem; font-weight: 600; margin: 0;">Discover Repo</p>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin: 2rem 0; flex-wrap: wrap; justify-content: center;">
+                        <div class="flow-step" id="discover-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1rem 1.5rem; min-width: 120px; text-align: center; background-color: #d4a373; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'discover')" onmouseout="hideChallenge(this)">
+                            <p style="color: #fff; font-size: 0.95rem; font-weight: 600; margin: 0;">Discover Repo</p>
                         </div>
-                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.5rem; font-weight: 300;">→</div>
-                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'select')" onmouseout="hideChallenge(this)">
-                            <p style="color: #2d2d2d; font-size: 1rem; font-weight: 600; margin: 0;">Select Repos</p>
+                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.2rem; font-weight: 300;">→</div>
+                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1rem 1.5rem; min-width: 120px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'select')" onmouseout="hideChallenge(this)">
+                            <p style="color: #2d2d2d; font-size: 0.95rem; font-weight: 600; margin: 0;">Select Repos</p>
                         </div>
-                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.5rem; font-weight: 300;">→</div>
-                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'start')" onmouseout="hideChallenge(this)">
-                            <p style="color: #2d2d2d; font-size: 1rem; font-weight: 600; margin: 0;">Start Assessment</p>
+                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.2rem; font-weight: 300;">→</div>
+                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1rem 1.5rem; min-width: 120px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'start')" onmouseout="hideChallenge(this)">
+                            <p style="color: #2d2d2d; font-size: 0.95rem; font-weight: 600; margin: 0;">Start Assessment</p>
                         </div>
-                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.5rem; font-weight: 300;">→</div>
-                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1.5rem 2rem; min-width: 150px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'results')" onmouseout="hideChallenge(this)">
-                            <p style="color: #2d2d2d; font-size: 1rem; font-weight: 600; margin: 0;">View Results</p>
+                        <div style="flex-shrink: 0; color: #d4a373; font-size: 1.2rem; font-weight: 300;">→</div>
+                        <div class="flow-step" style="flex-shrink: 0; border: 2px solid #d4a373; border-radius: 8px; padding: 1rem 1.5rem; min-width: 120px; text-align: center; background-color: #fefcf9; cursor: pointer; transition: all 0.3s ease;" onmouseover="showChallenge(this, 'results')" onmouseout="hideChallenge(this)">
+                            <p style="color: #2d2d2d; font-size: 0.95rem; font-weight: 600; margin: 0;">View Results</p>
                         </div>
                     </div>
                     
@@ -226,53 +233,45 @@
                     </div>
                     
                     <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Final Result</h2>
-                    <p>I designed a multi-phase assessment and planning workflow that gives users control, transparency, and actionable insights:</p>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">I designed a multi-phase assessment and planning workflow that gives users control, transparency, and actionable insights:</p>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center;">
-                            <div style="max-width: 600px;">
-                                <h4>1. Bulk Selection Capabilities</h4>
-                                <p>Bulk selection capabilities allow assessing 100+ repositories in parallel without manual one-by-one selection, eliminating UI friction and enabling teams to assess their entire portfolio efficiently.</p>
+                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">1. Bulk Selection Capabilities</h3>
+                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Bulk selection capabilities allow assessing 100+ repositories in parallel without manual one-by-one selection, eliminating UI friction and enabling teams to assess their entire portfolio efficiently.</p>
                             </div>
-                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
-                                <img src="code-assessment-assets/bulk-select.gif" alt="Bulk Selection" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
-                            </div>
+                            <img src="code-assessment-assets/bulk-select.gif" alt="Bulk Selection" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center; flex-direction: row-reverse;">
-                            <div style="max-width: 600px;">
-                                <h4>2. In-Progress Assessment Viewing</h4>
-                                <p>Real-time status updates reduce anxiety and give users control over the assessment process. Users can monitor progress as repositories are being analyzed.</p>
+                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">2. In-Progress Assessment Viewing</h3>
+                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Real-time status updates reduce anxiety and give users control over the assessment process. Users can monitor progress as repositories are being analyzed.</p>
                             </div>
-                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
-                                <img src="code-assessment-assets/assess-in-progress.gif" alt="In-Progress Assessment" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
-                            </div>
+                            <img src="code-assessment-assets/assess-in-progress.gif" alt="In-Progress Assessment" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center;">
-                            <div style="max-width: 600px;">
-                                <h4>3. Multi-Level Reporting & Chat Query</h4>
-                                <p>Assessment results are presented at job and repository levels, with detailed project information available in downloadable CSV files. Users can <strong>ask questions through chat</strong> like "Which repos have incompatible packages?" allowing both technical teams and stakeholders to understand assessment findings.</p>
+                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">3. Multi-Level Reporting & Chat Query</h3>
+                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Assessment results are presented at job and repository levels, with detailed project information available in downloadable CSV files. Users can <strong>ask questions through chat</strong> like "Which repos have incompatible packages?" allowing both technical teams and stakeholders to understand assessment findings.</p>
                             </div>
-                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
-                                <img src="code-assessment-assets/reports.gif" alt="Multi-Format Reporting" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
-                            </div>
+                            <img src="code-assessment-assets/reports.gif" alt="Multi-Format Reporting" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center; flex-direction: row-reverse;">
-                            <div style="max-width: 600px;">
-                                <h4>4. Visual Dependency Groups</h4>
-                                <p>Visual dependency maps and intelligent grouping help teams understand relationships between repositories and dependencies, enabling better transformation planning and reducing complexity.</p>
+                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">4. Visual Dependency Groups</h3>
+                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Visual dependency maps and intelligent grouping help teams understand relationships between repositories and dependencies, enabling better transformation planning and reducing complexity.</p>
                             </div>
-                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
-                                <img src="code-assessment-assets/groups-maps.gif" alt="Dependency Maps" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
-                            </div>
+                            <img src="code-assessment-assets/groups-maps.gif" alt="Dependency Maps" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
@@ -283,14 +282,18 @@
                 </div>
             </div>
             
-            <a href="index.html#selected-work" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 3rem; margin-bottom: 2rem; color: #666; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">
-                <span>←</span> Back to Work
-            </a>
-            </section>
-        
-        <nav class="tabs">
-            <a href="index.html">← Back to Work</a>
-        </nav>
+            <!-- Project Navigation -->
+            <div class="project-navigation">
+                <a href="sql-server.html" class="project-nav-link prev">
+                    <span class="nav-label">Previous Project</span>
+                    <span class="nav-title">SQL Server Database Modernization</span>
+                </a>
+                <a href="robo-consulting.html" class="project-nav-link next">
+                    <span class="nav-label">Next Project</span>
+                    <span class="nav-title">Robo Consulting Concept</span>
+                </a>
+            </div>
+        </section>
         
         <div id="imageModal" class="image-modal" onclick="closeModal(event)">
             <div class="modal-content" onclick="closeModal(event)">

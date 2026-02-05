@@ -13,18 +13,24 @@
 </head>
 <body>
     <main>
-        <section class="project-detail" style="padding-top: 100px;">
-            <div style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; padding-top: 2rem;">
-                <img src="code-assessment-assets/aws-logo.png" alt="AWS" style="height: 3rem; width: auto; align-self: flex-start;">
-                <div>
-                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Accelerating SQL Server database modernization</h1>
-                    <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8; max-width: 75%;">AI-assisted cloud migration and modernization tool for full-stack SQL Server to Aurora PostgreSQL transformation</p>
-                </div>
+        <section class="project-detail" style="padding-top: 4rem;">
+            <!-- Header Section -->
+            <div style="padding: 3rem 0;">
+                <img src="code-assessment-assets/aws-logo.png" alt="AWS" style="height: 3rem; width: auto; margin-bottom: 2rem;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Accelerating SQL Server database modernization</h1>
+                <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8;">AI-assisted cloud migration and modernization tool for full-stack SQL Server to Aurora PostgreSQL transformation</p>
             </div>
-            
-            <div class="project-image-large" style="background-image: url('sql-server-hero.jpg'); margin-bottom: 3rem;"></div>
-            
-            <div class="project-info-detail" style="max-width: 80%; margin: 0 auto;">
+        </section>
+        
+        <!-- Full Width Hero Image -->
+        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+            <div class="project-image-large" style="background-image: url('sql-server-hero.jpg');"></div>
+        </div>
+        
+        <section class="project-detail">
+            <!-- Content Section -->
+            <div style="padding: 3rem 0;">
+                <!-- Project Meta -->
                 <div class="project-meta">
                     <div>
                         <h3>Timeline</h3>
@@ -40,6 +46,7 @@
                     </div>
                 </div>
                 
+                <!-- Content -->
                 <div class="project-content">
                     <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
                     <p>I led UX for a 0→1 Agentic SQL Server modernization workflow within AWS Transform, launched at <a href="https://aws.amazon.com/transform/windows/sql-server/" style="color: #d4a373; text-decoration: underline;">re:Invent 2025</a>. The challenge was designing an efficient experience for enterprise customers to speed up their database migrations. As UX lead, I defined the workflow from assessment, wave planning to modernization execution in a chat driven experience.</p>
@@ -290,41 +297,35 @@
                     </script>
                     
                     <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Final result</h2>
-                    <p>Designed an AI-assisted workflow that automatically analyzes SQL Server databases and .NET applications, converts schemas, migrates data, and refactors application code while maintaining human oversight at critical decision points.</p>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Designed an AI-assisted workflow that automatically analyzes SQL Server databases and .NET applications, converts schemas, migrates data, and refactors application code while maintaining human oversight at critical decision points.</p>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center;">
-                            <div style="max-width: 600px;">
-                                <h4>1. Chat-first, UI-supported paradigm</h4>
-                                <p>Chat handles intent capture, explanations, and quick plan edits, while UI manages structured data, dependencies, bulk operations, and validation.</p>
+                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">1. Chat-first, UI-supported paradigm</h3>
+                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Chat handles intent capture, explanations, and quick plan edits, while UI manages structured data, dependencies, bulk operations, and validation.</p>
                             </div>
-                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
-                                <img src="chat-edit.gif" alt="Chat-first, UI-supported paradigm" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
-                            </div>
+                            <img src="chat-edit.gif" alt="Chat-first, UI-supported paradigm" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center; flex-direction: row-reverse;">
-                            <div style="max-width: 600px;">
-                                <h4>2. Progressive disclosure</h4>
-                                <p>Layered information architecture from chat summaries to detailed data tables to drill-down views.</p>
+                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">2. Progressive disclosure</h3>
+                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Layered information architecture from chat summaries to detailed data tables to drill-down views.</p>
                             </div>
-                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
-                                <img src="schema-conversion.gif" alt="Progressive disclosure" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
-                            </div>
+                            <img src="schema-conversion.gif" alt="Progressive disclosure" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern">
-                        <div class="pattern-content" style="display: flex; gap: 2rem; align-items: center;">
-                            <div style="max-width: 600px;">
-                                <h4>3. Human-in-the-loop (HITL)</h4>
-                                <p>Clear decision points where users review and approve AI recommendations with full transparency.</p>
+                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">3. Human-in-the-loop (HITL)</h3>
+                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Clear decision points where users review and approve AI recommendations with full transparency.</p>
                             </div>
-                            <div style="margin-top: 1.5rem; flex-shrink: 0;">
-                                <img src="conversion-result.gif" alt="Human-in-the-loop (HITL)" style="width: 100%; max-width: 600px; border-radius: 8px; display: block;">
-                            </div>
+                            <img src="conversion-result.gif" alt="Human-in-the-loop (HITL)" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
@@ -333,14 +334,15 @@
                 </div>
             </div>
             
-            <a href="index.html#selected-work" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 3rem; margin-bottom: 2rem; color: #666; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">
-                <span>←</span> Back to Work
-            </a>
-            </section>
-        
-        <nav class="tabs">
-            <a href="index.html">← Back to Work</a>
-        </nav>
+            <!-- Project Navigation -->
+            <div class="project-navigation">
+                <div class="project-nav-spacer"></div>
+                <a href="code-assessment.html" class="project-nav-link next">
+                    <span class="nav-label">Next Project</span>
+                    <span class="nav-title">.NET Code Assessment Workflow</span>
+                </a>
+            </div>
+        </section>
     </main>
     
     <footer>
