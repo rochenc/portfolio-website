@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Assessment - Slides</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500&family=Montserrat+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2d2d2d;
+            background: #fff;
+        }
+
+        /* Print and PDF optimized styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .slide {
+                page-break-after: always;
+                break-after: page;
+            }
+            .slide:last-child {
+                page-break-after: avoid;
+            }
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            page-break-after: always;
+            position: relative;
+        }
+
+        /* Title Slide */
+        .slide.title {
+            background: linear-gradient(135deg, #d4a373 0%, #c49565 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide.title h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .slide.title .subtitle {
+            font-size: 1.8rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .slide.title .meta {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-top: 3rem;
+        }
+
+        /* Content Slides */
+        .slide.content {
+            background: #fefcf9;
+            text-align: left;
+            justify-content: flex-start;
+            padding-top: 80px;
+        }
+
+        .slide.content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2d2d2d;
+        }
+
+        .slide.content h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #d4a373;
+        }
+
+        .slide.content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #6a6a6a;
+        }
+
+        .slide.content ul {
+            margin-left: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #6a6a6a;
+        }
+
+        .slide.content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .slide.content strong {
+            color: #2d2d2d;
+        }
+
+        /* Impact Box */
+        .impact-box {
+            background: #f5f3f0;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid #d4a373;
+        }
+
+        .impact-box p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* End Slide */
+        .slide.end {
+            background: linear-gradient(135deg, #f5f3f0 0%, #fefcf9 100%);
+            text-align: center;
+        }
+
+        .slide.end h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #d4a373;
+        }
+
+        .slide.end p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #6a6a6a;
+            margin-bottom: 1rem;
+        }
+
+        /* Print button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #d4a373;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #c49565;
+        }
+
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">Print / Save as PDF</button>
+
+    <!-- Slide 1: Title -->
+    <div class="slide title">
+        <h1>AWS CodeAssess</h1>
+        <div class="subtitle">Enterprise Code Assessment & Migration Planning</div>
+        <div class="meta">
+            <p>AI-powered assessment and modernization planning workflow</p>
+            <p style="margin-top: 1rem;">Lead UX Designer</p>
+        </div>
+    </div>
+
+    <!-- Slide 2: Project Overview -->
+    <div class="slide content">
+        <h2>Project Overview</h2>
+        <p><strong>Timeline:</strong> Dec 2024 - Jul 2025</p>
+        <p><strong>Role:</strong> Lead UX Designer</p>
+        <p><strong>Scope:</strong> Full assessment and planning workflow design</p>
+        
+        <h3 style="margin-top: 2rem;">The Challenge</h3>
+        <p>Design an assessment workflow that gives users control, transparency, and actionable insights. Traditional approaches require deep technical expertise and leave teams confused about assessment progress and what actions to take next.</p>
+    </div>
+
+    <!-- Slide 3: Impact -->
+    <div class="slide content">
+        <h2>Impact</h2>
+        <div class="impact-box">
+            <p><strong>Since launch in August 2025:</strong></p>
+            <p style="margin-top: 1rem;">✓ Improved customer feedback on assessment experience</p>
+            <p>✓ Enterprises like Thomson Reuters happy with assessment comprehensiveness</p>
+            <p>✓ Actionable insights enabling proper modernization planning</p>
+            <p>✓ Reduced setup complexity and increased adoption</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: UX Challenges -->
+    <div class="slide content">
+        <h2>UX Challenges</h2>
+        <p style="font-size: 1rem; margin-bottom: 1.5rem;"><em>Across the assessment workflow:</em></p>
+        
+        <h3>Discover Repositories</h3>
+        <p>How to help teams discover and understand their repository landscape at scale</p>
+        
+        <h3>Select Repositories</h3>
+        <p>UI limitations force one-page-at-a-time selection instead of bulk operations</p>
+        
+        <h3>Start Assessment</h3>
+        <p>Assessment process hidden in worklog—customers confused about what's happening</p>
+        
+        <h3>View Results</h3>
+        <p>How to present complex assessment data in an understandable and actionable way</p>
+    </div>
+
+    <!-- Slide 5: Design Principles -->
+    <div class="slide content">
+        <h2>Design Principles</h2>
+        <p style="margin-bottom: 1.5rem;">Based on research, I designed the assessment workflow with three core principles:</p>
+        
+        <h3>1. Transparency</h3>
+        <p>Show assessment progress and status in real-time</p>
+        
+        <h3>2. Accessibility</h3>
+        <p>Make assessment data queryable through natural language and filterable through UI</p>
+        
+        <h3>3. Control</h3>
+        <p>Enable users to make informed decisions at every step of the process</p>
+    </div>
+
+    <!-- Slide 6: Process & Key Features -->
+    <div class="slide content">
+        <h2>Process: Key Features</h2>
+        
+        <h3>1. Bulk Selection Capabilities</h3>
+        <p>Assess 100+ repositories in parallel without manual one-by-one selection, eliminating UI friction.</p>
+        
+        <h3>2. In-Progress Assessment Viewing</h3>
+        <p>Real-time status updates reduce anxiety and give users control over the assessment process.</p>
+        
+        <h3>3. Multi-Level Reporting & Chat Query</h3>
+        <p>Results at job and repository levels with downloadable CSV files. Users can ask questions through chat like "Which repos have incompatible packages?"</p>
+        
+        <h3>4. Visual Dependency Groups</h3>
+        <p>Visual dependency maps help teams understand repository relationships and enable better transformation planning.</p>
+    </div>
+
+    <!-- Slide 7: User Experience -->
+    <div class="slide content">
+        <h2>User Experience Outcomes</h2>
+        
+        <h3>What We Solved</h3>
+        <ul style="margin: 1rem 0;">
+            <li><strong>Clarity:</strong> Users see exactly what's happening at each step</li>
+            <li><strong>Efficiency:</strong> Bulk operations reduce assessment setup time</li>
+            <li><strong>Flexibility:</strong> Multiple ways to query and understand assessment data</li>
+            <li><strong>Transparency:</strong> Visual feedback at every stage of the process</li>
+            <li><strong>Actionability:</strong> Data presented in ways that enable decision-making</li>
+        </ul>
+    </div>
+
+    <!-- Slide 8: Design Patterns -->
+    <div class="slide content">
+        <h2>Design Patterns</h2>
+        
+        <h3>1. Progressive Disclosure</h3>
+        <p>Layered information from high-level overview → detailed tables → drill-down views</p>
+        
+        <h3>2. Real-time Feedback</h3>
+        <p>In-progress indicators and status updates give users confidence in the system</p>
+        
+        <h3>3. Multi-modal Interaction</h3>
+        <p>Combine UI filtering with natural language chat for flexible data exploration</p>
+        
+        <h3>4. Bulk Operations</h3>
+        <p>Enable efficient handling of large datasets through smart selection patterns</p>
+    </div>
+
+    <!-- Slide 9: Outcome -->
+    <div class="slide end">
+        <h2>Outcome</h2>
+        <p>A comprehensive assessment workflow that enterprises trust to understand their codebase</p>
+        <p style="font-size: 1.3rem; color: #d4a373; font-weight: 600; margin-top: 2rem;">Enabling informed modernization planning and confident decision-making</p>
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #d4a373;">
+            <p style="font-size: 1rem;">Ready to explore the full project? Visit the interactive case study on the portfolio website.</p>
+        </div>
+    </div>
+
+</body>
+</html>
