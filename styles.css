@@ -927,7 +927,7 @@ footer .footer-right h3 {
 /* Desktop (1024px and above) */
 @media (min-width: 1025px) {
     .project-info-detail {
-        max-width: 75% !important;
+        max-width: 80% !important;
     }
     
     .design-pattern {
