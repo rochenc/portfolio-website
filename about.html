@@ -25,10 +25,55 @@
 </head>
 <body>
     <!-- Top Navigation -->
-    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 2rem 3rem; z-index: 100; background: transparent; display: flex; justify-content: space-between; align-items: center;">
+    <nav style="position: relative; padding: 2rem 3rem; z-index: 100; background: #fefcf9; display: flex; justify-content: space-between; align-items: center;">
         <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
-        <a href="about.html" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+        <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+        
+        // Show hamburger on scroll for desktop
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navBottom = nav.offsetTop + nav.offsetHeight;
+            
+            if (window.scrollY > navBottom) {
+                hamburger.classList.add('show-on-scroll');
+            } else {
+                hamburger.classList.remove('show-on-scroll');
+            }
+        });
+    </script>
 
     <main>
         <section class="hero">
@@ -44,6 +89,7 @@
                     <p style="margin-bottom: 0; color: #6a6a6a; font-size: 1.05rem; line-height: 1.9;">
                         I'm a passionate UX designer with 8 years of experience creating user-centered digital experiences. 
                         I believe in the power of design to solve real problems and make technology more accessible to end users.
+                        Aside from building digital experiences, I have designed and created physical products including <a href="https://www.behance.net/RuobingChen" target="_blank" style="color: #d4a373; text-decoration: none; border-bottom: 1px solid #d4a373; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">furniture</a> and consumer products.
                     </p>
                 </div>
                 <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, #d4a373 0%, #a8a8a8 100%); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
@@ -51,21 +97,54 @@
                 </div>
             </div>
 
+            <!-- My Approach Section -->
+            <div style="margin-bottom: 4rem;">
+                <h2 style="margin-bottom: 2rem; font-size: 2rem;">My Approach</h2>
+                <p style="margin-bottom: 0; color: #6a6a6a; font-size: 1.05rem; line-height: 1.9;">
+                    My approach to UX design always starts with understanding the user, the business, and the domain context to identify strategic opportunities. I believe great design is created through feedback and iterative learning. I enjoy thinking outside the box to solve old problems in new ways. Currently, I'm interested in learning about quantifying and measuring UX impact.
+                </p>
+            </div>
+
             <!-- Skills & Expertise Section -->
             <div style="margin-bottom: 4rem;">
                 <h2 style="margin-bottom: 2rem; font-size: 2rem;">Skills & Expertise</h2>
                 <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">User Persona</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Storyboarding</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Journey Mapping</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Prototyping</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Interaction Design</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Visual Design</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Usability Testing</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Metrics & Analytics</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Strategic Design</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Design System</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0ede8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8e3dd;">Accessibility</span>
+                    <!-- Strategy -->
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Strategic Design</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Roadmapping</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Vision Design</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Storyboarding</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Workshop</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Metrics & Analytics</span>
+                    
+                    <!-- Research -->
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">User Persona</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">Journey Mapping</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">Usability Testing</span>
+                    
+                    <!-- Interaction Design -->
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Interaction Design</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Prototyping</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Visual Design</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Design System</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Accessibility</span>
+                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">iOS/Android</span>
+                </div>
+                
+                <!-- Legend -->
+                <div style="margin-top: 1.5rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 16px; height: 16px; background-color: #e8f4f8; border: 1px solid #c5e3ed; border-radius: 50%;"></span>
+                        <span style="font-size: 0.85rem; color: #6a6a6a;">Strategy</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 16px; height: 16px; background-color: #f5f0e8; border: 1px solid #e8ddc5; border-radius: 50%;"></span>
+                        <span style="font-size: 0.85rem; color: #6a6a6a;">Research</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 16px; height: 16px; background-color: #f0e8f4; border: 1px solid #ddc5e8; border-radius: 50%;"></span>
+                        <span style="font-size: 0.85rem; color: #6a6a6a;">Interaction Design</span>
+                    </div>
                 </div>
             </div>
 
@@ -74,7 +153,7 @@
                 <h2 style="margin-bottom: 2rem; font-size: 2rem;">Experience</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
                     <div>
-                        <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.9;">I've worked with great people that inspires me and taught me about design and collaboration to solve problems and innovate for end users.</p>
+                        <p style="color: #6a6a6a; font-size: 1.05rem; line-height: 1.9;">My past work includes B2B enterprise tools across cloud services, logistics, finance, and communication industries, as well as high-touch mobile apps for consumer banking services.</p>
                     </div>
                     <div style="color: #6a6a6a; font-size: 1.05rem; line-height: 2;">
                         <p><strong>AWS</strong> — Senior UX Designer, 2022–current</p>

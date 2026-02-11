@@ -13,10 +13,55 @@
 </head>
 <body>
     <!-- Top Navigation -->
-    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 2rem 3rem; z-index: 100; background: transparent; display: flex; justify-content: space-between; align-items: center;">
+    <nav style="position: relative; padding: 2rem 3rem; z-index: 100; background: #fefcf9; display: flex; justify-content: space-between; align-items: center;">
         <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
-        <a href="about.html" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+        <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+        
+        // Show hamburger on scroll for desktop
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navBottom = nav.offsetTop + nav.offsetHeight;
+            
+            if (window.scrollY > navBottom) {
+                hamburger.classList.add('show-on-scroll');
+            } else {
+                hamburger.classList.remove('show-on-scroll');
+            }
+        });
+    </script>
     
     <main>
         <section class="hero">
@@ -36,7 +81,7 @@
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </h2>
-            <div style="display: flex; gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
+            <div class="project-quick-links" style="display: flex; gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
                 <a href="#project-sql-server" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">AWS Transform Database Modernization</a>
                 <a href="#project-code-assessment" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">AWS Transform Code Assessment</a>
                 <a href="#project-robo-consulting" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Robo Consulting</a>
@@ -112,6 +157,7 @@
                 <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
                 <a href="mailto:rchen02@risd.edu">Email me</a>
             </div>
+            <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
         </div>
     </footer>
 
