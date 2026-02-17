@@ -428,6 +428,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
+    overflow: visible;
 }
 
 .project-info-detail {
@@ -487,6 +488,17 @@ h1, h2, h3, h4, h5, h6 {
     
     .project-detail {
         padding: 1rem;
+    }
+    
+    /* About page - My Story section mobile layout */
+    .my-story-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .my-story-grid > div:last-child {
+        order: -1; /* Move photo to top */
+        margin: 0 auto; /* Center the photo */
     }
 }
 
@@ -565,8 +577,8 @@ h1, h2, h3, h4, h5, h6 {
 footer {
     margin-top: 6rem;
     padding: 4rem 2rem;
-    background: #fefcf9;
-    border-top: 1px solid rgba(61, 61, 61, 0.08);
+    background: #1a1a1a;
+    border-top: none;
     display: flex;
     justify-content: center;
 }
@@ -598,7 +610,7 @@ footer .footer-nav {
 }
 
 footer .footer-nav a {
-    color: #6a6a6a;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -610,7 +622,7 @@ footer .footer-nav a:hover {
 
 footer .footer-copyright {
     font-size: 0.85rem;
-    color: #6a6a6a;
+    color: rgba(255, 255, 255, 0.5);
     margin-top: 1rem;
 }
 
@@ -624,6 +636,7 @@ footer .footer-right {
 footer .footer-right h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 .social-links {
@@ -634,7 +647,7 @@ footer .footer-right h3 {
 }
 
 .social-links a {
-    color: #6a6a6a;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -938,7 +951,7 @@ footer .footer-right h3 {
     }
     
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         max-width: 100%;
         margin-bottom: 1rem;
         line-height: 1.3;
@@ -1105,6 +1118,13 @@ footer .footer-right h3 {
     .work-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Design Iterations sections - stack text and image vertically */
+    div[style*="grid-template-columns: 30% 70%"],
+    div[style*="grid-template-columns: 70% 30%"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
 }
 
 /* Tablet (640px to 1024px) */
@@ -1173,6 +1193,13 @@ footer .footer-right h3 {
     
     div[style*="grid-template-columns: 1fr 1fr"] {
         grid-template-columns: 1fr !important;
+    }
+    
+    /* Design Iterations sections - stack text and image vertically */
+    div[style*="grid-template-columns: 30% 70%"],
+    div[style*="grid-template-columns: 70% 30%"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
     
     /* Journey map responsive - convert 4 columns to 1 column */

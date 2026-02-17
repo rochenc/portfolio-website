@@ -134,94 +134,151 @@
                 <!-- Content -->
                 <div class="project-content">
                     <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
-                    <p>I led UX for a 0→1 Agentic SQL Server modernization workflow within AWS Transform, launched at <a href="https://aws.amazon.com/transform/windows/sql-server/" style="color: #d4a373; text-decoration: underline;">re:Invent 2025</a>. The challenge was designing an efficient experience for enterprise customers to speed up their database migrations. As UX lead, I defined the workflow from assessment, wave planning to modernization execution in a chat driven experience.</p>
-                    <p>My impact lies in making the agentic AI-driven experience useful and usable. This includes defining human-in-the-loop moments, crafting chat content design, and making new AI-human interaction clear and intuitive.</p>
-                    <p><a href="https://app.storylane.io/share/xfh6mssbmgua?refid=ee0a6709-ee17-4d66-bdfe-b5b0661b8e3e" style="color: #d4a373; text-decoration: underline;">View interactive demo</a></p>
+                    <p style="margin-bottom: 1.5rem;">I led the UX design and research for Agentic SQL Server modernization workflow within AWS Transform to accelerate enterprise database modernization, launched at <a href="https://aws.amazon.com/transform/windows/sql-server/" style="color: #d4a373; text-decoration: underline;">re:Invent 2025</a>. As lead UX designer, I defined the conversational flow to guide user through the end to end modernization tasks. My impact lies in making the agentic AI-driven experience useful and usable, including defining human-in-the-loop moments, crafting chat content design, and making new AI-human interaction clear and intuitive.</p>
+                    <a href="https://app.storylane.io/share/xfh6mssbmgua?refid=ee0a6709-ee17-4d66-bdfe-b5b0661b8e3e" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0; color: #d4a373; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.color='#2d2d2d';" onmouseout="this.style.color='#d4a373';">
+                        View interactive demo
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: all 0.3s ease;">
+                            <path d="M12 4L12 8.5M12 4L7.5 4M12 4L6 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                     
-                    <h2 id="impact" style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
-                    <p>Since launching to AWS enterprise customers worldwide in December 2025, we've seen more than 46 customer-created jobs with a 20% job completion rate, reducing modernization time with the same scope from months to weeks. The solution has also eliminated SQL Server licensing fees and freed up significant developer time for higher-value work.</p>
+                    <!-- Full-width preview image -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; margin-top: 2rem; margin-bottom: 0;">
+                        <img src="sql-preview.png" alt="SQL Server modernization preview" style="width: 100%; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                    </div>
                     
-                    <h2 id="users" style="margin-top: 3rem; margin-bottom: 1.5rem;">Users & Jobs To Be Done</h2>
-                    <h3>Personas</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
-                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <!-- Impact Section with Background -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <h2 id="impact" style="margin-top: 0; margin-bottom: 1.5rem;">Impact</h2>
+                            <p style="margin-bottom: 2.5rem;">Since launching to AWS enterprise customers worldwide in December 2025, we've seen more than 46 customer-created jobs with a 20% job completion rate, reducing modernization time with the same scope from months to weeks. The solution has also eliminated SQL Server licensing fees and freed up significant developer time for higher-value work.</p>
+                            
+                            <!-- Metrics Dashboard -->
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 0;">
+                        <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px; text-align: center;">
+                            <div style="font-size: 3.5rem; font-weight: 700; color: #d4a373; margin-bottom: 0.5rem; line-height: 1;">70%</div>
+                            <p style="color: #3a3a3a; font-size: 1rem; line-height: 1.5; margin: 0;">operating costs reduced by</p>
+                        </div>
+                        <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px; text-align: center;">
+                            <div style="font-size: 3.5rem; font-weight: 700; color: #d4a373; margin-bottom: 0.5rem; line-height: 1;">5X</div>
+                            <p style="color: #3a3a3a; font-size: 1rem; line-height: 1.5; margin: 0;">acceleration across database layers</p>
+                        </div>
+                        <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px; text-align: center;">
+                            <div style="font-size: 3.5rem; font-weight: 700; color: #d4a373; margin-bottom: 0.5rem; line-height: 1;">80%</div>
+                            <p style="color: #3a3a3a; font-size: 1rem; line-height: 1.5; margin: 0;">positive feedback on new chat framework</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <!-- What is database modernization section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 8rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <h4 style="font-size: 1rem; color: rgba(255, 255, 255, 0.8); margin-top: 0; margin-bottom: 0.5rem; font-weight: 600;">What is SQL modernization</h4>
+                            <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 0;">SQL server database modernization is moving old Microsoft databases to cheaper cloud databases without breaking your applications.</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Problem section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Problem</h2>
+                            <p style="font-size: 1rem; color: #3a3a3a; line-height: 1.6; margin-bottom: 1rem;">Companies are still using legacy apps coded 20 years ago, costing them millions in licensing costs. When they make the decision to modernize, it's a hard journey ahead of them. 80% enterprise customers feel uncertain, anxious and lost when it comes to modernizing legacy apps. Modernization is hard due to a number of factors, most highlighting:</p>
+                            <ul style="font-size: 1rem; color: #3a3a3a; line-height: 1.8; margin-bottom: 0; padding-left: 1.5rem;">
+                        <li>Inaccurate assessment</li>
+                        <li>Poor planning</li>
+                        <li>Manual and error prone processes</li>
+                                <li>Lack of expertise</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Users Section with Background -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <h2 id="users" style="margin-top: 0; margin-bottom: 1.5rem; color: #ffffff;">Designing for cross-functional team</h2>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin: 2rem 0;">
+                        <div style="display: flex; flex-direction: column;">
                             <img src="persona.svg" alt="IT Generalist" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
-                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">IT Generalist</h4>
-                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Owns the modernization initiative end-to-end. Creates transformation projects, defines the overall objectives, and invites specialists as collaborators.</p>
+                            <h4 style="color: #ffffff; font-size: 0.95rem; margin: 0 0 0.5rem 0;">Project Lead</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Lead the modernization project, define approach, plan milestones, and coordinate across team</p>
                         </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="display: flex; flex-direction: column;">
                             <img src="Personas-1.svg" alt="Database Administrator" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
-                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">Database Administrator (DBA)</h4>
-                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Focused on database schema conversion, data migration oversight, and resolving any database-level transformation exceptions.</p>
+                            <h4 style="color: #ffffff; font-size: 0.95rem; margin: 0 0 0.5rem 0;">Database Engineer</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Works on each database's schema conversion, fix unconverted schemas, validate and test results</p>
                         </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="display: flex; flex-direction: column;">
                             <img src="Personas-2.svg" alt="Application Developer" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
-                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">Application Developer</h4>
-                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Owns application code transformation, resolves flagged code changes, and runs functional tests.</p>
+                            <h4 style="color: #ffffff; font-size: 0.95rem; margin: 0 0 0.5rem 0;">App Dev</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Needs to ensure apps work correctly during modernization. Help identify app-db dependencies</p>
                         </div>
-                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="display: flex; flex-direction: column;">
                             <img src="Personas.svg" alt="AWS Admin & DevOps Engineer" style="width: 120px; height: 120px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover;">
-                            <h4 style="color: #2d2d2d; font-size: 1.2rem; margin: 0 0 0.5rem 0;">AWS Admin & DevOps Engineer</h4>
-                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0;">Plays a governance role providing necessary connector approvals upfront, manages CI/CD integration and deployment orchestration.</p>
+                            <h4 style="color: #ffffff; font-size: 0.95rem; margin: 0 0 0.5rem 0;">AWS Admin</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Provide necessary access to company's cloud environment</p>
+                        </div>
+                    </div>
                         </div>
                     </div>
 
-                    <h3 style="margin-top: 3rem;">Modernization Journey</h3>
-                    <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">SQL Server to PostgreSQL modernization is a critical but daunting initiative for enterprises. Traditional approaches take months of manual work and require deep technical expertise across databases, applications, and infrastructure.</p>
-                    <div style="background-color: #f5f3f0; border-radius: 12px; padding: 2rem; margin: 2rem 0; position: relative;">
-                        <img src="journeymap.svg" alt="User Emotion & Confidence Journey Map" style="width: 100%; height: auto; display: block; margin-bottom: 1rem;">
-                        <p style="color: #999; font-size: 0.75rem; text-align: center; margin: 0 0 2rem 0;">User Emotion & Confidence</p>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e3dd;">
-                            <div>
-                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Connect</p>
+                    <!-- Modernization Journey Section with Background -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <h2 style="margin-top: 0; margin-bottom: 1rem;">Modernization journey</h2>
+                            <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">SQL Server to PostgreSQL modernization is a critical but daunting initiative for enterprises. Traditional approaches take months of manual work and require deep technical expertise across databases, applications, and infrastructure.</p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e3dd;">
+                                <div>
+                                    <p style="color: #2d2d2d; font-size: 1.1rem; font-weight: 700; margin: 0;">Connect</p>
+                                </div>
+                                <div>
+                                    <p style="color: #2d2d2d; font-size: 1.1rem; font-weight: 700; margin: 0;">Assess</p>
+                                </div>
+                                <div>
+                                    <p style="color: #2d2d2d; font-size: 1.1rem; font-weight: 700; margin: 0;">Plan</p>
+                                </div>
+                                <div>
+                                    <p style="color: #2d2d2d; font-size: 1.1rem; font-weight: 700; margin: 0;">Modernize</p>
+                                </div>
                             </div>
-                            <div>
-                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Assess</p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e3dd;">
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Lack of expertise in setting up secure connections to legacy systems.</p>
+                                </div>
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Identifying dependencies on repositories is challenging—without this, modernizing SQL will break applications.</p>
+                                </div>
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Complex wave sequencing and resource allocation across teams.</p>
+                                </div>
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">90% schema conversion will still require manual conversion, even with automation tools.</p>
+                                </div>
                             </div>
-                            <div>
-                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Plan</p>
-                            </div>
-                            <div>
-                                <p style="color: #2d2d2d; font-size: 0.9rem; font-weight: 700; margin: 0;">Modernize</p>
-                            </div>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e3dd;">
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Lack of expertise in setting up secure connections to legacy systems.</p>
-                            </div>
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Identifying dependencies on repositories is challenging—without this, modernizing SQL will break applications.</p>
-                            </div>
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Complex wave sequencing and resource allocation across teams.</p>
-                            </div>
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">Problem</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">90% schema conversion will still require manual conversion, even with automation tools.</p>
-                            </div>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Guided connector setup with authentication management.</p>
-                            </div>
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">AI-powered schema analysis and dependency detection at scale.</p>
-                            </div>
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Intelligent wave planning with risk assessment recommendations.</p>
-                            </div>
-                            <div>
-                                <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
-                                <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Automated conversion with human-in-the-loop oversight.</p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Guided connector setup with authentication management.</p>
+                                </div>
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">AI-powered schema analysis and dependency detection at scale.</p>
+                                </div>
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Intelligent wave planning with risk assessment recommendations.</p>
+                                </div>
+                                <div>
+                                    <p style="color: #999; font-size: 0.75rem; font-weight: 600; margin: 0 0 0.25rem 0; text-transform: uppercase;">AI Capability</p>
+                                    <p style="color: #6a6a6a; font-size: 0.8rem; margin: 0; line-height: 1.5;">Automated conversion with human-in-the-loop oversight.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -266,158 +323,309 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <h2 id="challenge" style="margin-top: 3rem; margin-bottom: 1.5rem;">Challenge</h2>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
-                        <div>
-                            <h3 style="font-size: 1.5rem; color: #2d2d2d; margin-bottom: 1.5rem;">How might we guide users through a SQL database modernization journey with clarity, confidence and control—interacting with multiple AI agents?</h3>
-                        </div>
-                        <div>
-                            <p style="margin-top: 0;">This challenge centers on three major areas:</p>
-                            <p><strong>1. Dealing with AI output hallucinations and inconsistencies</strong><br>Ensuring agents provide reliable, accurate results when handling complex database analysis and transformation logic.</p>
-                            <p><strong>2. Showing agent rationale and transparency</strong><br>Helping users understand why agents make recommendations and how they arrived at their conclusions.</p>
-                            <p><strong>3. Finetuning of agent-generated results</strong><br>Allowing users to review, modify, and improve agent outputs before execution to maintain control and quality.</p>
                         </div>
                     </div>
                     
-                    <h2 id="research" style="margin-top: 3rem; margin-bottom: 1.5rem;">Key Research Insights</h2>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
-                        <div>
-                            <p>From interviewing with 10 migration and modernization practitioners, we learned that some of our assumptions are wrong.</p>
+                    <!-- Challenge Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 8rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <h2 id="challenge" style="margin-top: 0; margin-bottom: 1.5rem; color: #ffffff;">Challenge</h2>
+                    <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 2rem;">How might we guide users through a SQL database modernization journey with clarity, confidence and control—interacting with multiple AI agents?</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
+                        <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px;">
+                            <h4 style="font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; color: #ffffff;">Hallucination & inconsistency</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin: 0;">Ensuring agents provide reliable, accurate results when handling complex database analysis and transformation logic.</p>
                         </div>
-                        <div>
-                            <p><strong>1. Users need guided, not fully automated, experiences</strong><br>While users want efficiency, they don't want to lose control over critical decisions. This led to designing "human-in-the-loop" (HITL) interactions at key decision points.</p>
-                            <p><strong>2. Chat alone isn't enough</strong><br>Users don't want to do everything in chat and expect it to be smarter. We balanced chat-based AI interactions with traditional UI for complex data visualization.</p>
+                        <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px;">
+                            <h4 style="font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; color: #ffffff;">Trust and transparency</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin: 0;">Helping users understand why agents make recommendations and how they arrived at their conclusions.</p>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px;">
+                            <h4 style="font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; color: #ffffff;">Refinement</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin: 0;">Allowing users to review, modify, and improve agent outputs before execution to maintain control and quality.</p>
+                        </div>
+                    </div>
                         </div>
                     </div>
                     
-                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">How does this impact the experience?</h2>
-                    <div class="experience-section">
-                        <div class="experience-item">
-                            <h4>Guided job plan</h4>
-                            <p>Sarah is presented a guided job plan with a customized job plan based on her modernization needs.</p>
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Process</h2>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a; margin-bottom: 1rem;">To mitigate the challenge of designing highly technical workflows, I worked through quick mockups, PM-eng-UX sync-ups, technical SA feedback and reviews, then validated with 15+ customers, and continue improvement with feedback from 40+ participants in GA bugbash.</p>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a; margin-bottom: 2rem;">I also used vibe coded prototypes to deal with the lack of time to prep for prototype testing—generating various iterations quickly, especially for the wave plan page layout.</p>
+                    
+                    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Define the conversational flow</h2>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a; margin-bottom: 1rem;">One major ask was to update the old GA framework. I worked closely with platform team to define a new chat centric experience with the <strong>3 panel framework</strong> to ensure database modernization users can efficiently interact with AI agents to assess, plan and transform their database and applications:</p>
+                    <ul style="font-size: 1rem; color: #6a6a6a; line-height: 1.8; margin-bottom: 2rem; padding-left: 1.5rem;">
+                        <li><strong>Job plan pane:</strong> Shows the sequential steps of the modernization workflow</li>
+                        <li><strong>Chat pane:</strong> Primary interface for conversing with AI agents</li>
+                        <li><strong>Human in the loop panel:</strong> Displays key decision points requiring user review and approval</li>
+                    </ul>
+                    
+                    <div style="display: none; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 0.75rem; font-weight: 600; color: #2d2d2d;">Old framework</h4>
+                            <img src="old-framework.png" alt="Old framework architecture" style="width: 100%; border-radius: 8px; display: block; cursor: pointer; transition: transform 0.3s ease; margin-bottom: 0.75rem;" onclick="openImageModal(this.src, this.alt)" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onerror="this.style.display='none'">
+                            <p style="color: #6a6a6a; font-size: 0.9rem; line-height: 1.6; margin: 0;">UI is dense and lack hierarchy, and users were confused about where to click to interact with agent</p>
                         </div>
-                        <div class="experience-item">
-                            <h4>Full control</h4>
-                            <p>Users have full control over the transformation progress, with each step she is always presented before agent take actions.</p>
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 0.75rem; font-weight: 600; color: #2d2d2d;">New framework</h4>
+                            <img src="cs-db-connector.png" alt="New framework architecture" style="width: 100%; border-radius: 8px; display: block; cursor: pointer; transition: transform 0.3s ease; margin-bottom: 0.75rem;" onclick="openImageModal(this.src, this.alt)" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onerror="this.style.display='none'">
+                            <p style="color: #6a6a6a; font-size: 0.9rem; line-height: 1.6; margin: 0;">3 panel layout with jobplan, chat pane and Human in the loop panel</p>
                         </div>
-                        <div class="experience-item">
-                            <h4>Smart defaults & drill-down</h4>
-                            <p>As Sarah going through these steps, smart defaults and recommendations save time and minimize errors. She can drill down to details about these information as needed.</p>
+                    </div>
+                    
+                    <!-- Interactive 3-Panel Wireframe -->
+                    <div style="margin: 3rem 0;">
+                        <div style="display: grid; grid-template-columns: 250px 1fr 300px; gap: 0; height: 500px; background: #fefcf9; border: 2px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                            <!-- Left Panel - Job Plan -->
+                            <div id="jobPlanPanel" style="background: #f8f8f8; border-right: 1px solid #e0e0e0; padding: 1.5rem; overflow-y: auto;">
+                                <h5 style="font-size: 0.85rem; font-weight: 600; color: #2d2d2d; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Job Plan</h5>
+                                <div style="margin-bottom: 1rem;">
+                                    <div style="background: #8ec5e0; color: white; padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem;">1. Connect</div>
+                                    <div style="background: #8ec5e0; color: white; padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem;">2. Discover</div>
+                                    <div style="background: #8ec5e0; color: white; padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem;">3. Assess</div>
+                                    <div style="background: #e8e8e8; color: #6a6a6a; padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem;">4. Plan Wave</div>
+                                    <div style="background: #e8e8e8; color: #6a6a6a; padding: 0.75rem; border-radius: 4px; font-size: 0.8rem;">5. Transform</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Middle Panel - Chat -->
+                            <div id="chatPanel" style="background: white; padding: 1.5rem; display: flex; flex-direction: column;">
+                                <h5 style="font-size: 0.85rem; font-weight: 600; color: #2d2d2d; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Chat with Agent</h5>
+                                <div style="flex: 1; overflow-y: auto; margin-bottom: 1rem;">
+                                    <div style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; align-items: flex-start;">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #8ec5e0; flex-shrink: 0;"></div>
+                                        <div style="background: #f0f0f0; padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; flex: 1;">
+                                            I've analyzed your SQL Server database. Ready to create a wave plan?
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; align-items: flex-start; flex-direction: row-reverse;">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #6a6a6a; flex-shrink: 0;"></div>
+                                        <div style="background: #e8f4f8; padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; flex: 1; text-align: right;">
+                                            Yes, create a 3-wave plan
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #8ec5e0; flex-shrink: 0;"></div>
+                                        <div style="background: #f0f0f0; padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; flex: 1;">
+                                            Wave plan created. Please review in the HITL panel →
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="text" placeholder="Type your message..." style="flex: 1; padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 0.85rem;">
+                                    <button style="background: #8ec5e0; color: white; padding: 0.75rem 1.25rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">Send</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Panel - Human in the Loop -->
+                            <div id="hitlPanel" style="background: #f8f8f8; border-left: 1px solid #e0e0e0; padding: 1.5rem; overflow-y: auto;">
+                                <h5 style="font-size: 0.85rem; font-weight: 600; color: #2d2d2d; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Review & Approve</h5>
+                                <div style="background: white; border: 1px solid #e0e0e0; border-radius: 4px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                                    <p style="font-size: 0.8rem; color: #2d2d2d; margin: 0; font-weight: 600;">Wave 1</p>
+                                    <p style="font-size: 0.7rem; color: #6a6a6a; margin: 0.25rem 0 0 0;">4 databases</p>
+                                </div>
+                                <div style="background: white; border: 1px solid #e0e0e0; border-radius: 4px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                                    <p style="font-size: 0.8rem; color: #2d2d2d; margin: 0; font-weight: 600;">Wave 2</p>
+                                    <p style="font-size: 0.7rem; color: #6a6a6a; margin: 0.25rem 0 0 0;">5 databases</p>
+                                </div>
+                                <div style="background: white; border: 1px solid #e0e0e0; border-radius: 4px; padding: 0.75rem; margin-bottom: 1rem;">
+                                    <p style="font-size: 0.8rem; color: #2d2d2d; margin: 0; font-weight: 600;">Wave 3</p>
+                                    <p style="font-size: 0.7rem; color: #6a6a6a; margin: 0.25rem 0 0 0;">3 databases</p>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button style="background: #8ec5e0; color: white; padding: 0.75rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.75rem; flex: 1;">Approve</button>
+                                    <button style="background: white; color: #2d2d2d; padding: 0.75rem 1rem; border: 1px solid #e0e0e0; border-radius: 4px; cursor: pointer; font-size: 0.75rem; flex: 1;">Edit</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="experience-item">
-                            <h4>Contextual alerts & guidance</h4>
-                            <p>Sarah is prompted with the latest status of transformation via contextual alerts, and recommended resolutions.</p>
-                        </div>
-                        <div class="experience-item">
-                            <h4>Agent as partner</h4>
+                    </div>
+                    
+                    <div style="display: none;">
+                        <h3 style="font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 600; color: #2d2d2d;">AI agent behavior principle</h3>
+                        <div class="experience-item" style="background: #f5f3f0; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                            <h4>Agent as partner, trust but verify</h4>
                             <p>Agent as partner, answers questions about the what, why and how, learning about best practices and modernize with confidence.</p>
                         </div>
                     </div>
-                    
-                    <h2 id="iterations" style="margin-top: 3rem; margin-bottom: 1.5rem;">Design Iterations</h2>
-                    <p>One key workflow iteration happens where customers set the target input for each wave. The decision lies in enabling full automation for target configuration, or a step-by-step approach.</p>
-                    
-                    <div style="margin: 2rem 0; position: relative;">
-                        <!-- Pill labels as selectable buttons -->
-                        <div style="display: flex; gap: 1rem; margin-bottom: 2rem; position: relative; z-index: 1; width: fit-content;">
-                            <button onclick="showVersion('v1')" id="pill-v1" style="background-color: #d4a373; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: white; cursor: pointer;">V1</button>
-                            <button onclick="showVersion('v2')" id="pill-v2" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">V2</button>
-                            <button onclick="showVersion('v3')" id="pill-v3" style="background-color: white; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #d4a373; font-size: 0.9rem; font-weight: 500; color: #2d2d2d; cursor: pointer;">V3</button>
                         </div>
-                        
-                        <!-- V1 Content -->
-                        <div id="version-v1" style="display: block;">
-                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
-                                <div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem; width: 90%;">
-                                    <img src="v1-target.jpg" alt="V1 - Setup Target Per Step Per Wave" style="width: 100%; height: auto;">
+                    </div>
+                    
+                    <!-- Key Research Insights Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <h2 id="research" style="margin-top: 0; margin-bottom: 1.5rem;">Testing out the experience</h2>
+                            <p>To test out the new conversational flow, I conducted 10 user testing sessions on the private preview design. The goal was to get feedback on both functionality and user experience. The results showed that users were excited about the new chat-centric experience, but also expressed concerns around needing finer control and a more efficient way to interact with the agent. We also learned that some of our assumptions about the desired degree of automation were wrong.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Assessment Result Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Assessment result should be emphasized over grouping</h2>
                                 </div>
-                                <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0; width: 90%; text-align: left;">Initial approach where users configure target databases and applications for each step within every wave, providing granular control but requiring more manual input.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- V2 Content -->
-                        <div id="version-v2" style="display: none;">
-                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
-                                <div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem; width: 90%;">
-                                    <img src="v2-target.jpg" alt="V2 - Setup as Part of Wave Plan Step" style="width: 100%; height: auto;">
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Research showed users need to review assessment first to fix dependency errors before planning. V2 separates these steps, giving users control to verify agent output before proceeding.</p>
                                 </div>
-                                <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0; width: 90%; text-align: left;">Consolidated approach where target configuration happens as part of the wave planning process, reducing friction and centralizing decisions within the wave workflow.</p>
+                            </div>
+                            <div>
+                                <img src="assess-v2.png" alt="Assessment workflow iterations" style="width: 100%; border-radius: 8px; display: block; margin-bottom: 0.5rem; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
+                                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.5; margin: 0; font-style: italic;">In V2, users can see detailed rich info about assessment for each of their resources prior to grouping them.</p>
                             </div>
                         </div>
-                        
-                        <!-- V3 Content -->
-                        <div id="version-v3" style="display: none;">
-                            <div style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;">
-                                <div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem; width: 90%;">
-                                    <img src="v3-target.jpg" alt="V3 - Configure Wave Step" style="width: 100%; height: auto;">
+                    </div>
+                    
+                    <!-- Configure Wave Target Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Configure by step to provide control</h2>
                                 </div>
-                                <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0; width: 90%; text-align: left;">Streamlined approach enabling full automation for target configuration, allowing users to apply wave-level settings across all databases and applications with a single action.</p>
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Targets for each wave steps is configured after the last step is done, to break down the complexity and reduce uncertainty for this task. This enables different teams to work on each wave concurrently, with different personas working on database, app, and deployment. The outcome of schema conversion may change data migration configuration, and this approach provides more transparency about pricing and cost implications.</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <script>
-                        function showVersion(version) {
-                            // Hide all versions
-                            document.getElementById('version-v1').style.display = 'none';
-                            document.getElementById('version-v2').style.display = 'none';
-                            document.getElementById('version-v3').style.display = 'none';
-                            
-                            // Reset all pills
-                            document.getElementById('pill-v1').style.backgroundColor = 'white';
-                            document.getElementById('pill-v1').style.color = '#2d2d2d';
-                            document.getElementById('pill-v2').style.backgroundColor = 'white';
-                            document.getElementById('pill-v2').style.color = '#2d2d2d';
-                            document.getElementById('pill-v3').style.backgroundColor = 'white';
-                            document.getElementById('pill-v3').style.color = '#2d2d2d';
-                            
-                            // Show selected version
-                            document.getElementById('version-' + version).style.display = 'block';
-                            
-                            // Highlight selected pill
-                            document.getElementById('pill-' + version).style.backgroundColor = '#d4a373';
-                            document.getElementById('pill-' + version).style.color = 'white';
-                        }
-                    </script>
-                    
-                    <h2 id="final" style="margin-top: 3rem; margin-bottom: 1.5rem;">Final result</h2>
-                    <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Designed an AI-assisted workflow that automatically analyzes SQL Server databases and .NET applications, converts schemas, migrates data, and refactors application code while maintaining human oversight at critical decision points.</p>
-                    
-                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                             <div>
-                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">1. Chat-first, UI-supported paradigm</h3>
-                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Chat handles intent capture, explanations, and quick plan edits, while UI manages structured data, dependencies, bulk operations, and validation.</p>
+                                <img src="v1-target.jpg" alt="V1 - Setup Target Per Step Per Wave" style="width: 100%; border-radius: 8px; display: block; margin-bottom: 0.5rem; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.5; margin: 0; font-style: italic;">User prefer to configure target databases and applications for each step within every wave, providing granular control but requiring more manual input.</p>
                             </div>
-                            <img src="chat-edit.gif" alt="Chat-first, UI-supported paradigm" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Monitor Progress Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Monitor progress directly in job view</h2>
+                                </div>
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">I explored real-time status indicators to keep users informed of long-running migration tasks, providing visibility into AI agent progress and potential issues. Users need a persistent, convenient place to monitor progress without switching to the worklog page. Allow them to check agent progress easily.</p>
+                                </div>
+                            </div>
                             <div>
-                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">2. Progressive disclosure</h3>
-                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Layered information architecture from chat summaries to detailed data tables to drill-down views.</p>
+                                <img src="in-progress-widget-v2.gif" alt="Monitor progress directly in job view" style="width: 100%; border-radius: 8px; display: block; margin-bottom: 0.5rem; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.5; margin: 0; font-style: italic;">Widget concept explored to show agent progress while enabling chat.</p>
                             </div>
-                            <img src="schema-conversion.gif" alt="Progressive disclosure" style="width: 100%; border-radius: 8px; display: block;">
                         </div>
                     </div>
                     
-                    <div class="full-width-pattern" style="display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0;">
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 600;">3. Human-in-the-loop (HITL)</h3>
-                                <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a;">Clear decision points where users review and approve AI recommendations with full transparency.</p>
-                            </div>
-                            <img src="conversion-result.gif" alt="Human-in-the-loop (HITL)" style="width: 100%; border-radius: 8px; display: block;">
+                    <!-- Horizontal Divider -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 8rem 0 0 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <hr style="border: none; border-top: 1px solid #ffffff; margin: 0;">
                         </div>
                     </div>
                     
-                    <h3 id="outcome" style="margin-top: 3rem; margin-bottom: 1.5rem;">Outcome</h3>
-                    <p>The SQL Server modernization solution was featured as a key announcement at AWS re:Invent 2025, highlighting the power of agentic AI to accelerate enterprise cloud migration workflows.</p>
+                    <!-- Final result Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 10rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 id="final" style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Final result</h2>
+                                </div>
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.5rem; line-height: 1.6; margin: 0;">A guided streamlined experience that enables cross-functional teams to collaborate and automate transformation from end to end.</p>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <!-- Full-width hero image -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; margin-bottom: 0;">
+                        <img src="sql-final-result.png" alt="Final result overview" style="width: 100%; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                    </div>
+                    
+                    <!-- Rich Assessment Information Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Rich assessment information</h2>
+                                </div>
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.5rem; line-height: 1.6; margin: 0;">Layered information architecture from chat summaries to detailed data tables to drill-down views.</p>
+                                </div>
+                            </div>
+                            <div style="position: relative; width: 100%;">
+                                <img src="apple Macbook Pro 15_ Space Grey formats.png" alt="MacBook Pro" style="width: 100%; display: block;">
+                                <img src="sql-assess-result.gif" alt="Rich assessment information" style="position: absolute; top: 15%; left: 13%; width: 74%; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Edit Waveplan Using Chat Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Edit waveplan using chat</h2>
+                                </div>
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.5rem; line-height: 1.6; margin: 0;">Chat handles intent capture, explanations, and quick plan edits, while UI manages structured data, dependencies, bulk operations, and validation.</p>
+                                </div>
+                            </div>
+                            <div style="position: relative; width: 100%;">
+                                <img src="apple Macbook Pro 15_ Space Grey formats.png" alt="MacBook Pro" style="width: 100%; display: block;">
+                                <img src="chat-edit.gif" alt="Edit waveplan using chat" style="position: absolute; top: 15%; left: 13%; width: 74%; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contextual Edit Wave Plan Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Configure with control</h2>
+                                </div>
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.5rem; line-height: 1.6; margin: 0;">Contextual editing enables users to modify wave plan configurations directly within context, reducing navigation overhead and improving workflow efficiency.</p>
+                                </div>
+                            </div>
+                            <div style="position: relative; width: 100%;">
+                                <img src="apple Macbook Pro 15_ Space Grey formats.png" alt="MacBook Pro" style="width: 100%; display: block;">
+                                <img src="wave1-schema-conversion-setup.gif" alt="Configure with control" style="position: absolute; top: 15%; left: 13%; width: 74%; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contextual Alert Section -->
+                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                                <div>
+                                    <h2 style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Contextual alert for transformation results</h2>
+                                </div>
+                                <div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.5rem; line-height: 1.6; margin: 0;">Real-time notifications keep users informed of transformation status and guide them to address issues promptly.</p>
+                                </div>
+                            </div>
+                            <div style="position: relative; width: 100%;">
+                                <img src="apple Macbook Pro 15_ Space Grey formats.png" alt="MacBook Pro" style="width: 100%; display: block;">
+                                <img src="contextual-alert.gif" alt="Contextual alert for transformation results" style="position: absolute; top: 15%; left: 13%; width: 74%; cursor: pointer;" onclick="openImageModal(this.src, this.alt)">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: none; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
+                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                    
+                    <h3 id="outcome" style="margin-top: 3rem; margin-bottom: 1.5rem; color: #ffffff;">Outcome</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">The SQL Server modernization solution was featured as a key announcement at AWS re:Invent 2025, highlighting the power of agentic AI to accelerate enterprise cloud migration workflows.</p>
                 </div>
+                    </div>
             </div>
+            
+            <!-- Future Improvements Section -->
+            <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Future improvements</h2>
+            <p style="font-size: 1rem; line-height: 1.6; color: #6a6a6a; margin-bottom: 1.5rem;">From discussions with SAs and customers, I have identified a few areas of improvement to enable more flexibility and connection, and a more efficient experience for troubleshooting.</p>
+            <ul style="font-size: 1rem; color: #6a6a6a; line-height: 1.8; margin-bottom: 2rem; padding-left: 1.5rem;">
+                <li>More dynamic workflow—go back and add resources/change plan, retry a step</li>
+                <li>Schema conversion issue resolution in IDE</li>
+            </ul>
             
             <!-- Project Navigation -->
             <div class="project-navigation">
@@ -487,6 +695,32 @@
             });
         });
     </script>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); padding: 2rem;" onclick="closeImageModal()">
+        <span style="position: absolute; top: 2rem; right: 3rem; color: #f1f1f1; font-size: 3rem; font-weight: 300; cursor: pointer; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#f1f1f1'">&times;</span>
+        <img id="modalImage" src="" alt="" style="margin: auto; display: block; max-width: 90%; max-height: 90%; object-fit: contain;">
+    </div>
+    
+    <script>
+        function openImageModal(src, alt) {
+            document.getElementById('imageModal').style.display = 'flex';
+            document.getElementById('modalImage').src = src;
+            document.getElementById('modalImage').alt = alt;
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
 </body>
 </html>
-```
