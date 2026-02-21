@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruobing Chen - UX Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NSN8WLF1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-39NSN8WLF1');
+    </script>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav style="position: relative; padding: 2rem; z-index: 100; background: #fefcf9;">
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
+            <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+        </div>
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+        
+        // Show hamburger on scroll for desktop
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navBottom = nav.offsetTop + nav.offsetHeight;
+            
+            if (window.scrollY > navBottom) {
+                hamburger.classList.add('show-on-scroll');
+            } else {
+                hamburger.classList.remove('show-on-scroll');
+            }
+        });
+    </script>
+    
+    <main>
+        <section class="hero">
+            <p id="heroSubtitle" style="font-size: 1.1rem; color: #3a3a3a; margin-bottom: 1rem; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">Senior UX Designer</p>
+            <h1 id="heroHeadline" style="line-height: 1.05; letter-spacing: -1.68px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">Designing intuitive experiences that delight users and solve real problems.</h1>
+            <div id="heroContent" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+                <p style="font-size: 1.25rem; color: #6a6a6a; line-height: 1.7; letter-spacing: -0.45px;">Through research-driven design and strategic thinking, I transform complex challenges into intuitive experiences that drive measurable business outcomes. Currently working on the first Agentic AI services to accelerate migration and modernization at Amazon Web Services.</p>
+            </div>
+            <a href="#selected-works" id="viewSelectedWork" style="display: flex; align-items: center; gap: 0.75rem; margin-top: 3rem; text-decoration: none; color: #2d2d2d; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out, color 0.3s ease; max-width: 1000px; width: 100%;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">
+                View selected work
+                <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: bounce 2s infinite; color: #d4a373;">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+        </section>
+
+        <div style="max-width: calc(1000px + 4rem); margin: 0 auto; padding: 0 2rem;">
+            <hr style="border: none; border-top: 1px solid #e0e0e0;">
+        </div>
+
+        <section class="projects" id="selected-works">
+            <div id="selectedWorksHeader" style="display: flex; justify-content: space-between; align-items: flex-start; opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+                <h2 style="margin-bottom: 1rem; letter-spacing: -1.68px;">Selected works</h2>
+                <p style="font-size: 1.25rem; color: #6a6a6a; line-height: 1.7; letter-spacing: -0.45px; width: 30%; text-align: left;">My recent work focuses on helping enterprise customers move from on-prem datacenters to the cloud.</p>
+            </div>
+            <div class="project" id="project-sql-server">
+                <a href="sql-server.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-image" style="background-image: url('sql-server-hero.jpg');">
+                        <div class="project-overlay"></div>
+                        <div class="project-info">
+                            <div class="project-title-line">
+                                <h3>AWS Transform</h3>
+                                <span class="pipe"> | </span>
+                                <div class="year">Dec 2025</div>
+                            </div>
+                            <p>AI-powered workflow for modernizing SQL Server databases and .NET applications to AWS, combining chat-driven guidance with human-in-the-loop controls for faster, more reliable cloud migration.</p>
+                            <div class="view-project-btn">View Project</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="project" id="project-code-assessment">
+                <a href="code-assessment.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-image" style="background-image: url('code-assessment-assets/code-assessment-hero.jpg');">
+                        <div class="project-overlay"></div>
+                        <div class="project-info">
+                            <div class="project-title-line">
+                                <h3>AWS Transform</h3>
+                                <span class="pipe"> | </span>
+                                <div class="year">Dec 2025</div>
+                            </div>
+                            <p>AI-powered workflow for modernizing SQL Server databases and .NET applications to AWS, combining chat-driven guidance with human-in-the-loop controls for faster, more reliable cloud migration.</p>
+                            <div class="view-project-btn">View Project</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="project" id="project-robo-consulting">
+                <a href="robo-consulting.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-image" style="background-image: url('Robo-consulting.jpg');">
+                        <div class="project-overlay"></div>
+                        <div class="project-info">
+                            <div class="project-title-line">
+                                <h3>Robo Consulting</h3>
+                                <span class="pipe"> | </span>
+                                <div class="year">Apr 2024 - Jun 2024</div>
+                            </div>
+                            <p>Concept design for customer project consulting experience and consultant builder experience. More details coming soon.</p>
+                            <div class="view-project-btn">View Project</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-left">
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+            <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
+        </div>
+        
+        <div class="footer-right">
+            <h3>Let's connect</h3>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                <a href="mailto:rchen02@risd.edu">Email me</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animation
+        const heroSubtitle = document.getElementById('heroSubtitle');
+        const heroHeadline = document.getElementById('heroHeadline');
+        const heroContent = document.getElementById('heroContent');
+        const viewSelectedWork = document.getElementById('viewSelectedWork');
+        
+        // Staggered fade-in
+        setTimeout(() => {
+            heroSubtitle.style.opacity = '1';
+            heroSubtitle.style.transform = 'translateY(0)';
+        }, 100);
+        
+        setTimeout(() => {
+            heroHeadline.style.opacity = '1';
+            heroHeadline.style.transform = 'translateY(0)';
+        }, 250);
+        
+        setTimeout(() => {
+            heroContent.style.opacity = '1';
+            heroContent.style.transform = 'translateY(0)';
+        }, 400);
+        
+        setTimeout(() => {
+            viewSelectedWork.style.opacity = '1';
+            viewSelectedWork.style.transform = 'translateY(0)';
+        }, 550);
+        
+        // Scroll animation for Selected Works section
+        const selectedWorksHeader = document.getElementById('selectedWorksHeader');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        observer.observe(selectedWorksHeader);
+    </script>
+</body>
+</html>

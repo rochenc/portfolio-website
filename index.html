@@ -22,9 +22,11 @@
 </head>
 <body>
     <!-- Top Navigation -->
-    <nav style="position: relative; padding: 2rem 3rem; z-index: 100; background: #fefcf9; display: flex; justify-content: space-between; align-items: center;">
-        <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
-        <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+    <nav style="position: relative; padding: 2rem; z-index: 100; background: #ffffff;">
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
+            <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+        </div>
         <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
             <span></span>
             <span></span>
@@ -74,79 +76,93 @@
     
     <main>
         <section class="hero">
-            <h1 id="typingText">Hi, I'm Ruobing</h1>
-            <div id="heroContent" style="opacity: 0; transition: opacity 0.6s ease-in-out;">
-                <p style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">I'm a senior UX designer at <img src="code-assessment-assets/aws-logo.png" alt="AWS" style="height: 1rem; width: auto;"></p>
-                <p>My work involves simplifying complex workflows across Cloud Services, FinTech, and Enterprise tools.</p>
-                <p>Currently pioneering the first Agentic AI services designed to accelerate server migration and app modernization.</p>
-                <p style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">Originally from Shanghai and now based in Boston.</p>
+            <p id="heroSubtitle" style="font-size: 1.1rem; color: #3a3a3a; margin-bottom: 1rem; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">Senior UX Designer</p>
+            <h1 id="heroHeadline" style="line-height: 1.05; letter-spacing: -1.68px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">Designing <span id="rotatingPhrase" style="color: #d4a373; transition: opacity 0.3s ease-in-out;">intuitive experiences</span><br>that delight users and solve real problems.</h1>
+            <div id="heroContent" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+                <p style="font-size: 1.25rem; color: #6a6a6a; line-height: 1.7; letter-spacing: -0.45px;">Through research-driven design and strategic thinking, I transform complex challenges into intuitive experiences that drive measurable business outcomes. Currently working on the first Agentic AI services to accelerate migration and modernization at Amazon Web Services.</p>
             </div>
-        </section>
-
-        <section id="selected-work">
-            <h2 id="workSectionTitle" style="display: flex; align-items: center; gap: 0.75rem;">
-                Selected works
+            <a href="#selected-works" id="viewSelectedWork" style="display: flex; align-items: center; gap: 0.75rem; margin-top: 3rem; text-decoration: none; color: #2d2d2d; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out, color 0.3s ease; max-width: 1000px; width: 100%;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">
+                View selected work
                 <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: bounce 2s infinite; color: #d4a373;">
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-            </h2>
-            <div class="project-quick-links" style="display: flex; gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
-                <a href="#project-sql-server" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">AWS Transform Database Modernization</a>
-                <a href="#project-code-assessment" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">AWS Transform Code Assessment</a>
-                <a href="#project-robo-consulting" style="text-decoration: none; color: #2d2d2d; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Robo Consulting</a>
-            </div>
+            </a>
         </section>
 
-        <section class="projects">
+        <div style="max-width: calc(1000px + 4rem); margin: 0 auto; padding: 0 2rem;">
+            <hr style="border: none; border-top: 1px solid #e0e0e0;">
+        </div>
+
+        <section class="projects" id="selected-works">
             <div class="project" id="project-sql-server">
-                <a href="sql-server.html" style="text-decoration: none; color: inherit;">
-                    <div class="project-image" style="background-image: url('sql-server-hero.jpg');">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <div class="project-title-line">
-                                <h3>AWS Transform</h3>
-                                <span class="pipe"> | </span>
-                                <div class="year">Dec 2025</div>
-                            </div>
-                            <p>AI-powered workflow for modernizing SQL Server databases and .NET applications to AWS, combining chat-driven guidance with human-in-the-loop controls for faster, more reliable cloud migration.</p>
-                            <div class="view-project-btn">View Project</div>
-                        </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; cursor: pointer; max-height: 500px;" onclick="window.location.href='sql-server.html';" onmouseover="this.querySelector('h3').style.color='#d4a373'; this.querySelector('a').style.color='#d4a373';" onmouseout="this.querySelector('h3').style.color='#2d2d2d'; this.querySelector('a').style.color='#2d2d2d';">
+                <div style="border-radius: 12px; overflow: hidden; background-image: url('sql-cover-1.png'); background-size: cover; background-position: center; min-width: 600px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" ></div>
+                <div>
+                    <p style="font-size: 3rem; color: #d0d0d0; margin: 0 0 2rem 0; line-height: 1;">01</p>
+                    <p style="font-size: 0.9rem; color: #9a9a9a; margin-bottom: 2rem;">Amazon Web Services - 2025</p>
+                    <h3 style="font-size: 2.25rem; letter-spacing: -1.68px; margin-bottom: 2rem; line-height: 1.05;">Agentic Database Transformation</h3>
+                    <p style="font-size: 1.1rem; color: #6a6a6a; max-width: 600px; margin-bottom: 2rem; line-height: 1.4;">Designed the agentic workflow that reduces SQL Server database modernization from months to weeks.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Cloud Migration & Modernization</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Agentic AI</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Enterprise</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Web App</span>
                     </div>
-                </a>
+                    <a href="sql-server.html" style="text-decoration: none; color: #2d2d2d; font-size: 1rem; transition: color 0.3s ease;" onclick="event.stopPropagation();"></a>
+                </div>
+            </div>
             </div>
             
-            <div class="project" id="project-code-assessment">
-                <a href="code-assessment.html" style="text-decoration: none; color: inherit;">
-                    <div class="project-image" style="background-image: url('code-assessment-assets/code-assessment-hero.jpg');">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <div class="project-title-line">
-                                <h3>AWS Transform</h3>
-                                <span class="pipe"> | </span>
-                                <div class="year">Dec 2025</div>
-                            </div>
-                            <p>AI-powered workflow for modernizing SQL Server databases and .NET applications to AWS, combining chat-driven guidance with human-in-the-loop controls for faster, more reliable cloud migration.</p>
-                            <div class="view-project-btn">View Project</div>
-                        </div>
+            <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 3rem 0;">
+            
+            <div class="project" id="project-code-assessment" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; cursor: pointer; max-height: 500px;" onclick="window.location.href='code-assessment.html';" onmouseover="this.querySelector('h3').style.color='#d4a373'; this.querySelector('a').style.color='#d4a373';" onmouseout="this.querySelector('h3').style.color='#2d2d2d'; this.querySelector('a').style.color='#2d2d2d';">
+                    <div style="border-radius: 12px; overflow: hidden; background-image: url('assess-cover-1.png'); background-size: cover; background-position: center; min-width: 600px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" ></div>
+                    <div>
+                    <p style="font-size: 3rem; color: #d0d0d0; margin: 0 0 2rem 0; line-height: 1;">02</p>
+                    <p style="font-size: 0.9rem; color: #9a9a9a; margin-bottom: 2rem;">Amazon Web Services - 2025</p>
+                    <h3 style="font-size: 2.25rem; letter-spacing: -1.68px; margin-bottom: 2rem; line-height: 1.05;">Code Assessment</h3>
+                    <p style="font-size: 1.1rem; color: #6a6a6a; max-width: 600px; margin-bottom: 2rem; line-height: 1.4;">AI-powered workflow for analyzing and assessing .NET applications to identify modernization opportunities and risks.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Code Analysis</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Agentic AI</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Enterprise</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Web App</span>
                     </div>
-                </a>
+                    <a href="code-assessment.html" style="text-decoration: none; color: #2d2d2d; font-size: 1rem; transition: color 0.3s ease;" onclick="event.stopPropagation();"></a>
+                    </div>
+                </div>
             </div>
             
-            <div class="project" id="project-robo-consulting">
-                <a href="robo-consulting.html" style="text-decoration: none; color: inherit;">
-                    <div class="project-image" style="background-image: url('Robo-consulting.jpg');">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <div class="project-title-line">
-                                <h3>Robo Consulting</h3>
-                                <span class="pipe"> | </span>
-                                <div class="year">Apr 2024 - Jun 2024</div>
-                            </div>
-                            <p>Concept design for customer project consulting experience and consultant builder experience. More details coming soon.</p>
-                            <div class="view-project-btn">View Project</div>
-                        </div>
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+                <h3 style="font-size: 1.1rem; color: #2d2d2d; margin-bottom: 1.5rem; font-weight: 600;">Other projects</h3>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Migration Hub Automation</p>
+                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2024</p>
                     </div>
-                </a>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Robo Consulting</p>
+                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2024</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Migration Expert Help</p>
+                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2023</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Citizens Bank Mobile App</p>
+                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2021</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Mercedes Vehicle Allocation Platform</p>
+                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2020</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Wholesale Platform</p>
+                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2019</p>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #b0b0b0;">Case studies for these projects are available upon request</p>
             </div>
         </section>
     </main>
@@ -170,28 +186,66 @@
     </footer>
 
     <script>
-        // Typing effect
-        const typingText = document.getElementById('typingText');
+        // Fade-in animation
+        const heroSubtitle = document.getElementById('heroSubtitle');
+        const heroHeadline = document.getElementById('heroHeadline');
         const heroContent = document.getElementById('heroContent');
-        const fullText = "Hi, I'm Ruobing";
-        let index = 0;
+        const viewSelectedWork = document.getElementById('viewSelectedWork');
         
-        // Clear the text first
-        typingText.textContent = '';
+        // Staggered fade-in
+        setTimeout(() => {
+            heroSubtitle.style.opacity = '1';
+            heroSubtitle.style.transform = 'translateY(0)';
+        }, 100);
         
-        function typeText() {
-            if (index < fullText.length) {
-                typingText.textContent += fullText.charAt(index);
-                index++;
-                setTimeout(typeText, 40); // Faster typing (40ms per character)
-            } else {
-                // Show the rest of the content after typing completes
-                heroContent.style.opacity = '1';
-            }
+        setTimeout(() => {
+            heroHeadline.style.opacity = '1';
+            heroHeadline.style.transform = 'translateY(0)';
+        }, 250);
+        
+        setTimeout(() => {
+            heroContent.style.opacity = '1';
+            heroContent.style.transform = 'translateY(0)';
+        }, 400);
+        
+        setTimeout(() => {
+            viewSelectedWork.style.opacity = '1';
+            viewSelectedWork.style.transform = 'translateY(0)';
+        }, 550);
+        
+        // Rotating phrase animation
+        const phrases = ['intuitive experiences', 'fluid experiences', 'trustworthy experiences', 'streamlined experiences', 'efficient experiences', 'scalable experiences', 'effective experiences'];
+        let phraseIndex = 0;
+        const rotatingPhrase = document.getElementById('rotatingPhrase');
+        
+        function rotatePhrase() {
+            rotatingPhrase.style.opacity = '0';
+            setTimeout(() => {
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                rotatingPhrase.textContent = phrases[phraseIndex];
+                rotatingPhrase.style.opacity = '1';
+            }, 300);
         }
         
-        // Start typing after a short delay
-        setTimeout(typeText, 200);
+        // Start rotation after initial animations complete
+        setTimeout(() => {
+            setInterval(rotatePhrase, 1500);
+        }, 1500);
+        
+        // Scroll animation for Selected Works section
+        const projectCodeAssessment = document.getElementById('project-code-assessment');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        observer.observe(projectCodeAssessment);
     </script>
 </body>
 </html>
