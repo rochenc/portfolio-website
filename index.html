@@ -19,12 +19,36 @@
       gtag('js', new Date());
       gtag('config', 'G-39NSN8WLF1');
     </script>
+    <style>
+        @keyframes slideOutName {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+                max-width: 0;
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+                max-width: 200px;
+            }
+        }
+        .name-slide {
+            animation: slideOutName 0.6s ease-out 0.3s forwards;
+            opacity: 0;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
     <!-- Top Navigation -->
-    <nav style="position: relative; padding: 2rem; z-index: 100; background: #ffffff;">
+    <nav style="position: relative; padding: 2rem; z-index: 100; background: #fefcf9;">
         <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
+            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">
+                <span style="width: 28px; height: 28px; background: #2d2d2d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fefcf9; letter-spacing: 0.5px; flex-shrink: 0;">RC</span>
+                <span class="name-slide">Ruobing Chen</span>
+            </a>
             <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
         </div>
         <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
@@ -77,9 +101,9 @@
     <main>
         <section class="hero">
             <p id="heroSubtitle" style="font-size: 1.1rem; color: #3a3a3a; margin-bottom: 1rem; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">Senior UX Designer</p>
-            <h1 id="heroHeadline" style="line-height: 1.05; letter-spacing: -1.68px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">Designing <span id="rotatingPhrase" style="color: #d4a373; transition: opacity 0.3s ease-in-out;">intuitive experiences</span><br>that delight users and solve real problems.</h1>
+            <h1 id="heroHeadline" style="line-height: 1.05; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">Designing <span id="rotatingPhrase" style="color: #d4a373; transition: opacity 0.3s ease-in-out;">intuitive experiences</span><br>that delight users and solve real problems.</h1>
             <div id="heroContent" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-                <p style="font-size: 1.25rem; color: #6a6a6a; line-height: 1.7; letter-spacing: -0.45px;">Through research-driven design and strategic thinking, I transform complex challenges into intuitive experiences that drive measurable business outcomes. Currently working on the first Agentic AI services to accelerate migration and modernization at Amazon Web Services.</p>
+                <p style="font-size: 1.25rem; color: #6a6a6a; line-height: 1.7;">Through research-driven design and strategic thinking, I transform complex challenges into intuitive experiences that drive measurable business outcomes. Currently working on the first Agentic AI services to accelerate migration and modernization at Amazon Web Services.</p>
             </div>
             <a href="#selected-works" id="viewSelectedWork" style="display: flex; align-items: center; gap: 0.75rem; margin-top: 3rem; text-decoration: none; color: #2d2d2d; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out, color 0.3s ease; max-width: 1000px; width: 100%;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">
                 View selected work
@@ -89,19 +113,34 @@
             </a>
         </section>
 
-        <div style="max-width: calc(1000px + 4rem); margin: 0 auto; padding: 0 2rem;">
-            <hr style="border: none; border-top: 1px solid #e0e0e0;">
-        </div>
-
         <section class="projects" id="selected-works">
-            <div class="project" id="project-sql-server">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; cursor: pointer; max-height: 500px;" onclick="window.location.href='sql-server.html';" onmouseover="this.querySelector('h3').style.color='#d4a373'; this.querySelector('a').style.color='#d4a373';" onmouseout="this.querySelector('h3').style.color='#2d2d2d'; this.querySelector('a').style.color='#2d2d2d';">
-                <div style="border-radius: 12px; overflow: hidden; background-image: url('sql-cover-v8.png'); background-size: cover; background-position: center; min-width: 600px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" ></div>
-                <div>
-                    <p style="font-size: 3rem; color: #d0d0d0; margin: 0 0 2rem 0; line-height: 1;">01</p>
-                    <p style="font-size: 0.9rem; color: #9a9a9a; margin-bottom: 2rem;">Amazon Web Services - 2025</p>
-                    <h3 style="font-size: 2.25rem; letter-spacing: -1.68px; margin-bottom: 2rem; line-height: 1.05;">Agentic Database Transformation</h3>
-                    <p style="font-size: 1.1rem; color: #6a6a6a; max-width: 600px; margin-bottom: 2rem; line-height: 1.4;">Designed the agentic workflow that reduces SQL Server database modernization from months to weeks.</p>
+            <div class="project" id="project-expert-help" style="z-index: 1; top: 100px;">
+            <div class="project-card-grid" style="display: grid; grid-template-columns: 40% 55%; gap: 5%; align-items: stretch; cursor: pointer; overflow: hidden; border: none; border-radius: 24px; padding: 2rem; background: linear-gradient(135deg, #faf5f0 0%, #f5ebe0 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onclick="window.location.href='expert-help.html';" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.href='expert-help.html';}" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.12)'; this.querySelector('h3').style.color='#d4a373';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'; this.querySelector('h3').style.color='#2d2d2d';" tabindex="0" role="link" aria-label="View AWS ProHelp project">
+                <div style="overflow: hidden;">
+                    <p style="font-size: 2.5rem; color: #e8d4c0; margin: 0 0 1.5rem 0; line-height: 1;">01</p>
+                    <p style="font-size: 0.85rem; color: #9a9a9a; margin-bottom: 1.5rem;">Amazon Web Services - 2023</p>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; line-height: 1.1; transition: color 0.3s ease;">AWS ProHelp</h3>
+                    <p style="font-size: 1rem; color: #6a6a6a; margin-bottom: 1.5rem; line-height: 1.5;">On-demand, packaged expert help service that brings migration expertise to customers when they need it.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Expert Services</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Migration</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Enterprise</span>
+                        <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Web App</span>
+                    </div>
+                    <a href="expert-help.html" style="text-decoration: none; color: #2d2d2d; font-size: 1rem; transition: color 0.3s ease;" onclick="event.stopPropagation();"></a>
+                </div>
+                <div class="project-card-image" style="border-radius: 12px; overflow: hidden; background-image: url('prohelp-cover2.png'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 280px;" role="img" aria-label="AWS ProHelp project preview"></div>
+            </div>
+            </div>
+            
+            <div class="project" id="project-sql-server" style="z-index: 2; margin-top: 2rem; top: 140px;">
+            <div class="project-card-grid" style="display: grid; grid-template-columns: 55% 40%; gap: 5%; align-items: stretch; cursor: pointer; overflow: hidden; border: none; border-radius: 24px; padding: 2rem; background: linear-gradient(135deg, #f0f5f1 0%, #e5efe7 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onclick="window.location.href='sql-server.html';" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.href='sql-server.html';}" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.12)'; this.querySelector('h3').style.color='#5a8a5e';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'; this.querySelector('h3').style.color='#2d2d2d';" tabindex="0" role="link" aria-label="View Agentic Database Transformation project">
+                <div class="project-card-image" style="border-radius: 12px; overflow: hidden; background-image: url('dependency.png'); background-size: contain; background-position: center; background-repeat: no-repeat; min-height: 280px;" role="img" aria-label="SQL Server modernization project preview"></div>
+                <div style="overflow: hidden;">
+                    <p style="font-size: 2.5rem; color: #c5d8c8; margin: 0 0 1.5rem 0; line-height: 1;">02</p>
+                    <p style="font-size: 0.85rem; color: #9a9a9a; margin-bottom: 1.5rem;">Amazon Web Services - 2025</p>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; line-height: 1.1; transition: color 0.3s ease;">Agentic Database Transformation</h3>
+                    <p style="font-size: 1rem; color: #6a6a6a; margin-bottom: 1.5rem; line-height: 1.5;">Designed the agentic workflow that reduces SQL Server database modernization from months to weeks.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
                         <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Cloud Migration & Modernization</span>
                         <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Agentic AI</span>
@@ -113,16 +152,13 @@
             </div>
             </div>
             
-            <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 3rem 0;">
-            
-            <div class="project" id="project-code-assessment" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; cursor: pointer; max-height: 500px;" onclick="window.location.href='code-assessment.html';" onmouseover="this.querySelector('h3').style.color='#d4a373'; this.querySelector('a').style.color='#d4a373';" onmouseout="this.querySelector('h3').style.color='#2d2d2d'; this.querySelector('a').style.color='#2d2d2d';">
-                    <div style="border-radius: 12px; overflow: hidden; background-image: url('assess-cover-1.png'); background-size: cover; background-position: center; min-width: 600px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" ></div>
-                    <div>
-                    <p style="font-size: 3rem; color: #d0d0d0; margin: 0 0 2rem 0; line-height: 1;">02</p>
-                    <p style="font-size: 0.9rem; color: #9a9a9a; margin-bottom: 2rem;">Amazon Web Services - 2025</p>
-                    <h3 style="font-size: 2.25rem; letter-spacing: -1.68px; margin-bottom: 2rem; line-height: 1.05;">Code Assessment</h3>
-                    <p style="font-size: 1.1rem; color: #6a6a6a; max-width: 600px; margin-bottom: 2rem; line-height: 1.4;">AI-powered workflow for analyzing and assessing .NET applications to identify modernization opportunities and risks.</p>
+            <div class="project" id="project-code-assessment" style="z-index: 3; margin-top: 2rem; top: 180px;">
+                <div class="project-card-grid" style="display: grid; grid-template-columns: 40% 55%; gap: 5%; align-items: stretch; cursor: pointer; overflow: hidden; border: none; border-radius: 24px; padding: 2rem; background: linear-gradient(135deg, #f0f4f8 0%, #e3ebf3 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onclick="window.location.href='code-assessment.html';" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.href='code-assessment.html';}" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.12)'; this.querySelector('h3').style.color='#5a7a9e';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'; this.querySelector('h3').style.color='#2d2d2d';" tabindex="0" role="link" aria-label="View Code Assessment project">
+                    <div style="overflow: hidden;">
+                    <p style="font-size: 2.5rem; color: #c5d3e0; margin: 0 0 1.5rem 0; line-height: 1;">03</p>
+                    <p style="font-size: 0.85rem; color: #9a9a9a; margin-bottom: 1.5rem;">Amazon Web Services - 2025</p>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; line-height: 1.1; transition: color 0.3s ease;">Code Assessment</h3>
+                    <p style="font-size: 1rem; color: #6a6a6a; margin-bottom: 1.5rem; line-height: 1.5;">AI-powered workflow for analyzing and assessing .NET applications to identify modernization opportunities and risks.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
                         <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Code Analysis</span>
                         <span style="padding: 0.25rem 0.6rem; border: 1px solid #b0b0b0; border-radius: 20px; font-size: 0.75rem; color: #6a6a6a; background: transparent;">Agentic AI</span>
@@ -131,56 +167,137 @@
                     </div>
                     <a href="code-assessment.html" style="text-decoration: none; color: #2d2d2d; font-size: 1rem; transition: color 0.3s ease;" onclick="event.stopPropagation();"></a>
                     </div>
+                    <div class="project-card-image" style="border-radius: 12px; overflow: hidden; background-color: #fff; background-image: url('assess-cover-1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 280px;" role="img" aria-label="Code Assessment project preview"></div>
                 </div>
             </div>
-            
-            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
-                <h3 style="font-size: 1.1rem; color: #2d2d2d; margin-bottom: 1.5rem; font-weight: 600;">Other projects</h3>
-                <div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
-                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Migration Hub Automation</p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2024</p>
+        </section>
+        
+        <section style="padding: 4rem 2rem; background-color: #f5f3f0; position: relative; z-index: 10;">
+            <div style="max-width: calc(1000px + 4rem); margin-left: auto; margin-right: auto; width: 100%;">
+                <h3 style="font-size: 1.1rem; color: #2d2d2d; margin-bottom: 0.5rem; font-weight: 600;">Other projects</h3>
+                <p style="font-size: 0.85rem; color: #9a9a9a; margin-bottom: 1.5rem;">Case studies available upon request</p>
+                <style>
+                    .flip-card { perspective: 1000px; cursor: pointer; }
+                    .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+                    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+                    .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 12px; overflow: hidden; }
+                    .flip-card-back { transform: rotateY(180deg); background: #2d2d2d; display: flex; flex-direction: column; justify-content: center; padding: 1.5rem; box-sizing: border-box; }
+                    .flip-card-back p { color: #fff; margin: 0; font-size: 0.85rem; line-height: 1.6; }
+                    .flip-card-back .back-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.75rem; color: #d4a373; }
+                    .flip-card:hover .flip-card-inner { box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+                </style>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <div class="flip-card" style="aspect-ratio: 1/1;" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: #e8e6e3;">
+                                <div style="height: 75%; background: url('mhautomation.png') center/70% no-repeat, linear-gradient(135deg, #d4a373 0%, #e8c9a8 100%); border-radius: 0 0 12px 12px;"></div>
+                                <div style="padding: 1rem;">
+                                    <p style="margin: 0; font-size: 0.9rem; color: #2d2d2d; font-weight: 500;">Migration Hub Automation</p>
+                                    <p style="margin: 0.25rem 0 0 0; font-size: 0.75rem; color: #9a9a9a;">2024</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="back-title">Migration Hub Automation</p>
+                                <p>Designed automation workflow for migration execution to streamline repetitive, multi-step tasks.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
-                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Robo Consulting</p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2024</p>
+                    <div class="flip-card" style="aspect-ratio: 1/1;" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: #e8e6e3;">
+                                <div style="height: 75%; background: url('robo.png') center/70% no-repeat, linear-gradient(135deg, #7a9e8e 0%, #a8c4b8 100%); border-radius: 0 0 12px 12px;"></div>
+                                <div style="padding: 1rem;">
+                                    <p style="margin: 0; font-size: 0.9rem; color: #2d2d2d; font-weight: 500;">Robo Consulting</p>
+                                    <p style="margin: 0.25rem 0 0 0; font-size: 0.75rem; color: #9a9a9a;">2024</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="back-title">Robo Consulting</p>
+                                <p>Collaborated with AWS consultants to create the vision design for migration AI agents to pitch to org leadership.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
-                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Migration Expert Help</p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2023</p>
+                    <div class="flip-card" style="aspect-ratio: 1/1;" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: #e8e6e3;">
+                                <div style="height: 75%; background-color: #a8c4ab; background-image: url('citizens.png'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+                                <div style="padding: 1rem;">
+                                    <p style="margin: 0; font-size: 0.9rem; color: #2d2d2d; font-weight: 500;">Citizens Bank Mobile App</p>
+                                    <p style="margin: 0.25rem 0 0 0; font-size: 0.75rem; color: #9a9a9a;">2021</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="back-title">Citizens Bank Mobile App</p>
+                                <p>Launched and improved payment experience in the mobile app that will replace the need for a third party vendor website.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
-                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Citizens Bank Mobile App</p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2021</p>
+                    <div class="flip-card" style="aspect-ratio: 1/1;" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: #e8e6e3;">
+                                <div style="height: 75%; background-color: #8aa4be; background-image: url('mercedes.png'); background-size: 70%; background-position: center; background-repeat: no-repeat;"></div>
+                                <div style="padding: 1rem;">
+                                    <p style="margin: 0; font-size: 0.9rem; color: #2d2d2d; font-weight: 500;">Mercedes Vehicle Allocation Dashboard</p>
+                                    <p style="margin: 0.25rem 0 0 0; font-size: 0.75rem; color: #9a9a9a;">2020</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="back-title">Mercedes Vehicle Allocation Dashboard</p>
+                                <p>Redesign allocation dashboard for VISTA, a 25 year old legacy tool that helps allocation specialists distributing cars to dealerships timely and accurately.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #e0e0e0;">
-                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Mercedes Vehicle Allocation Platform</p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2020</p>
+                    <div class="flip-card" style="aspect-ratio: 1/1;" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: #e8e6e3;">
+                                <div style="height: 75%; background-color: #c4a8b8; background-image: url('vps.png'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+                                <div style="padding: 1rem;">
+                                    <p style="margin: 0; font-size: 0.9rem; color: #2d2d2d; font-weight: 500;">Verizon Voice Product Ordering</p>
+                                    <p style="margin: 0.25rem 0 0 0; font-size: 0.75rem; color: #9a9a9a;">2019</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="back-title">Verizon Voice Product Ordering</p>
+                                <p>Integrated bulk ordering and validation step to simplify voice product ordering.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0;">
-                        <p style="margin: 0; font-size: 0.95rem; color: #6a6a6a; font-weight: 500;">Wholesale Platform</p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #9a9a9a;">2019</p>
+                    <div class="flip-card" style="aspect-ratio: 1/1;" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: #e8e6e3;">
+                                <div style="height: 75%; background: url('designsystem.png') center/cover no-repeat, #f5f5f5;"></div>
+                                <div style="padding: 1rem;">
+                                    <p style="margin: 0; font-size: 0.9rem; color: #2d2d2d; font-weight: 500;">VPS Design System</p>
+                                    <p style="margin: 0.25rem 0 0 0; font-size: 0.75rem; color: #9a9a9a;">2020</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="back-title">VPS Design System</p>
+                                <p>Co-Designed and managed a coherent UI kit to support development and future releases for a team of 7 designers. Set up the symbol library with instructions, examples, and guidelines.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #b0b0b0;">Case studies for these projects are available upon request</p>
             </div>
         </section>
     </main>
     
     <footer>
-        <div class="footer-left">
-            <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-            </nav>
-            <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
-        </div>
-        
-        <div class="footer-right">
-            <h3>Let's connect</h3>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
-                <a href="mailto:rchen02@risd.edu">Email me</a>
+        <div style="max-width: 1000px; width: 100%; display: flex; justify-content: space-between; margin: 0 auto;">
+            <div class="footer-left">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
+            </div>
+            
+            <div class="footer-right">
+                <h3>Let's connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                    <a href="mailto:rchen02@risd.edu">Email me</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -233,19 +350,28 @@
         }, 1500);
         
         // Scroll animation for Selected Works section
-        const projectCodeAssessment = document.getElementById('project-code-assessment');
+        const projects = [
+            document.getElementById('project-expert-help'),
+            document.getElementById('project-sql-server'),
+            document.getElementById('project-code-assessment')
+        ];
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
+        function checkScroll() {
+            projects.forEach((project, index) => {
+                if (!project) return;
+                const boxTop = project.getBoundingClientRect().top;
+                
+                // First project appears when top enters viewport, others appear when more centered
+                const triggerPoint = index === 0 ? window.innerHeight : window.innerHeight * 0.85;
+                
+                if (boxTop < triggerPoint) {
+                    project.classList.add('show');
                 }
             });
-        }, { threshold: 0.2 });
+        }
         
-        observer.observe(projectCodeAssessment);
+        // Check only on scroll
+        window.addEventListener('scroll', checkScroll);
     </script>
 </body>
 </html>

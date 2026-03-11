@@ -32,6 +32,26 @@
                 order: -1;
             }
         }
+        
+        @keyframes slideOutName {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+                max-width: 0;
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+                max-width: 200px;
+            }
+        }
+        .name-slide {
+            animation: slideOutName 0.6s ease-out 0.3s forwards;
+            opacity: 0;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
     </style>
     <script defer src="/_vercel/insights/script.js"></script>
     <!-- Google tag (gtag.js) -->
@@ -45,9 +65,12 @@
 </head>
 <body>
     <!-- Top Navigation -->
-    <nav style="position: relative; padding: 2rem; z-index: 100; background: #ffffff;">
+    <nav style="position: relative; padding: 2rem; z-index: 100; background: #fefcf9;">
         <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Ruobing Chen</a>
+            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">
+                <span style="width: 28px; height: 28px; background: #2d2d2d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fefcf9; letter-spacing: 0.5px; flex-shrink: 0;">RC</span>
+                <span class="name-slide">Ruobing Chen</span>
+            </a>
             <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
         </div>
         <button class="hamburger" aria-label="Toggle menu" style="position: absolute; right: 2rem; top: 2rem;">
@@ -89,28 +112,28 @@
             <!-- Skills & Expertise Section -->
             <div style="margin-bottom: 4rem;">
                 <h2 style="margin-bottom: 2rem; font-size: 2rem;">Skills & Expertise</h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                <div class="skill-tags" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
                     <!-- Strategy -->
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Strategic Design</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Roadmapping</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Vision Design</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Storyboarding</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #e8f4f8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #c5e3ed;">Workshop</span>
+                    <span class="skill-tag skill-tag--strategy">Strategic Design</span>
+                    <span class="skill-tag skill-tag--strategy">Roadmapping</span>
+                    <span class="skill-tag skill-tag--strategy">Vision Design</span>
+                    <span class="skill-tag skill-tag--strategy">Storyboarding</span>
+                    <span class="skill-tag skill-tag--strategy">Workshop</span>
                     <!-- Research -->
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">User Research</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">Usability Testing</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">Metrics & Analytics</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">User Persona</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f5f0e8; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #e8ddc5;">Journey Mapping</span>
+                    <span class="skill-tag skill-tag--research">User Research</span>
+                    <span class="skill-tag skill-tag--research">Usability Testing</span>
+                    <span class="skill-tag skill-tag--research">Metrics & Analytics</span>
+                    <span class="skill-tag skill-tag--research">User Persona</span>
+                    <span class="skill-tag skill-tag--research">Journey Mapping</span>
                     <!-- Interaction -->
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Interaction Design</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Information Architecture</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Data Visualization</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Prototyping</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Visual Design</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Design System</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">Accessibility</span>
-                    <span style="display: inline-block; padding: 0.35rem 0.75rem; background-color: #f0e8f4; border-radius: 20px; font-size: 0.85rem; color: #2d2d2d; border: 1px solid #ddc5e8;">iOS/Android</span>
+                    <span class="skill-tag skill-tag--interaction">Interaction Design</span>
+                    <span class="skill-tag skill-tag--interaction">Information Architecture</span>
+                    <span class="skill-tag skill-tag--interaction">Data Visualization</span>
+                    <span class="skill-tag skill-tag--interaction">Prototyping</span>
+                    <span class="skill-tag skill-tag--interaction">Visual Design</span>
+                    <span class="skill-tag skill-tag--interaction">Design System</span>
+                    <span class="skill-tag skill-tag--interaction">Accessibility</span>
+                    <span class="skill-tag skill-tag--interaction">iOS/Android</span>
                 </div>
                 <div style="margin-top: 1.5rem; display: flex; gap: 2rem; flex-wrap: wrap;">
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -151,19 +174,21 @@
     </main>
     
     <footer>
-        <div class="footer-left">
-            <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-            </nav>
-            <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
-        </div>
-        
-        <div class="footer-right">
-            <h3>Let's connect</h3>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
-                <a href="mailto:rchen02@risd.edu">Email me</a>
+        <div style="max-width: 1000px; width: 100%; display: flex; justify-content: space-between; margin: 0 auto;">
+            <div class="footer-left">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
+            </div>
+            
+            <div class="footer-right">
+                <h3>Let's connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                    <a href="mailto:rchen02@risd.edu">Email me</a>
+                </div>
             </div>
         </div>
     </footer>

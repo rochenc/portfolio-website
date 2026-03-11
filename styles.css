@@ -1,3 +1,37 @@
+/* Design System Tokens */
+:root {
+    /* Colors */
+    --color-accent: #d4a373;
+    --color-text-dark: #2d2d2d;
+    --color-text-medium: #3a3a3a;
+    --color-text-light: #6a6a6a;
+    --color-text-lighter: #9a9a9a;
+    --color-background: #fefcf9;
+    --color-background-alt: #f5f3f0;
+    --color-border-subtle: rgba(61, 61, 61, 0.08);
+    --color-overlay-dark: rgba(0, 0, 0, 0.8);
+    
+    /* Typography */
+    --font-headline: 'Rethink Sans', sans-serif;
+    --font-body: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 25px;
+    
+    /* Container */
+    --container-max-width: 1000px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +40,10 @@
 }
 
 body {
-    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-body);
     line-height: 1.8;
-    color: #3a3a3a;
-    background: #ffffff;
+    color: var(--color-text-medium);
+    background: var(--color-background);
 }
 
 /* Hamburger Menu Styles */
@@ -17,7 +51,7 @@ body {
     display: none;
     flex-direction: column;
     gap: 5px;
-    background: #ffffff;
+    background: var(--color-background);
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -57,7 +91,7 @@ body {
     position: fixed;
     top: 80px;
     right: 3rem;
-    background: #ffffff;
+    background: var(--color-background);
     box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     z-index: 999;
@@ -94,7 +128,7 @@ body {
     bottom: 2rem;
     right: 3rem;
     z-index: 1000;
-    background: #ffffff;
+    background: var(--color-background);
     border: none;
     padding: 12px;
     cursor: pointer;
@@ -189,7 +223,7 @@ h4 {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #ffffff;
+    background: var(--color-background);
     z-index: 1000;
     border-bottom: 1px solid rgba(61, 61, 61, 0.08);
 }
@@ -216,19 +250,22 @@ h4 {
 .hero {
     padding: 2rem 2rem 2rem;
     text-align: left;
-    background: #ffffff;
+    background: var(--color-background);
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: calc(100vh - 80px);
+    min-height: 70vh;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 0;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: normal;
     max-width: 1000px;
     width: 100%;
     text-align: left;
@@ -296,7 +333,7 @@ h4 {
 #selected-work h2 {
     font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: normal;
     margin-bottom: 2rem;
 }
 
@@ -304,21 +341,82 @@ h4 {
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 6rem;
-    max-width: calc(1000px + 4rem);
-    margin: 0 auto;
+    gap: 0;
+    width: 100%;
+    background-color: #f5f3f0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.02);
+    border-radius: 24px 24px 0 0;
 }
 
 .project {
     display: flex;
     flex-direction: column;
     opacity: 0;
-    transform: translateY(30px);
-    animation: slideUp 0.5s ease forwards;
+    transform: translateY(60px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     scroll-margin-top: 120px;
+    position: sticky;
+    top: 100px;
+    max-width: calc(1000px + 4rem);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
+.project-card-grid {
+    min-height: 380px;
+}
 
+.project.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project Card Grid - Responsive */
+.project-card-grid {
+    outline: none;
+}
+
+.project-card-grid:focus {
+    outline: 2px solid #d4a373;
+    outline-offset: 4px;
+    border-radius: 12px;
+}
+
+.project-card-image {
+    min-height: 250px;
+}
+
+/* Tablet: stack vertically */
+@media (max-width: 900px) {
+    .project-card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .project-card-image {
+        aspect-ratio: 16/9 !important;
+        min-height: 200px;
+    }
+}
+
+/* Mobile: tighter spacing */
+@media (max-width: 640px) {
+    .project-card-grid {
+        gap: 1.5rem !important;
+    }
+    
+    .project-card-grid h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .project-card-grid p[style*="font-size: 3rem"] {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
 
 .project-image {
     width: 100%;
@@ -476,7 +574,7 @@ h4 {
     color: #999;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: normal;
 }
 
 .project-meta p {
@@ -560,7 +658,7 @@ h4 {
     color: #6a6a6a;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: normal;
 }
 
 .nav-title {
@@ -591,27 +689,24 @@ h4 {
 }
 
 footer {
-    margin-top: 6rem;
-    padding: 4rem 2rem;
+    margin-top: 0;
+    padding: 6rem 2rem 4rem;
     background: #1a1a1a;
     border-top: none;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 10;
 }
 
-footer > div:first-child,
-footer > div:last-child {
-    flex: 1;
+footer > div:first-child {
+    width: 100%;
 }
 
 footer {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-}
-
-footer > * {
-    max-width: 40%;
 }
 
 footer .footer-left {
@@ -673,6 +768,45 @@ footer .footer-right h3 {
     color: #d4a373;
 }
 
+/* Skill Tags - About Page */
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #2d2d2d;
+    min-height: 36px;
+    line-height: 1.4;
+}
+
+.skill-tag--strategy {
+    background-color: #e8f4f8;
+    border: 1px solid #c5e3ed;
+}
+
+.skill-tag--research {
+    background-color: #f5f0e8;
+    border: 1px solid #e8ddc5;
+}
+
+.skill-tag--interaction {
+    background-color: #f0e8f4;
+    border: 1px solid #ddc5e8;
+}
+
+/* Mobile: Increase touch targets to 44px minimum */
+@media (max-width: 768px) {
+    .skill-tags {
+        gap: 0.5rem !important;
+    }
+    
+    .skill-tag {
+        padding: 0.75rem 1rem;
+        min-height: 44px;
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
@@ -726,7 +860,7 @@ footer .footer-right h3 {
     color: #666;
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: normal;
 }
 
 .user-cards {

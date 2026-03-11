@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500&family=Montserrat+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="auth.js"></script>
     <style>
@@ -173,25 +173,30 @@
     </nav>
     
     <main>
-        <section class="project-detail" style="padding-top: 4rem;">
+        <section class="project-detail" style="padding-top: 1rem;">
             <!-- Header Section -->
-            <div style="padding: 3rem 0;">
-                <img src="code-assessment-assets/aws-logo.png" alt="AWS" style="height: 3rem; width: auto; margin-bottom: 2rem;">
+            <div style="padding: 1rem 0 2rem 0;">
                 <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Improving code assessment experience for .NET modernization</h1>
-                <p style="font-size: 1.15rem; color: #6a6a6a; line-height: 1.8;">Intelligent .NET repository assessment and transformation planning for modernizing legacy applications to cross-platform .NET</p>
+                <p style="font-size: 1.35rem; color: #6a6a6a; line-height: 1.8;">Intelligent .NET repository assessment and transformation planning for modernizing legacy applications to cross-platform .NET</p>
             </div>
         </section>
         
         <!-- Full Width Hero Image -->
         <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-            <div class="project-image-large" style="background-image: url('code-assessment-assets/code-assessment-hero.jpg');"></div>
+            <div class="project-image-large" style="background-image: url('assess-cover-1.png'); background-size: cover; background-position: center;"></div>
         </div>
         
         <section class="project-detail">
             <!-- Content Section -->
             <div style="padding: 3rem 0;">
+                <!-- Content -->
+                <div class="project-content">
+                    <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
+                    <p>I led the UX design for an AI-powered .NET code assessment capability with complexity, compatibility, and dependency analysis to help customers gain deep insight about their resources so they can gain confidence in their modernization planning.</p>
+                </div>
+                
                 <!-- Project Meta -->
-                <div class="project-meta">
+                <div class="project-meta" style="margin-top: 2rem;">
                     <div>
                         <h3>Timeline</h3>
                         <p>Jun 2025 → Jul 2025</p>
@@ -205,11 +210,6 @@
                         <p>New repository assessment and reporting workflow in .NET modernization</p>
                     </div>
                 </div>
-                
-                <!-- Content -->
-                <div class="project-content">
-                    <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
-                    <p>I led the UX design for an AI-powered .NET code assessment capability with complexity, compatibility, and dependency analysis to help customers gain deep insight about their resources so they can gain confidence in their modernization planning.</p>
                     
                     <h2 id="impact" style="margin-top: 3rem; margin-bottom: 1.5rem;">Impact</h2>
                     <p>By enabling developers to do parallel assessment of 100+ repositories and providing actionable insights, the code assessment capability has increased developer satisfaction and reduced modernization planning time from weeks to days.</p>
@@ -376,15 +376,26 @@
             </div>
             
             <!-- Project Navigation -->
-            <div class="project-navigation">
-                <a href="sql-server.html" class="project-nav-link prev">
-                    <span class="nav-label">Previous Project</span>
-                    <span class="nav-title">SQL Server Database Modernization</span>
-                </a>
-                <a href="robo-consulting.html" class="project-nav-link next">
-                    <span class="nav-label">Next Project</span>
-                    <span class="nav-title">Robo Consulting Concept</span>
-                </a>
+            <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem 2rem;">
+                <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(61, 61, 61, 0.1);">
+                    <p style="font-size: 0.85rem; color: #6a6a6a; text-transform: uppercase; margin-bottom: 1.5rem;">Other Projects</p>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                        <a href="expert-help.html" style="text-decoration: none; display: block; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <div style="aspect-ratio: 16/9; background-image: url('prohelp-cover2.png'); background-size: cover; background-position: center;"></div>
+                            <div style="padding: 1rem; background: #f5f3f0;">
+                                <p style="margin: 0; font-size: 1rem; font-weight: 500; color: #2d2d2d;">AWS ProHelp</p>
+                                <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #6a6a6a;">Expert Services</p>
+                            </div>
+                        </a>
+                        <a href="sql-server.html" style="text-decoration: none; display: block; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <div style="aspect-ratio: 16/9; background-image: url('dependency.png'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #f0f5f1;"></div>
+                            <div style="padding: 1rem; background: #f5f3f0;">
+                                <p style="margin: 0; font-size: 1rem; font-weight: 500; color: #2d2d2d;">Agentic Database Transformation</p>
+                                <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #6a6a6a;">Cloud Migration</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -419,19 +430,21 @@
     </script>
     
     <footer>
-        <div class="footer-left">
-            <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-            </nav>
-            <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
-        </div>
-        
-        <div class="footer-right">
-            <h3>Let's connect</h3>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
-                <a href="mailto:rchen02@risd.edu">Email me</a>
+        <div style="max-width: 1000px; width: 100%; display: flex; justify-content: space-between; margin: 0 auto;">
+            <div class="footer-left">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
+            </div>
+            
+            <div class="footer-right">
+                <h3>Let's connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                    <a href="mailto:rchen02@risd.edu">Email me</a>
+                </div>
             </div>
         </div>
     </footer>
