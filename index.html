@@ -40,6 +40,9 @@
             white-space: nowrap;
         }
     </style>
+    <!-- LogRocket Session Recording -->
+    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('uudz1c/portfolio');</script>
 </head>
 <body>
     <!-- Top Navigation -->
@@ -49,7 +52,11 @@
                 <span style="width: 28px; height: 28px; background: #2d2d2d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fefcf9; letter-spacing: 0.5px; flex-shrink: 0;">RC</span>
                 <span class="name-slide">Ruobing Chen</span>
             </a>
-            <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#selected-works" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Work</a>
+                <a href="other-works.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Others</a>
+                <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+            </div>
         </div>
         <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
             <span></span>
@@ -61,6 +68,8 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
+        <a href="#selected-works">Work</a>
+        <a href="other-works.html">Others</a>
         <a href="about.html">About</a>
     </div>
     
@@ -133,7 +142,7 @@
             </div>
             </div>
             
-            <div class="project" id="project-sql-server" style="z-index: 2; margin-top: 2rem; top: 140px;">
+            <div class="project" id="project-sql-server" style="z-index: 2; margin-top: 6rem; top: 140px;">
             <div class="project-card-grid" style="display: grid; grid-template-columns: 55% 40%; gap: 5%; align-items: stretch; cursor: pointer; overflow: hidden; border: none; border-radius: 24px; padding: 2rem; background: linear-gradient(135deg, #f0f5f1 0%, #e5efe7 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onclick="window.location.href='sql-server.html';" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.href='sql-server.html';}" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.12)'; this.querySelector('h3').style.color='#5a8a5e';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'; this.querySelector('h3').style.color='#2d2d2d';" tabindex="0" role="link" aria-label="View Agentic Database Transformation project">
                 <div class="project-card-image" style="border-radius: 12px; overflow: hidden; background-image: url('dependency.png'); background-size: contain; background-position: center; background-repeat: no-repeat; min-height: 280px;" role="img" aria-label="SQL Server modernization project preview"></div>
                 <div style="overflow: hidden;">
@@ -152,7 +161,7 @@
             </div>
             </div>
             
-            <div class="project" id="project-code-assessment" style="z-index: 3; margin-top: 2rem; top: 180px;">
+            <div class="project" id="project-code-assessment" style="z-index: 3; margin-top: 6rem; top: 180px;">
                 <div class="project-card-grid" style="display: grid; grid-template-columns: 40% 55%; gap: 5%; align-items: stretch; cursor: pointer; overflow: hidden; border: none; border-radius: 24px; padding: 2rem; background: linear-gradient(135deg, #f0f4f8 0%, #e3ebf3 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onclick="window.location.href='code-assessment.html';" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.href='code-assessment.html';}" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.12)'; this.querySelector('h3').style.color='#5a7a9e';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'; this.querySelector('h3').style.color='#2d2d2d';" tabindex="0" role="link" aria-label="View Code Assessment project">
                     <div style="overflow: hidden;">
                     <p style="font-size: 2.5rem; color: #c5d3e0; margin: 0 0 1.5rem 0; line-height: 1;">03</p>
@@ -287,6 +296,7 @@
             <div class="footer-left">
                 <nav class="footer-nav">
                     <a href="index.html">Home</a>
+                    <a href="other-works.html">Others</a>
                     <a href="about.html">About</a>
                 </nav>
                 <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>

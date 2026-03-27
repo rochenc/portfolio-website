@@ -366,7 +366,7 @@ h4 {
 }
 
 .project-card-grid {
-    min-height: 380px;
+    min-height: 450px;
 }
 
 .project.show {
@@ -390,7 +390,7 @@ h4 {
 }
 
 /* Tablet: stack vertically */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .project-card-grid {
         grid-template-columns: 1fr !important;
         gap: 2rem !important;

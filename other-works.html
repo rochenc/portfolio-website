@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Others - Ruobing Chen</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js"></script>
+    <style>
+        @keyframes slideOutName {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+                max-width: 0;
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+                max-width: 200px;
+            }
+        }
+        .name-slide {
+            animation: slideOutName 0.6s ease-out 0.3s forwards;
+            opacity: 0;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        /* Page header */
+        .page-header {
+            padding: 4rem 2rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d2d2d;
+            margin-bottom: 0.75rem;
+        }
+        
+        .page-header p {
+            font-size: 1.15rem;
+            color: #6a6a6a;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+        
+        /* Gallery grid - Masonry style */
+        .gallery-section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .masonry-grid {
+            columns: 3;
+            column-gap: 1.25rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            break-inside: avoid;
+            margin-bottom: 1.25rem;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f5f3f0;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item-overlay h3 {
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .gallery-item-overlay p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.75rem;
+            margin: 0;
+        }
+        
+        /* Placeholder items */
+        .gallery-item.placeholder {
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e6e3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+        
+        .gallery-item.placeholder.tall {
+            min-height: 320px;
+        }
+        
+        .gallery-item.placeholder.short {
+            min-height: 160px;
+        }
+        
+        .placeholder-content {
+            text-align: center;
+            color: #b0b0b0;
+        }
+        
+        .placeholder-content svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+            opacity: 0.4;
+        }
+        
+        .placeholder-content p {
+            font-size: 0.8rem;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+            padding: 2rem;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .lightbox-close svg {
+            width: 24px;
+            height: 24px;
+            stroke: #fff;
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            text-align: center;
+        }
+        
+        .lightbox-caption h3 {
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .lightbox-caption p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 3rem 1.5rem 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-section {
+                padding: 1.5rem;
+            }
+            
+            .masonry-grid {
+                columns: 2;
+                column-gap: 1rem;
+            }
+            
+            .gallery-item {
+                margin-bottom: 1rem;
+                border-radius: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .masonry-grid {
+                columns: 1;
+            }
+        }
+    </style>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NSN8WLF1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-39NSN8WLF1');
+    </script>
+    <!-- LogRocket Session Recording -->
+    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('uudz1c/portfolio');</script>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav style="position: relative; padding: 2rem; z-index: 100; background: #fefcf9;">
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">
+                <span style="width: 28px; height: 28px; background: #2d2d2d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fefcf9; letter-spacing: 0.5px; flex-shrink: 0;">RC</span>
+                <span class="name-slide">Ruobing Chen</span>
+            </a>
+            <div style="display: flex; gap: 2rem;">
+                <a href="index.html#selected-works" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Work</a>
+                <a href="other-works.html" class="nav-link" style="text-decoration: none; color: #d4a373; font-weight: 500; font-size: 1rem;">Others</a>
+                <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Others</h1>
+            <p>A collection of personal projects, creative experiments, and things I make outside of work—furniture, collages, photography, and random explorations.</p>
+        </div>
+        
+        <!-- Gallery Section - Masonry Grid -->
+        <section class="gallery-section">
+            <div class="masonry-grid">
+                <!-- Furniture -->
+                <div class="gallery-item" data-title="Cabinet" data-category="furniture">
+                    <img src="other%20works/5f283ae955f24ac0c05790f3_5f10b8ad37ec9e69999f9cb0_cover_cabinet%25201-p-500.png" alt="Cabinet design">
+                    <div class="gallery-item-overlay">
+                        <h3>Cabinet</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Experiment" data-category="experiments">
+                    <img src="other%20works/37e66434445435.56d09c847d493.webp" alt="Experiment">
+                    <div class="gallery-item-overlay">
+                        <h3>Experiment</h3>
+                        <p>Experiments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Tree" data-category="furniture">
+                    <img src="other%20works/5f283ae6233b55d40129f1b0_5f10b282b4020074af9d49c0_cover_tree-p-500.png" alt="Tree furniture">
+                    <div class="gallery-item-overlay">
+                        <h3>Tree</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Experiment" data-category="experiments">
+                    <img src="other%20works/a5587b34445435.56d09c847ca11.webp" alt="Experiment">
+                    <div class="gallery-item-overlay">
+                        <h3>Experiment</h3>
+                        <p>Experiments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Collage" data-category="collage">
+                    <img src="other%20works/2f866816840869.562b1f909b637.jpg" alt="Collage">
+                    <div class="gallery-item-overlay">
+                        <h3>Collage</h3>
+                        <p>Collage</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Experiment" data-category="experiments">
+                    <img src="other%20works/75e1f334793003.56de813d5d6cb.webp" alt="Experiment">
+                    <div class="gallery-item-overlay">
+                        <h3>Experiment</h3>
+                        <p>Experiments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Split" data-category="furniture">
+                    <img src="other%20works/5f283ae7d635bca923b50930_5f10b797509b8b39fc5f1ecc_cover_split-p-500.png" alt="Split furniture">
+                    <div class="gallery-item-overlay">
+                        <h3>Split</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Experiment" data-category="experiments">
+                    <img src="other%20works/91ba0034793003.56de128b5870d.webp" alt="Experiment">
+                    <div class="gallery-item-overlay">
+                        <h3>Experiment</h3>
+                        <p>Experiments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Flow" data-category="furniture">
+                    <img src="other%20works/5f283ae888e775f636b94d23_5f10b297b40200e8529d4a78_cover_flow-p-500.png" alt="Flow furniture">
+                    <div class="gallery-item-overlay">
+                        <h3>Flow</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Experiment" data-category="experiments">
+                    <img src="other%20works/9901ac34793003.56de128b597af.webp" alt="Experiment">
+                    <div class="gallery-item-overlay">
+                        <h3>Experiment</h3>
+                        <p>Experiments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Collage" data-category="collage">
+                    <img src="other%20works/47062516840869.562b20158aabe.jpg" alt="Collage">
+                    <div class="gallery-item-overlay">
+                        <h3>Collage</h3>
+                        <p>Collage</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Experiment" data-category="experiments">
+                    <img src="other%20works/b5403632920333.56988392c4749.webp" alt="Experiment">
+                    <div class="gallery-item-overlay">
+                        <h3>Experiment</h3>
+                        <p>Experiments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Pillow" data-category="furniture">
+                    <img src="other%20works/5f283ae8c5eab70486f1ce59_5f10b28daa01d06c646b3af4_cover_pillow-p-500.png" alt="Pillow furniture">
+                    <div class="gallery-item-overlay">
+                        <h3>Pillow</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Watermelon" data-category="furniture">
+                    <img src="other%20works/5f283ae90107d17d5b5de719_5f10b2a68cd37c2e05793b76_cover_watermelon-p-500.png" alt="Watermelon furniture">
+                    <div class="gallery-item-overlay">
+                        <h3>Watermelon</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Roundabout" data-category="furniture">
+                    <img src="other%20works/5f283b057bf8af4ad7532a46_cover_roundabout-p-500.png" alt="Roundabout furniture">
+                    <div class="gallery-item-overlay">
+                        <h3>Roundabout</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Collage" data-category="collage">
+                    <img src="other%20works/5692cb16840869.562b1f90a4a89.jpg" alt="Collage">
+                    <div class="gallery-item-overlay">
+                        <h3>Collage</h3>
+                        <p>Collage</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Cabinet 2" data-category="furniture">
+                    <img src="other%20works/5f283ae594a3033f88c32d7a_5f10b917eca03116009082c6_cover_cabinet%25202-p-500.png" alt="Cabinet 2">
+                    <div class="gallery-item-overlay">
+                        <h3>Cabinet 2</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Collage" data-category="collage">
+                    <img src="other%20works/68940716840869.562b2015c6349.jpg" alt="Collage">
+                    <div class="gallery-item-overlay">
+                        <h3>Collage</h3>
+                        <p>Collage</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Photography" data-category="photography">
+                    <img src="other%20works/74603d32873775.5696ced27a46e.webp" alt="Photography">
+                    <div class="gallery-item-overlay">
+                        <h3>Photography</h3>
+                        <p>Photography</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Photography" data-category="photography">
+                    <img src="other%20works/afaeb632873775.5696ced270a40.webp" alt="Photography">
+                    <div class="gallery-item-overlay">
+                        <h3>Photography</h3>
+                        <p>Photography</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Photography" data-category="photography">
+                    <img src="other%20works/79fe4c32873775.5696d41d6e7c4.webp" alt="Photography">
+                    <div class="gallery-item-overlay">
+                        <h3>Photography</h3>
+                        <p>Photography</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Figure Collage" data-category="collage">
+                    <img src="other%20works/figure%20college.jpg" alt="Figure Collage">
+                    <div class="gallery-item-overlay">
+                        <h3>Figure Collage</h3>
+                        <p>Collage</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Photography" data-category="photography">
+                    <img src="other%20works/25951832873775.5696ced27b547.webp" alt="Photography">
+                    <div class="gallery-item-overlay">
+                        <h3>Photography</h3>
+                        <p>Photography</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Photography" data-category="photography">
+                    <img src="other%20works/79ff3b32873775.5696d41d6c489.webp" alt="Photography">
+                    <div class="gallery-item-overlay">
+                        <h3>Photography</h3>
+                        <p>Photography</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Chair" data-category="furniture">
+                    <img src="other%20works/chair.webp" alt="Chair">
+                    <div class="gallery-item-overlay">
+                        <h3>Chair</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Chair 2" data-category="furniture">
+                    <img src="other%20works/chair2.webp" alt="Chair 2">
+                    <div class="gallery-item-overlay">
+                        <h3>Chair 2</h3>
+                        <p>Furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-title="Sammo" data-category="collage">
+                    <img src="other%20works/Sammo.jpg" alt="Sammo">
+                    <div class="gallery-item-overlay">
+                        <h3>Sammo</h3>
+                        <p>Collage</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <img src="" alt="" id="lightbox-img">
+        <div class="lightbox-caption">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-description"></p>
+        </div>
+    </div>
+    
+    <footer>
+        <div style="max-width: 1000px; width: 100%; display: flex; justify-content: space-between; margin: 0 auto;">
+            <div class="footer-left">
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="other-works.html">Others</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
+            </div>
+            
+            <div class="footer-right">
+                <h3>Let's connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                    <a href="mailto:rchen02@risd.edu">Email me</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDescription = document.getElementById('lightbox-description');
+        
+        document.querySelectorAll('.gallery-item:not(.placeholder)').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                if (img) {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = item.dataset.title || '';
+                    lightboxTitle.textContent = item.dataset.title || '';
+                    lightboxDescription.textContent = item.dataset.category || '';
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
