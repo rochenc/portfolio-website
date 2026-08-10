@@ -1,0 +1,738 @@
+/* ============================================================
+   Picture — layout & visual system
+   Structure ported from the CocoBasic "Picture" Framer template;
+   content and imagery are Ruobing Chen's.
+   ============================================================ */
+
+:root {
+    --ink: #111111;
+    --muted: #898989;
+    --paper: #ffffff;
+    --radius: 6px;
+
+    --pad-l: 70px;
+    --pad-r: 66px;
+    --side-w: 296px;
+    --side-gap: 112px;
+
+    --col-gap: 80px;
+    --row-gap: 40px;
+    --col-offset: 40px;
+
+    --ratio-wide: 408 / 280;
+    --ratio-mid: 408 / 400;
+    --ratio-tall: 408 / 600;
+    --prose-w: 632px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Shell ---------- */
+
+.shell {
+    display: grid;
+    grid-template-columns: var(--side-w) 1fr;
+    column-gap: var(--side-gap);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: var(--pad-l);
+    padding-right: var(--pad-r);
+    align-items: start;
+}
+
+/* ---------- Sidebar ---------- */
+
+.side {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 70px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-logo {
+    display: block;
+    color: var(--ink);
+    margin-bottom: 31px;
+}
+
+.side-logo svg {
+    display: block;
+}
+
+.side-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22.4px;
+}
+
+.side-role {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.4px;
+    color: var(--muted);
+}
+
+.side-bio {
+    margin-top: 67px;
+    max-width: var(--side-w);
+}
+
+.side-nav {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9.6px;
+}
+
+.side-nav a {
+    line-height: 22.4px;
+    transition: color 0.3s ease;
+}
+
+.side-nav a:hover,
+.side-nav a[aria-current='page'] {
+    color: var(--muted);
+}
+
+.side-btn {
+    margin-top: 44px;
+    align-self: flex-start;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    transition: opacity 0.3s ease;
+}
+
+.side-btn:hover {
+    opacity: 0.8;
+}
+
+.side-foot {
+    margin-top: auto;
+    font-size: 12px;
+    line-height: 13.2px;
+    color: var(--muted);
+}
+
+.side-foot .side-links {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.side-foot a {
+    transition: color 0.3s ease;
+}
+
+.side-foot a:hover {
+    color: var(--ink);
+}
+
+/* ---------- Main ---------- */
+
+.main {
+    padding: 70px 0 140px;
+    min-width: 0;
+}
+
+/* ---------- Two-column image grid ---------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--col-gap);
+    align-items: start;
+}
+
+.grid-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--row-gap);
+    min-width: 0;
+}
+
+/* second column starts lower, as in the template */
+.grid-col:nth-child(2) {
+    margin-top: var(--col-offset);
+}
+
+/* ---------- Tile ---------- */
+
+.tile {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: #f0f0f0;
+    aspect-ratio: var(--ratio-wide);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tile.mid {
+    aspect-ratio: var(--ratio-mid);
+}
+
+.tile.tall {
+    aspect-ratio: var(--ratio-tall);
+}
+
+.tile.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* UI screenshots read better anchored to their top edge */
+.tile.ui img {
+    object-position: center top;
+}
+
+.tile-veil {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.42) 40%, rgba(0, 0, 0, 0.08) 75%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.tile-veil h2 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17.6px;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.tile-veil p {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15.4px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.tile:hover img {
+    transform: scale(1.09);
+}
+
+.tile:hover .tile-veil {
+    opacity: 1;
+}
+
+/* ---------- Prose / About ---------- */
+
+.prose {
+    max-width: var(--prose-w);
+}
+
+.prose-hero {
+    width: 100%;
+    aspect-ratio: 632 / 360;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: var(--radius);
+}
+
+.block {
+    margin-top: 64px;
+}
+
+.eyebrow {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    color: var(--muted);
+    margin-bottom: 32px;
+}
+
+.block h1,
+.block h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 41.6px;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+
+.block p {
+    margin-bottom: 22px;
+}
+
+.block p:last-child {
+    margin-bottom: 0;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    border: 1px solid rgba(17, 17, 17, 0.14);
+    border-radius: var(--radius);
+    padding: 7px 14px;
+    line-height: 15.4px;
+}
+
+.roles {
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.roles div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.roles em {
+    font-style: normal;
+    color: var(--muted);
+}
+
+.roles time {
+    color: var(--muted);
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Case study ---------- */
+
+.case {
+    max-width: var(--prose-w);
+}
+
+.case-cat {
+    font-size: 12px;
+    line-height: 13.2px;
+    color: var(--ink);
+    margin-bottom: 24px;
+}
+
+.case h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 41.6px;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+}
+
+.case-meta {
+    color: var(--muted);
+    margin: 32px 0 40px;
+}
+
+.case p {
+    margin-bottom: 22px;
+}
+
+.case p:last-child {
+    margin-bottom: 0;
+}
+
+/* The template's pull quote: larger, muted, indented from the column */
+.quote {
+    font-size: 18px;
+    line-height: 36px;
+    color: var(--muted);
+    padding-left: 24px;
+    margin: 48px 0;
+}
+
+.case-h {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17.6px;
+    margin: 56px 0 20px;
+}
+
+/* Figure with focal crop.
+   --ar  frame aspect ratio
+   --pos which part of the image to keep in frame
+   --z   how far to zoom into that point  */
+.shot {
+    margin: 40px 0;
+}
+
+.shot .frame {
+    aspect-ratio: var(--ar, 632 / 360);
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: #f0f0f0;
+}
+
+.shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--pos, center);
+    transform: scale(var(--z, 1));
+    transform-origin: var(--pos, center);
+}
+
+.shot.mono img {
+    filter: grayscale(1);
+}
+
+.shot figcaption {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--muted);
+}
+
+.shot.pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.shot.pair figcaption {
+    grid-column: 1 / -1;
+    margin-top: 0;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 48px 0;
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
+    padding-top: 24px;
+}
+
+.metrics b {
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: -0.01em;
+}
+
+.metrics span {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--muted);
+}
+
+.related {
+    margin-top: 96px;
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
+    padding-top: 24px;
+}
+
+.related > p {
+    font-size: 12px;
+    line-height: 13.2px;
+    margin-bottom: 24px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.related-grid a span {
+    display: block;
+    font-size: 12px;
+    line-height: 13.2px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.related-grid a h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17.6px;
+    transition: color 0.3s ease;
+}
+
+.related-grid a:hover h3 {
+    color: var(--muted);
+}
+
+/* ---------- Read gate ---------- */
+
+.gate-locked {
+    overflow: hidden;
+}
+
+.gate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    /* let a sliver of the article show through at the top, then fade to paper */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.92) 14%, var(--paper) 26%);
+    opacity: 0;
+    animation: gate-in 0.5s ease forwards;
+}
+
+@keyframes gate-in {
+    to { opacity: 1; }
+}
+
+.gate-card {
+    width: 100%;
+    max-width: 420px;
+    text-align: left;
+}
+
+.gate-card h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+}
+
+.gate-form {
+    display: flex;
+    gap: 8px;
+}
+
+.gate-form input {
+    flex: 1;
+    min-width: 0;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 15.4px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid rgba(17, 17, 17, 0.18);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    transition: border-color 0.2s ease;
+}
+
+.gate-form input::placeholder {
+    color: var(--ink-faint, #b8b8b8);
+}
+
+.gate-form input:focus {
+    outline: none;
+    border-color: var(--ink);
+}
+
+.gate-form button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    color: var(--paper);
+    background: var(--ink);
+    border: 0;
+    border-radius: var(--radius);
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+}
+
+.gate-form button:hover {
+    opacity: 0.8;
+}
+
+.gate-error {
+    margin: 14px 0 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #b4231f;
+    visibility: hidden;
+}
+
+.gate-error.show {
+    visibility: visible;
+}
+
+.gate-alt {
+    margin-top: 28px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--muted);
+}
+
+.gate-alt a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gate {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* ---------- Reveal ---------- */
+
+.rise {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rise.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1280px) {
+    :root {
+        --pad-l: 48px;
+        --pad-r: 48px;
+        --side-w: 260px;
+        --side-gap: 72px;
+        --col-gap: 48px;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Flatten the sidebar so its parts can be reordered around the content:
+       intro on top, copyright pushed to the true bottom of the page. */
+    .shell {
+        display: flex;
+        flex-direction: column;
+        /* override the desktop `align-items: start`, which would otherwise
+           shrink-wrap each item on the cross axis and collapse .main to 0 */
+        align-items: stretch;
+        padding: 48px 24px 0;
+    }
+
+    .side {
+        display: contents;
+    }
+
+    .side-logo { order: 1; }
+    .side-name { order: 2; }
+    .side-role { order: 3; }
+    .side-bio  { order: 4; }
+    .side-nav  { order: 5; }
+    .side-btn  { order: 6; }
+    .main      { order: 7; }
+    .side-foot { order: 8; }
+
+    .side-bio {
+        margin-top: 40px;
+        max-width: 420px;
+    }
+
+    .side-nav {
+        margin-top: 32px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .side-btn {
+        margin-top: 32px;
+    }
+
+    .side-foot {
+        margin-top: 64px;
+        padding-bottom: 48px;
+    }
+
+    .main {
+        padding: 56px 0 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        row-gap: var(--row-gap);
+    }
+
+    .grid-col:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .block h1,
+    .block h2 {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    /* touch devices have no hover — keep captions visible, and darken the
+       scrim further since it can no longer be revealed on demand */
+    .tile-veil {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 35%, rgba(0, 0, 0, 0.12) 70%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tile,
+    .rise {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .tile img,
+    .tile-veil {
+        transition: none;
+    }
+}
