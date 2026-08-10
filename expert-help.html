@@ -1,695 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS ProHelp - Ruobing Chen UX Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="auth.js"></script>
-    <style>
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-        }
-        
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .fade-in-content {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
-        
-        .fade-in-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NSN8WLF1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-39NSN8WLF1');
-    </script>
-    <!-- LogRocket Session Recording -->
-    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('uudz1c/portfolio');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS ProHelp — Ruobing Chen</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="picture.css">
 </head>
 <body>
-    <!-- Top Navigation -->
-    <nav style="position: relative; padding: 2rem 3rem; z-index: 100; background: #fefcf9; display: flex; justify-content: space-between; align-items: center;">
-        <a href="index.html#project-expert-help" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">← Work</a>
-        <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
-        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-    </div>
-    
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </button>
-    
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            menu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            const nav = document.querySelector('nav');
-            
-            if (!nav.contains(event.target) && menu.classList.contains('active')) {
-                menu.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-        
-        // Show hamburger on scroll for desktop
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            const hamburger = document.querySelector('.hamburger');
-            const navBottom = nav.offsetTop + nav.offsetHeight;
-            const backToTop = document.getElementById('backToTop');
-            
-            if (window.scrollY > navBottom) {
-                hamburger.classList.add('show-on-scroll');
-            } else {
-                hamburger.classList.remove('show-on-scroll');
-            }
-            
-            // Show back to top button after scrolling 300px
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-    
-    <!-- Side Navigation -->
-    <nav id="sideNav" style="position: fixed; top: 140px; left: 3rem; z-index: 99; display: flex; flex-direction: column; gap: 0.75rem;">
-        <a href="#summary" class="side-nav-link" style="text-decoration: none; color: #d4a373; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Summary</a>
-        <a href="#context" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Context</a>
-        <a href="#problem" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Problem</a>
-        <a href="#competitive" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Competitive</a>
-        <a href="#research" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Research</a>
-        <a href="#opportunity" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Opportunity</a>
-        <a href="#storyboard" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Storyboard</a>
-        <a href="#iterations" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Iterations</a>
-        <a href="#final" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Final result</a>
-        <a href="#outcome" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Outcome</a>
-    </nav>
-    
-    <main>
-        <section class="project-detail" style="padding-top: 1rem;">
-            <!-- Header Section -->
-            <div class="fade-in-section" style="padding: 1rem 0 2rem 0;">
-                <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">AWS ProHelp</h1>
-                <p style="font-size: 1.35rem; color: #6a6a6a; line-height: 1.8;">Defined the complete user experience for a brand new on-demand, packaged expert help service from initial concept through private preview.</p>
+<div class="shell">
+
+    <aside class="side">
+        <a href="index.html" class="side-logo" aria-label="Ruobing Chen — home">
+            <svg viewBox="0 0 56 31" width="56" height="31" fill="none" aria-hidden="true">
+                <g stroke="currentColor" stroke-width="7">
+                    <path d="M3.5 0V31"/>
+                    <path d="M3.5 3.5H9a7 7 0 0 1 0 14H3.5"/>
+                    <path d="M10.5 17.5L19 31"/>
+                    <path d="M48.99 7.02a12 12 0 1 0 0 16.96"/>
+                </g>
+            </svg>
+        </a>
+        <p class="side-name">Ruobing Chen</p>
+        <p class="side-role">Senior UX Designer</p>
+
+        <p class="side-bio">I have a passion for designing beautiful and useful things. Currently designing for agentic marketing @ Klaviyo.</p>
+
+        <nav class="side-nav">
+            <a href="index.html">UX</a>
+            <a href="other-works.html">Objects</a>
+            <a href="about.html">About</a>
+            <a href="Resume_Ruobing_Chen_2026.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+
+        <a href="mailto:rchen02@risd.edu" class="side-btn">Get in touch</a>
+
+        <div class="side-foot">
+            <div class="side-links">
+                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:rchen02@risd.edu">Email</a>
             </div>
-        </section>
-        
-        <!-- Full Width Hero Image -->
-        <div class="fade-in-section" style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-            <div class="project-image-large" style="background-image: url('prohelp-cover2.png'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #f5f3f0;"></div>
+            &copy; 2026 &ndash; Ruobing Chen
         </div>
-        
-        <section class="project-detail">
-            <!-- Content Section -->
-            <div style="padding: 3rem 0;">
-                <!-- Content -->
-                <div class="project-content fade-in-section">
-                    <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
-                    <p style="margin-bottom: 1.5rem;">As the sole product designer for this brand new initiative in AWS Modernization org, I worked with a lean team with 1 product manager and 1 developer manager to bring the product through the idea phase to preview in 2023. I was responsible for defining UX strategy, user stories, research, and interaction design while driving cross-functional alignment through the entire product lifecycle.</p>
-                    <p style="margin-bottom: 1.5rem;">This case study focuses on the customer experience and problem that we are solving.</p>
-                </div>
-                
-                <!-- Project Meta -->
-                <div class="project-meta" style="margin-top: 2rem;">
-                    <div>
-                        <h3>Timeline</h3>
-                        <p>2022 - 2023</p>
-                    </div>
-                    <div>
-                        <h3>Role</h3>
-                        <p>Product Designer</p>
-                    </div>
-                    <div>
-                        <h3>Scope</h3>
-                        <p>UX strategy, competitive analysis, storyboard, interaction design, visual design, UX research</p>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Context Section with Background -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="context" style="margin-top: 0; margin-bottom: 1.5rem;">Context</h2>
-                        <p style="margin-bottom: 1.5rem;">AWS migration service helps enterprise customers to bring on-prem servers to AWS cloud. Customers struggle with migration projects due to several reasons:</p>
-                        <ul style="font-size: 1rem; color: #3a3a3a; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.5rem;">
-                            <li>Companies usually don't have the expert on hand in-house for migration projects—these require a set of specific skills, familiar with AWS services and legacy environment, and businesses usually are not incentivized to hire or train for these less frequently utilized skills</li>
-                            <li>AWS services are hard to learn and navigate without sufficient training in best practices, setups, and configurations</li>
-                            <li>Each migration is different and has unique challenges—when there's a playbook, it's hard to tailor it to your unique scenarios without experience in real migration projects</li>
-                        </ul>
-                        <p style="margin-bottom: 0;">To help customers accelerate their migration projects, the migration organization proposed a migration operation suite comprising three key components—core service, project help, and MITS tracking. <strong>ProHelp as a service addresses one of the top challenges in the migration domain: on-demand access to expert help.</strong></p>
-                    </div>
-                </div>
-                
-                <!-- Problem Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 8rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="problem" style="margin-top: 0; margin-bottom: 1.5rem; color: #ffffff;">Problem</h2>
-                        <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 2rem;">Migration customers have a hard time finding the specific technical expert they need to help unblock them timely.</h3>
-                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Migration project team needs highly specific but critical skills from technical/domain expertise while doing their migration project to help unblock them in their migration project timely. They need domain knowledge experts who possess unique and deep knowledge about a specific area in migration (e.g., Gov Cloud, security and networking configuration) or an AWS service. But these experts are hard to find. There are many available expert help services, but customers either are not aware of these options, or these expert help options do not meet their needs, or they had to wait for a long time to request the help from account manager.</p>
-                    </div>
-                </div>
-                
-                <!-- Competitive Analysis Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="competitive" style="margin-top: 0; margin-bottom: 1.5rem;">Competitive Analysis</h2>
-                        <div style="background: #f5f3f0; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
-                            <p style="font-size: 1.1rem; color: #2d2d2d; line-height: 1.6; margin: 0; font-weight: 500;">What unique value can we provide to migration customers aside from the AWS help services that they already have access to today?</p>
-                        </div>
-                        <p style="margin-bottom: 2rem;">To bridge the gap for customers in help experience, I conducted research to better understand the context and challenges in providing expert help in AWS, pain points, and opportunities. This revealed an opportunity for ProHelp to focus on packaged, clearly scoped small projects with a fast service speed.</p>
-                        <img src="competitive analysis.png" alt="Competitive analysis comparing AWS ProServe, AWS IQ, AWS Support, and ProHelp" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <!-- User Interviews Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="research" style="margin-top: 0; margin-bottom: 1.5rem;">User Interviews</h2>
-                        <div style="background: #fefcf9; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
-                            <p style="font-size: 1.1rem; color: #2d2d2d; line-height: 1.6; margin: 0; font-weight: 500;">Why doesn't the current help meet migration customer needs?</p>
-                        </div>
-                        <p style="margin-bottom: 1.5rem;">With limited access to external customers, I interviewed 10 server migration practitioners who closely work with customers in migration projects—including AWS Solutions Architects, Account Managers, and AWS ProServe Consultants—to understand the current help journey's gaps and customers' unmet needs.</p>
-                        
-                        <h3 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 600; color: #2d2d2d;">Pain Points</h3>
-                        <p style="margin-bottom: 1.5rem;">I captured the current experience and pain points in the form of journey maps and discussed with PM on the areas we'd focus on solving. Through user interviews, I identified critical pain points in the current expert help experience:</p>
-                        <ul style="font-size: 1rem; color: #3a3a3a; line-height: 1.8; margin-bottom: 2rem; padding-left: 1.5rem;">
-                            <li>Long turnaround time when requesting subject matter expertise</li>
-                            <li>Lack of understanding of the expert's specialty by looking at their title—difference and nuances of skills</li>
-                            <li>No timely response from experts</li>
-                            <li>Long back and forth to clarify scope and requirements, review proposals</li>
-                            <li>Even when experts are found, the long approval and procurement process is needed for existing services like ProServe and Partners</li>
-                        </ul>
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 0;">
-                            <img src="aiq.png" alt="Journey map showing pain points in expert help experience" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            <img src="Current Option Journey Map.png" alt="Current option journey map" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Design Opportunity Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 8rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="opportunity" style="margin-top: 0; margin-bottom: 1.5rem; color: #ffffff;">Design Opportunity</h2>
-                        <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 2rem;">Bring expert help to the customer in context of their current task and goal.</h3>
-                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">There's an opportunity to make the discovery process more intuitive by recommending help in context of user's current task, empower them through a simple, direct self-service request process, and make the collaboration process more transparent. For V1 of the service, we are limited to only providing free packages.</p>
-                        <ul style="font-size: 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.8; margin-bottom: 0; padding-left: 1.5rem;">
-                            <li><strong style="color: #ffffff;">Discovery:</strong> Surface relevant help offerings in context to where user is at (console page)</li>
-                            <li><strong style="color: #ffffff;">Align expectation:</strong> Emphasize expert's unique skill, experience, and past projects</li>
-                            <li><strong style="color: #ffffff;">Help package delivery:</strong> Allow customer to schedule call on expert's calendar</li>
-                            <li><strong style="color: #ffffff;">Closing, review and feedback:</strong> How to collect feedback, resolve dispute, and improve the service help offerings</li>
-                            <li><strong style="color: #ffffff;">Service integration:</strong> Integrate with Migration Hub Journey—a guidance tool that team will use to track specific tasks, ingress in console where task doers will carry out tasks</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Target User Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Target User</h2>
-                        <p style="margin-bottom: 2rem;">Through user research, I defined two key personas for the ProHelp service:</p>
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;">
-                            <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px;">
-                                <h4 style="font-size: 1rem; margin-bottom: 0.25rem; font-weight: 600; color: #2d2d2d;">Task Doer</h4>
-                                <p style="font-size: 0.9rem; color: #6a6a6a; margin-bottom: 1rem;">Architect, Developers, SysAdmin</p>
-                                <p style="font-size: 0.9rem; color: #6a6a6a; margin-bottom: 1rem; font-style: italic;">The person in charge of delivering assessment report with AWS Migration Hub service.</p>
-                                <p style="font-size: 0.9rem; color: #2d2d2d; margin-bottom: 0.75rem;"><strong>Goal:</strong> Finding expert help to conduct migration assessment on application.</p>
-                                <p style="font-size: 0.9rem; color: #2d2d2d; margin-bottom: 0.5rem;"><strong>Needs:</strong></p>
-                                <ul style="font-size: 0.85rem; color: #6a6a6a; line-height: 1.6; margin: 0; padding-left: 1.25rem;">
-                                    <li>Quickly locate the expert help specific to assessment</li>
-                                    <li>Review credibility and skills—which AWS services domain and industry experience</li>
-                                    <li>See timeline and availability</li>
-                                    <li>Clear procurement process/price information</li>
-                                    <li>Confidence and trust in quality of expert/their work</li>
-                                    <li>How it would feel like working using this service</li>
-                                </ul>
-                            </div>
-                            <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px;">
-                                <h4 style="font-size: 1rem; margin-bottom: 0.25rem; font-weight: 600; color: #2d2d2d;">Migration Lead</h4>
-                                <p style="font-size: 0.9rem; color: #6a6a6a; margin-bottom: 1rem;">Decision Makers, Project Managers</p>
-                                <p style="font-size: 0.9rem; color: #6a6a6a; margin-bottom: 1rem; font-style: italic;">Planning and working on a migration journey to track their migration tasks.</p>
-                                <p style="font-size: 0.9rem; color: #2d2d2d; margin-bottom: 0.75rem;"><strong>Goal:</strong> Plan out migration journey and ensure each task has clear assignees to carry out tasks timely.</p>
-                                <p style="font-size: 0.9rem; color: #2d2d2d; margin-bottom: 0.5rem;"><strong>Needs:</strong></p>
-                                <ul style="font-size: 0.85rem; color: #6a6a6a; line-height: 1.6; margin: 0; padding-left: 1.25rem;">
-                                    <li>Find the right skillset for the task</li>
-                                    <li>Ensure deployed or upcoming task has right people on it</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Storyboard Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="storyboard" style="margin-top: 0; margin-bottom: 1.5rem;">Storyboard</h2>
-                        <p style="margin-bottom: 2rem;">I created storyboards to map the end-to-end user journey from discovery to engagement with expert help. Along with this document, we used it to validate the service value proposition with internal stakeholders—Migration Services, Startup team, ProServe team, and UX team. This generated interest about the initiative and became the starting point for many cross-team conversations about potential packages they could provide on the platform.</p>
-                        <img src="storyboard.png" alt="User flow storyboards" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <!-- Service Integration Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Service Integration</h2>
-                        <p style="margin-bottom: 2rem;">We identified 2 initial service integration points to reach customers at the right moment in their journey, as they are most impactful in bringing timely help. Other ingress points that were considered including AWS Documentation, Marketplace, and re:Post forum but deprioritized as they're not a direct path users will encounter throughout their task.</p>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2rem;">
-                            <div style="background: #f5f3f0; padding: 1.5rem; border-radius: 8px;">
-                                <h4 style="font-size: 1rem; margin-bottom: 0.75rem; font-weight: 600; color: #2d2d2d;">MigOps Integration</h4>
-                                <p style="font-size: 0.9rem; color: #6a6a6a; line-height: 1.6; margin: 0;">MigOps is a new service we are building outside of the AWS management console. In early migration journey, customers can do assessment and build business case without an AWS account. ProHelp will integrate with MigOps.</p>
-                            </div>
-                            <div style="background: #f5f3f0; padding: 1.5rem; border-radius: 8px;">
-                                <h4 style="font-size: 1rem; margin-bottom: 0.75rem; font-weight: 600; color: #2d2d2d;">AWS Management Console</h4>
-                                <p style="font-size: 0.9rem; color: #6a6a6a; line-height: 1.6; margin: 0;">In AWS Management Console, based on contextual information we'll suggest ProHelp packages that help with user's current task based on several dimensions, i.e., which page customer is on. In the backend, packages will be categorized based on a couple dimensions.</p>
-                            </div>
-                        </div>
-                        
-                        <p style="margin-bottom: 1.5rem;">The diagram below illustrates the end-to-end ProHelp UX flow across both integration points.</p>
-                        <img src="prohelp ux flow.png" alt="ProHelp UX flow diagram" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <!-- Design Iterations Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #e8e4df; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="iterations" style="margin-top: 0; margin-bottom: 1.5rem; color: #2d2d2d;">Design Iterations</h2>
-                        <h3 style="font-size: 1.3rem; color: #2d2d2d; margin-bottom: 2rem;">Contextual Discovery</h3>
-                        <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">I explored multiple approaches for showing help contextually, including utilizing the AWS console help info panel, a floating bubble, ingress in search bar, and showing recommendations in empty states.</p>
-                        <img src="discovery-wires.png" alt="Contextual discovery wireframe exploration" style="width: 100%; border-radius: 8px; display: block; margin-bottom: 2rem; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                        
-                        <div style="background: #fefcf9; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                            <h4 style="font-size: 1rem; margin-bottom: 0.75rem; font-weight: 600; color: #2d2d2d;">Decision</h4>
-                            <p style="color: #6a6a6a; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">The final decision was to focus on incorporating the help panel, as it's natural for customers familiar with the AWS console to look there for tutorials and documentation.</p>
-                            <ul style="font-size: 0.9rem; color: #6a6a6a; line-height: 1.8; margin: 0; padding-left: 1.25rem;">
-                                <li>Access without interrupting the workflow</li>
-                                <li>Take quick actions</li>
-                                <li>Can benefit from being in the contextual environment</li>
-                                <li>Can be reused easily</li>
-                            </ul>
-                        </div>
-                        
-                        <div style="background: #fefcf9; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                            <h4 style="font-size: 1rem; margin-bottom: 0.75rem; font-weight: 600; color: #2d2d2d;">Pitch to AWS Design System</h4>
-                            <p style="color: #6a6a6a; font-size: 0.95rem; line-height: 1.6; margin: 0;">Since this component is owned by the AWS Design System team across all AWS services, I pitched the design to work with them and get buy-in. I worked with design engineers on the central team and a visual designer to define the expert help logo and the interaction of introducing a new expert help concept to the help panel.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- User Flow Explorations -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #e8e4df; padding: 2rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem 0; font-weight: 600; color: #2d2d2d;">Discovery Flow</h3>
-                        <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0;">As a task doer, I can see packages available specifically for my current task so that I get relevant help.</p>
-                        <img src="taskdoerdiscovery.png" alt="Task doer discovery flow" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #e8e4df; padding: 2rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem 0; font-weight: 600; color: #2d2d2d;">Request Flow</h3>
-                        <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0;">As a task doer, I can propose an initial sync time during the request process to ensure timely start.</p>
-                        <img src="request-flow.png" alt="Request flow wireframe" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #e8e4df; padding: 2rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem 0; font-weight: 600; color: #2d2d2d;">Payment Flow</h3>
-                        <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0;">As a task doer, I can review the work first before being charged for paid projects.</p>
-                        <img src="paymentflow.png" alt="Payment flow wireframe" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #e8e4df; padding: 2rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem 0; font-weight: 600; color: #2d2d2d;">Marketplace Recommendation Flow</h3>
-                        <p style="color: #6a6a6a; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0;">As a task doer, I can browse a central help package marketplace for additional package discovery.</p>
-                        <img src="marketplaceflow.png" alt="Marketplace recommendation flow" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <!-- Visual Design Exploration -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Visual Design Exploration</h2>
-                        <p style="margin-bottom: 2rem;">I explored various visual design directions to create an engaging and professional experience for the ProHelp service.</p>
-                        <img src="visualexploration.png" alt="Visual design exploration" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                
-                <!-- Final result Section -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 10rem 0 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 3rem;">
-                            <div>
-                                <h2 id="final" style="margin-top: 0; margin-bottom: 0; color: #ffffff;">Final result</h2>
-                            </div>
-                            <div>
-                                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.5rem; line-height: 1.6; margin: 0;">What we built to address customer and expert needs.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Widget Discovery -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Widget Discovery</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">By including the ProHelp service in the info panel—it's a natural place where customers look for help as the current info panel shows help information but not much hands-on help. This will help customers in the right mindset. Shows how it works and who can request.</p>
-                            </div>
-                            <div>
-                                <img src="module.gif" alt="Widget in task board with popover" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Doer Discovery -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Task Doer Discovery</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Task doers can discover relevant help packages directly from their current task context.</p>
-                            </div>
-                            <div>
-                                <img src="task.gif" alt="Task doer discovery flow" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Clearly Defined Help Package -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Clearly Defined Help Package</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Each help package clearly defines the scope, deliverables, and expert qualifications so customers know exactly what they're getting.</p>
-                            </div>
-                            <div>
-                                <img src="package.png" alt="Clearly defined help package" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Requirements, FAQs and Reviews -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div>
-                            <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Requirements, FAQs and Reviews</h3>
-                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0 0 2rem 0;">Detailed package information organized into three tabs: Requirements, FAQs, and Review—giving customers all the context they need to make an informed decision.</p>
-                            <img src="packageinfo.png" alt="Package info tabs" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Expert Profile -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Expert Profile</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Displays timezone, skills, and AWS services expertise—giving customers confidence in selecting the right expert for their specific needs.</p>
-                            </div>
-                            <div>
-                                <img src="expert.png" alt="Expert profile showing timezone, skill, AWS services" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Request Details -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Request Details</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Clear request flow with scope definition and timeline expectations.</p>
-                            </div>
-                            <div>
-                                <img src="request.png" alt="Request details flow" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Collaboration -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Collaboration</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Seamless collaboration workflow between customers and experts for project delivery.</p>
-                            </div>
-                            <div>
-                                <img src="delivery.png" alt="Collaboration and delivery flow" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Invite -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Invite</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Invite team members to collaborate on the project.</p>
-                            </div>
-                            <div>
-                                <img src="invite.png" alt="Invite team members" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Payment -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Payment</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">Streamlined payment process integrated with AWS billing.</p>
-                            </div>
-                            <div>
-                                <img src="payment.png" alt="Payment flow" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Marketplace -->
-                <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; margin: 0 0 1rem 0; font-weight: 600; color: #ffffff;">Marketplace</h3>
-                                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin: 0;">A marketplace view to browse available expert packages and find additional discovery options.</p>
-                            </div>
-                            <div>
-                                <img src="marketplace.png" alt="Expert help marketplace" style="width: 100%; border-radius: 8px; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Outcome Section -->
-                <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                        <h2 id="outcome" style="margin-top: 0; margin-bottom: 1.5rem;">Outcome & Learnings</h2>
-                        <p style="font-size: 1rem; line-height: 1.6; color: #3a3a3a; margin-bottom: 0;">Successfully brought the product from concept to private preview in 2023. The service addresses a critical gap in the AWS migration support ecosystem by providing fast, scoped, task-level expert assistance.</p>
-                    </div>
-                </div>
+    </aside>
+
+    <main class="main">
+        <article class="case">
+            <p class="case-cat rise">Expert Services</p>
+            <h1 class="rise">AWS ProHelp</h1>
+
+            <figure class="shot rise" style="--ar: 632 / 360; --pos: center 22%; --z: 1.15;">
+                <div class="frame"><img src="prohelp-cover2.png" alt="AWS ProHelp in the AWS console" loading="lazy"></div>
+            </figure>
+            <p class="case-meta rise">Amazon Web Services &middot; 2022&ndash;2023 &middot; Sole Product Designer</p>
+
+            <p class="rise">On-demand, packaged expert help that brings migration expertise to customers at the moment they are blocked. I was the only designer, working with one PM and one dev manager to take the service from idea to private preview.</p>
+
+            <p class="case-h rise">Final result</p>
+            <p class="rise">Help packages surface in the AWS console info panel &mdash; the place customers already look &mdash; scoped to the page they are on. Each package states its deliverables before purchase, and every expert profile leads with timezone, AWS domain expertise and past projects, so the choice rests on evidence rather than a job title.</p>
+
+            <figure class="shot pair rise" style="--ar: 306 / 260;">
+                <div class="frame"><img src="package.png" alt="Help package detail" loading="lazy"></div>
+                <div class="frame"><img src="expert.png" alt="Expert profile" loading="lazy"></div>
+                <figcaption>Left: a package with scope and deliverables stated up front. Right: expert profile built around demonstrable skill.</figcaption>
+            </figure>
+            <figure class="shot rise" style="--ar: 632 / 340; --pos: center 15%; --z: 1.1;">
+                <div class="frame"><img src="marketplace.png" alt="ProHelp marketplace" loading="lazy"></div>
+                <figcaption>A central marketplace for browsing beyond the contextual recommendations.</figcaption>
+            </figure>
+
+            <div data-gate aria-hidden="true"></div>
+
+            <p class="quote rise">Migration customers have a hard time finding the specific technical expert they need to unblock them in time.</p>
+
+            <p class="rise">Enterprises rarely keep migration specialists on staff, AWS services are hard to navigate without training, and every migration carries its own edge cases. I interviewed 10 practitioners &mdash; Solutions Architects, Account Managers, ProServe consultants &mdash; and mapped where the existing help experience broke down.</p>
+
+            <figure class="shot rise" style="--ar: 632 / 300; --pos: center 30%; --z: 1.05;">
+                <div class="frame"><img src="Current Option Journey Map.png" alt="Journey map of the existing expert help experience" loading="lazy"></div>
+                <figcaption>Journey map of today's options. The long grey stretches are waiting: request turnaround, scoping back-and-forth, procurement.</figcaption>
+            </figure>
+            <p class="case-h rise">The opportunity</p>
+            <p class="rise">Bring expert help to the customer in the context of their current task and goal &mdash; rather than making them leave, search, and start a procurement cycle.</p>
+
+            <figure class="shot rise" style="--ar: 632 / 300; --pos: center; --z: 1;">
+                <div class="frame"><img src="prohelp ux flow.png" alt="End-to-end ProHelp UX flow" loading="lazy"></div>
+                <figcaption>End-to-end flow across both integration points: the AWS Management Console and MigOps.</figcaption>
+            </figure>
+            <p class="case-h rise">Outcome</p>
+            <p class="rise">Brought the product from concept to private preview in 2023, closing a real gap in the AWS migration support ecosystem: fast, scoped, task-level expert assistance.</p>
+
+            <div class="related rise">
+                <p>MORE WORK</p>
+                <div class="related-grid">
+                <a href="sql-server.html"><span>Agentic AI</span><h3>Agentic Database Transformation</h3></a>
+                <a href="code-assessment.html"><span>Agentic AI</span><h3>Code Assessment</h3></a>
                 </div>
             </div>
-            
-            <!-- Project Navigation -->
-            <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem 2rem;">
-                <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(61, 61, 61, 0.1);">
-                    <p style="font-size: 0.85rem; color: #6a6a6a; text-transform: uppercase; margin-bottom: 1.5rem;">Other Projects</p>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
-                    <a href="sql-server.html" style="text-decoration: none; display: block; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                        <div style="aspect-ratio: 16/9; background-image: url('dependency.png'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #f0f5f1;"></div>
-                        <div style="padding: 1rem; background: #f5f3f0;">
-                            <p style="margin: 0; font-size: 1rem; font-weight: 500; color: #2d2d2d;">Agentic Database Transformation</p>
-                            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #6a6a6a;">Cloud Migration</p>
-                        </div>
-                    </a>
-                    <a href="code-assessment.html" style="text-decoration: none; display: block; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                        <div style="aspect-ratio: 16/9; background-image: url('assess-cover-1.png'); background-size: cover; background-position: center;"></div>
-                        <div style="padding: 1rem; background: #f5f3f0;">
-                            <p style="margin: 0; font-size: 1rem; font-weight: 500; color: #2d2d2d;">Code Assessment</p>
-                            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #6a6a6a;">Agentic AI</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </section>
+
+        </article>
     </main>
-    
-    <footer>
-        <div style="max-width: 1000px; width: 100%; display: flex; justify-content: space-between; margin: 0 auto;">
-            <div class="footer-left">
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                </nav>
-                <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
-            </div>
-            
-            <div class="footer-right">
-                <h3>Let's connect</h3>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
-                    <a href="mailto:rchen02@risd.edu">Email me</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Scroll spy for side navigation
-        const sections = document.querySelectorAll('h2[id], h3[id]');
-        const navLinks = document.querySelectorAll('.side-nav-link');
-        
-        function updateActiveLink() {
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 150) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.style.color = '#6a6a6a';
-                if (link.getAttribute('href') === '#' + currentSection) {
-                    link.style.color = '#d4a373';
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', updateActiveLink);
-        window.addEventListener('load', updateActiveLink);
-        
-        // Smooth scroll for anchor links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
-    
-    <!-- Image Modal -->
-    <div id="imageModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); padding: 2rem;" onclick="closeImageModal()">
-        <span style="position: absolute; top: 2rem; right: 3rem; color: #f1f1f1; font-size: 3rem; font-weight: 300; cursor: pointer; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#f1f1f1'">&times;</span>
-        <img id="modalImage" src="" alt="" style="margin: auto; display: block; max-width: 90%; max-height: 90%; object-fit: contain;">
-    </div>
-    
-    <script>
-        function openImageModal(src, alt) {
-            document.getElementById('imageModal').style.display = 'flex';
-            document.getElementById('modalImage').src = src;
-            document.getElementById('modalImage').alt = alt;
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeImageModal() {
-            document.getElementById('imageModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeImageModal();
-            }
-        });
-        
-        // Scroll animation for sections
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+</div>
 
-        // Observe all fade-in-section elements
-        document.querySelectorAll('.fade-in-section').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Observe all fade-in-content elements
-        document.querySelectorAll('.fade-in-content').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+<script src="picture.js"></script>
+<script src="picture-gate.js"></script>
 </body>
 </html>

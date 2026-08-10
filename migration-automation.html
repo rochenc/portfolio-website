@@ -1,475 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruobing Chen - UX Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="auth.js"></script>
-    <style>
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-        }
-        
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .fade-in-content {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
-        
-        .fade-in-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39NSN8WLF1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-39NSN8WLF1');
-    </script>
-    <!-- LogRocket Session Recording -->
-    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('uudz1c/portfolio');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Migration Hub Automation — Ruobing Chen</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="picture.css">
 </head>
 <body>
-    <!-- Top Navigation -->
-    <nav style="position: sticky; top: 0; padding: 2rem 3rem; z-index: 100; background: #fefcf9; display: flex; justify-content: space-between; align-items: center;">
-        <a href="index.html#project-migration-automation" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">← Work</a>
-        <a href="about.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">About</a>
-        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-    </div>
-    
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </button>
-    
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            menu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            const nav = document.querySelector('nav');
-            
-            if (!nav.contains(event.target) && menu.classList.contains('active')) {
-                menu.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-        
-        // Show hamburger on scroll for desktop
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            const hamburger = document.querySelector('.hamburger');
-            const navBottom = nav.offsetTop + nav.offsetHeight;
-            const backToTop = document.getElementById('backToTop');
-            
-            if (window.scrollY > navBottom) {
-                hamburger.classList.add('show-on-scroll');
-            } else {
-                hamburger.classList.remove('show-on-scroll');
-            }
-            
-            // Show back to top button after scrolling 300px
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-    
-    <!-- Side Navigation -->
-    <nav id="sideNav" style="position: fixed; top: 140px; left: 3rem; z-index: 101; display: flex; flex-direction: column; gap: 0.75rem;">
-        <a href="#summary" class="side-nav-link" style="text-decoration: none; color: #d4a373; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Summary</a>
-        <a href="#impact" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Impact</a>
-        <a href="#challenge" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Research</a>
-        <a href="#iterations" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Iterations</a>
-        <a href="#final" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Final Result</a>
-        <a href="#outcome" class="side-nav-link" style="text-decoration: none; color: #6a6a6a; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="if(!this.classList.contains('active')) this.style.color='#6a6a6a'">Outcome</a>
-    </nav>
-    
-    <main>
-        <!-- Sticky Hero Section -->
-        <div style="position: sticky; top: 0; z-index: 1; background: #fefcf9;">
-            <section class="project-detail" style="padding-top: 1rem;">
-                <!-- Header Section -->
-                <div class="fade-in-section" style="padding: 1rem 0 2rem 0;">
-                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.3;">Automating enterprise application migration at scale</h1>
-                    <p style="font-size: 1.35rem; color: #6a6a6a; line-height: 1.8;">Intelligent automation platform for migrating enterprise applications to AWS with reduced manual effort and faster deployment cycles</p>
-                </div>
-            </section>
-            
-            <!-- Full Width Hero Image -->
-            <div class="fade-in-section" style="max-width: 1000px; margin: 0 auto; padding: 0 2rem 3rem 2rem;">
-                <div class="project-image-large" style="background-image: url('mhautomation.png'); background-size: contain; background-position: center; background-repeat: no-repeat; height: 400px; border-radius: 8px; background-color: #f5f3f0;"></div>
-            </div>
-        </div>
-        
-        <!-- Content Layer (scrolls over hero) -->
-        <section class="project-detail" style="position: relative; z-index: 2; background: #fefcf9; box-shadow: 0 -20px 40px rgba(0,0,0,0.05);">
-            <!-- Content Section -->
-            <div style="padding: 3rem 0;">
-                <!-- Content -->
-                <div class="project-content fade-in-section">
-                    <h2 id="summary" style="margin-top: 0; margin-bottom: 1.5rem;">Summary</h2>
-                    <p style="margin-bottom: 1.5rem;">I led the UX design for Migration Hub Automation, a platform that provides a library of automation units and the flexibility to create custom units. With this, migration customers, partners, and AWS practitioners have a centralized place for automation solutions ready to use for their migration projects—reducing repetitive work and minimizing errors in the process, speeding up and scaling the execution of migrations.</p>
-                </div>
-                
-                <!-- Project Meta -->
-                <div class="project-meta" style="margin-top: 2rem;">
-                    <div>
-                        <h3>Timeline</h3>
-                        <p>May 2024 - Oct 2024</p>
-                    </div>
-                    <div>
-                        <h3>Role</h3>
-                        <p>Senior UX Designer</p>
-                    </div>
-                    <div>
-                        <h3>Scope</h3>
-                        <p>Migration workflow automation and orchestration</p>
-                    </div>
-                </div>
-                    
-                    <!-- Impact Section with Background -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 2rem; margin-bottom: 0; display: none;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <h2 id="impact" style="margin-top: 0; margin-bottom: 1.5rem;">Impact</h2>
-                            <p style="margin-bottom: 2.5rem;">With a library of automation units and the flexibility to create custom units, migration customers, partners, and AWS practitioners have a centralized place for automation solutions that are ready to use for their migration projects. This reduces repetitive work and minimizes errors in the process, speeding up and scaling the execution of migrations.</p>
-                            
-                            <!-- Metrics Dashboard -->
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 0;">
-                        <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px; text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 700; color: #d4a373; margin-bottom: 0.5rem; line-height: 1;">3X</div>
-                            <p style="color: #3a3a3a; font-size: 1rem; line-height: 1.5; margin: 0;">faster deployment cycles</p>
-                        </div>
-                        <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px; text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 700; color: #d4a373; margin-bottom: 0.5rem; line-height: 1;">60%</div>
-                            <p style="color: #3a3a3a; font-size: 1rem; line-height: 1.5; margin: 0;">reduction in manual tasks</p>
-                        </div>
-                        <div style="background: #f5f3f0; padding: 2rem; border-radius: 12px; text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 700; color: #d4a373; margin-bottom: 0.5rem; line-height: 1;">92%</div>
-                            <p style="color: #3a3a3a; font-size: 1rem; line-height: 1.5; margin: 0;">user satisfaction score</p>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <!-- AWS Migration Hub Section -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <h2 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; color: #2d2d2d; font-weight: 600;">AWS Migration Hub</h2>
-                            <p style="font-size: 1rem; color: #3a3a3a; line-height: 1.6; margin-bottom: 0;">Migration Hub help customer migrate by providing tools to discover, assess, plan and execute migration tasks. It provides a central place for customer to track their migration resources and migration status across other AWS migration tools.<br><br>In addition to the AWS console experience, Migration Hub offers an outside-console experience for migration planning and collaboration between AWS practitioners, partners and customer .</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Problem section highlighted -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 8rem 0; margin-top: 0; margin-bottom: 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <h2 style="font-size: 1.5rem; color: #ffffff; margin: 0 0 2rem 0; line-height: 1.3; font-weight: 600;">Problem</h2>
-                            <p style="font-size: 1rem; color: #ffffff; margin: 0; line-height: 1.6; font-weight: 400;">Customer needs a streamlined experience that co-locates data needed and automates repetitive workflow to increase efficiency and experience.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Problem section -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #fefcf9; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Longitudinal Survey</h2>
-                            <p style="font-size: 1rem; color: #3a3a3a; line-height: 1.6; margin-bottom: 2rem;">To understand enterprise migration challenges, I conducted a longitudinal survey with 60 practitioners across the full migration lifecycle. Mapping their jobs-to-be-done across four key phases—Discover, Plan, Execute, and Observe—revealed a critical gap: <strong>Execute is the major pain point</strong>.</p>
-                            
-                            <!-- JTBD Importance-Satisfaction Chart (nested under survey) -->
-                            <h3 style="margin-top: 0; margin-bottom: 2rem; font-size: 1.2rem; color: #2d2d2d;">Jobs-to-be-Done: Importance vs Satisfaction</h3>
-                            <div style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid #e8e3dd; overflow-x: auto;">
-                                <svg viewBox="0 0 900 500" style="width: 100%; height: auto; min-height: 400px;">
-                                    <!-- Grid -->
-                                    <line x1="80" y1="50" x2="80" y2="420" stroke="#d0d0d0" stroke-width="2"/>
-                                    <line x1="80" y1="420" x2="850" y2="420" stroke="#d0d0d0" stroke-width="2"/>
-                                    
-                                    <!-- Grid lines -->
-                                    <line x1="80" y1="235" x2="850" y2="235" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="3,3"/>
-                                    <line x1="465" y1="50" x2="465" y2="420" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="3,3"/>
-                                    
-                                    <!-- Axis labels -->
-                                    <text x="25" y="235" font-size="13" font-weight="600" fill="#666" text-anchor="middle" transform="rotate(-90 25 235)">Satisfaction</text>
-                                    <text x="465" y="460" font-size="13" font-weight="600" fill="#666" text-anchor="middle">Importance</text>
-                                    
-                                    <!-- Axis values -->
-                                    <text x="70" y="428" font-size="11" fill="#999" text-anchor="end">3.7</text>
-                                    <text x="70" y="243" font-size="11" fill="#999" text-anchor="end">3.85</text>
-                                    <text x="70" y="58" font-size="11" fill="#999" text-anchor="end">4.0</text>
-                                    <text x="85" y="440" font-size="11" fill="#999">3.9</text>
-                                    <text x="465" y="440" font-size="11" fill="#999" text-anchor="middle">4.05</text>
-                                    <text x="850" y="440" font-size="11" fill="#999" text-anchor="end">4.2</text>
-                                    
-                                    <!-- Quadrant labels -->
-                                    <text x="140" y="80" font-size="12" font-weight="600" fill="#f9a825">Maintain</text>
-                                    <text x="140" y="97" font-size="9" fill="#999">(Low Imp., High Sat.)</text>
-                                    
-                                    <text x="760" y="80" font-size="12" font-weight="600" fill="#4caf50" text-anchor="end">Key Benefits</text>
-                                    <text x="760" y="97" font-size="9" fill="#999" text-anchor="end">(High Imp., High Sat.)</text>
-                                    
-                                    <text x="140" y="405" font-size="11" font-weight="600" fill="#999">Least Priority</text>
-                                    
-                                    <text x="760" y="405" font-size="12" font-weight="600" fill="#d84315" text-anchor="end">Areas to Improve</text>
-                                    
-                                    <!-- Data points -->
-                                    <!-- Execute planned migration efficiently - HIGH IMPORTANCE, LOW SATISFACTION -->
-                                    <circle cx="790" cy="320" r="8" fill="#d84315" opacity="0.8"/>
-                                    <text x="790" y="340" font-size="13" font-weight="600" fill="#2d2d2d" text-anchor="middle">Execute planned</text>
-                                    <text x="790" y="357" font-size="13" font-weight="600" fill="#2d2d2d" text-anchor="middle">migration efficiently</text>
-                                    
-                                    <!-- Form a migration plan confidently - HIGH IMPORTANCE, HIGH SATISFACTION -->
-                                    <circle cx="650" cy="120" r="6" fill="#4caf50" opacity="0.8"/>
-                                    <text x="650" y="140" font-size="12" fill="#2d2d2d" text-anchor="middle">Form a migration</text>
-                                    <text x="650" y="155" font-size="12" fill="#2d2d2d" text-anchor="middle">plan confidently</text>
-                                    
-                                    <!-- Conduct migration discovery - LOW IMPORTANCE, HIGH SATISFACTION -->
-                                    <circle cx="200" cy="140" r="6" fill="#f9a825" opacity="0.8"/>
-                                    <text x="200" y="160" font-size="12" fill="#2d2d2d" text-anchor="middle">Conduct</text>
-                                    <text x="200" y="175" font-size="12" fill="#2d2d2d" text-anchor="middle">migration discovery</text>
-                                </svg>
-                            </div>
-                            <p style="color: #6a6a6a; font-size: 0.9rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 0;"><strong>Key Insight:</strong> Execute planned migration efficiently is rated as high importance but low satisfaction, representing the primary opportunity for improvement through automation.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Deep dive into execution pain points -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #f5f3f0; padding: 3rem 0; margin-top: 0; margin-bottom: 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <h2 id="challenge" style="margin-top: 0; margin-bottom: 1rem;">Follow-up Interviews</h2>
-                    <p style="color: #3a3a3a; font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">To understand the specific pain points around managing complex deployments. The research revealed two critical barriers that fragment the execution experience:</p>
-                    
-                    <div style="margin-bottom: 3rem;">
-                        <h3 style="color: #2d2d2d; font-size: 1.1rem; font-weight: 700; margin: 0 0 1rem 0;">Siloed Tooling</h3>
-                        <p style="color: #6a6a6a; font-size: 0.9rem; margin: 0 0 2rem 0; line-height: 1.6;">With many migration tools from both AWS and 3rd-party partners, managing multiple platforms leads to broken workflows. Teams spend significant time switching contexts, replicating data, and coordinating across disconnected systems.</p>
-                    </div>
-                    
-                    <div>
-                        <h3 style="color: #2d2d2d; font-size: 1.1rem; font-weight: 700; margin: 0 0 1rem 0;">Access Management</h3>
-                        <p style="color: #6a6a6a; font-size: 0.9rem; margin: 0; line-height: 1.6;">Most customers work with AWS Partners or ProServe consultants. Sharing AWS accounts between internal teams and external partners is not a security best practice, creating access control complexities and compliance risks.</p>
-                    </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Personas Section -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 3rem;">
-                                <h2 id="research" style="margin: 0; color: #ffffff;">Personas</h2>
-                            </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
-                                <!-- Migration Engineer -->
-                                <div style="background: #2d2d2d; padding: 2rem; border-radius: 8px;">
-                                    <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.5rem;">
-                                        <h3 style="font-size: 1.1rem; color: #ffffff; margin: 0; font-weight: 600;">Migration Engineer</h3>
-                                        <span style="font-size: 0.85rem; color: #ffffff; font-weight: 500;">Customer</span>
-                                    </div>
-                                    
-                                    <div style="margin-bottom: 1.5rem;">
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Goals</h5>
-                                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6; margin: 0;">Complete migration tasks accurately and efficiently.</p>
-                                    </div>
-                                    
-                                    <div style="margin-bottom: 1.5rem;">
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Key Tasks</h5>
-                                        <ul style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6; margin: 0; padding: 0 0 0 1rem;">
-                                            <li>Conduct migration tasks using automation solutions</li>
-                                            <li>Track migration execution status and troubleshoot</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div style="margin-bottom: 1.5rem;">
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Skills & Tools</h5>
-                                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6; margin: 0;">Experience with AWS migration tools such as AWS Application Migration Services, AWS Migration Hub.</p>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Needs</h5>
-                                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6; margin: 0; font-weight: 500;">A centralized way to discover, run, and track automation solutions for migration tasks</p>
-                                    </div>
-                                </div>
-                                
-                                <!-- Automation Engineer -->
-                                <div style="background: #2d2d2d; padding: 2rem; border-radius: 8px;">
-                                    <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.5rem;">
-                                        <h3 style="font-size: 1.1rem; color: #ffffff; margin: 0; font-weight: 600;">Automation Engineer</h3>
-                                        <span style="font-size: 0.85rem; color: #ffffff; font-weight: 500;">AWS</span>
-                                    </div>
-                                    
-                                    <div style="margin-bottom: 1.5rem;">
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Goals</h5>
-                                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6; margin: 0;">Build and customize automation solutions to help customers migrate.</p>
-                                    </div>
-                                    
-                                    <div style="margin-bottom: 1.5rem;">
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Key Tasks</h5>
-                                        <ul style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6; margin: 0; padding: 0 0 0 1rem;">
-                                            <li>Understand customer's automation needs and requirements</li>
-                                            <li>Develop custom automation units</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div style="margin-bottom: 1.5rem;">
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Skills & Tools</h5>
-                                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6; margin: 0;">Experience with various AWS services for automation and development tools such as AWS SSM, Lambda, etc.</p>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.5rem 0; font-weight: 600;">Needs</h5>
-                                        <p style="color: #ffffff; font-size: 0.9rem; line-height: 1.6; margin: 0; font-weight: 500;">A way to share automation solutions with customers easily and securely</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- User Flow Section -->
-                    <div class="fade-in-section" style="padding: 4rem 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <h2 id="user-flow" style="font-size: 1.5rem; margin: 0 0 2rem 0; font-weight: 600; color: #2d2d2d;">User flow</h2>
-                        </div>
-                    </div>
-                    
-                    <!-- Final result Section -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 10rem 0; margin-top: 0; margin-bottom: 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 3rem;">
-                                <div>
-                                    <h2 id="final" style="font-size: 1.5rem; margin: 0; font-weight: 600; color: #ffffff;">Final result</h2>
-                                </div>
-                                <div>
-                                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.5rem; line-height: 1.6; margin: 0;">An intelligent, transparent automation platform that accelerates cloud migrations while maintaining human oversight and control throughout the entire process.</p>
-                                </div>
-                            </div>
-                    </div>
-                    
-                    <!-- Full-width hero image -->
-                    <div style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; margin-bottom: 0;">
-                        <img src="migration-automation-final.png" alt="Final result overview" style="width: 100%; display: block; cursor: pointer;" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'">
-                    </div>
-                    
-                    <!-- Outcome Section -->
-                    <div class="fade-in-section" style="position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; background: #1a1a1a; padding: 4rem 0; margin-top: 0; margin-bottom: 0;">
-                        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-                            <h2 id="outcome" style="margin-top: 0; margin-bottom: 1.5rem; color: #ffffff;">Outcome & Learnings</h2>
-                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">The platform has successfully reduced migration timelines by 60% on average, with teams reporting higher confidence in automated processes. Key learnings include the importance of progressive disclosure for complex operations, the value of smart error handling in reducing support burden, and how transparency in automation builds user trust. The experience taught me that successful automation isn't about removing the human from the process—it's about amplifying their capabilities through clear visibility and meaningful control.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div style="max-width: 1000px; width: 100%; display: flex; justify-content: space-between; margin: 0 auto;">
-            <div class="footer-left">
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                </nav>
-                <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
-            </div>
-            
-            <div class="footer-right">
-                <h3>Let's connect</h3>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
-                    <a href="mailto:rchen02@risd.edu">Email me</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<div class="shell">
 
-    <script>
-        // Fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.fade-in-section, .fade-in-content').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Side navigation scroll spy
-        const sideNavLinks = document.querySelectorAll('#sideNav a');
-        const sections = document.querySelectorAll('[id^="summary"], [id^="impact"], [id^="challenge"], [id^="research"], [id^="iterations"], [id^="final"], [id^="outcome"]');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            sideNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Image modal
-        function openImageModal(src, alt) {
-            const modal = document.createElement('div');
-            modal.style.cssText = `position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 1000; cursor: pointer;`;
-            modal.innerHTML = `<img src="${src}" alt="${alt}" style="max-width: 90%; max-height: 90%; border-radius: 8px;">`;
-            modal.onclick = () => modal.remove();
-            document.body.appendChild(modal);
-        }
-    </script>
+    <aside class="side">
+        <a href="index.html" class="side-logo" aria-label="Ruobing Chen — home">
+            <svg viewBox="0 0 56 31" width="56" height="31" fill="none" aria-hidden="true">
+                <g stroke="currentColor" stroke-width="7">
+                    <path d="M3.5 0V31"/>
+                    <path d="M3.5 3.5H9a7 7 0 0 1 0 14H3.5"/>
+                    <path d="M10.5 17.5L19 31"/>
+                    <path d="M48.99 7.02a12 12 0 1 0 0 16.96"/>
+                </g>
+            </svg>
+        </a>
+        <p class="side-name">Ruobing Chen</p>
+        <p class="side-role">Senior UX Designer</p>
+
+        <p class="side-bio">I have a passion for designing beautiful and useful things. Currently designing for agentic marketing @ Klaviyo.</p>
+
+        <nav class="side-nav">
+            <a href="index.html">UX</a>
+            <a href="other-works.html">Objects</a>
+            <a href="about.html">About</a>
+            <a href="Resume_Ruobing_Chen_2026.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+
+        <a href="mailto:rchen02@risd.edu" class="side-btn">Get in touch</a>
+
+        <div class="side-foot">
+            <div class="side-links">
+                <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:rchen02@risd.edu">Email</a>
+            </div>
+            &copy; 2026 &ndash; Ruobing Chen
+        </div>
+    </aside>
+
+    <main class="main">
+        <article class="case">
+            <p class="case-cat rise">Automation &middot; Enterprise</p>
+            <h1 class="rise">Automating enterprise application migration at scale</h1>
+
+            <figure class="shot rise" style="--ar: 632 / 360; --pos: center 20%; --z: 1.12;">
+                <div class="frame"><img src="mhautomation.png" alt="Migration Hub Automation" loading="lazy"></div>
+            </figure>
+            <p class="case-meta rise">Amazon Web Services &middot; May&ndash;Oct 2024 &middot; Senior UX Designer</p>
+
+            <p class="rise">A platform giving migration customers, partners and AWS practitioners one place to discover, run and track the automation that migration projects repeat over and over.</p>
+
+            <div class="metrics rise">
+                <div><b>60%</b><span>Average reduction in migration timelines</span></div>
+                <div><b>60</b><span>Practitioners in the longitudinal survey</span></div>
+                <div><b>4</b><span>Lifecycle phases mapped</span></div>
+            </div>
+
+            <div data-gate aria-hidden="true"></div>
+
+            <p class="quote rise">Customers need a streamlined experience that co-locates the data they need and automates the repetitive work around it.</p>
+
+            <p class="rise">I ran a longitudinal survey with 60 practitioners across the full migration lifecycle, mapping jobs-to-be-done through Discover, Plan, Execute and Observe. Follow-up interviews surfaced the two structural problems: siloed tooling, and access management that blocked people from the work they owned.</p>
+
+            <p class="case-h rise">Outcome</p>
+            <p class="rise">Migration timelines fell 60% on average, with teams reporting higher confidence in automated processes. The clearest lesson was how much progressive disclosure matters when an operation is complex and irreversible.</p>
+
+            <div class="related rise">
+                <p>MORE WORK</p>
+                <div class="related-grid">
+                <a href="expert-help.html"><span>Expert Services</span><h3>AWS ProHelp</h3></a>
+                <a href="code-assessment.html"><span>Agentic AI</span><h3>Code Assessment</h3></a>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+</div>
+
+<script src="picture.js"></script>
+<script src="picture-gate.js"></script>
 </body>
 </html>
