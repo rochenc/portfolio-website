@@ -16,7 +16,7 @@
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        
+
         .fade-in-section.visible {
             opacity: 1;
             transform: translateY(0);
@@ -31,26 +31,6 @@
             .story-image {
                 order: -1;
             }
-        }
-        
-        @keyframes slideOutName {
-            0% {
-                opacity: 0;
-                transform: translateX(-20px);
-                max-width: 0;
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-                max-width: 200px;
-            }
-        }
-        .name-slide {
-            animation: slideOutName 0.6s ease-out 0.3s forwards;
-            opacity: 0;
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
         }
     </style>
     <script defer src="/_vercel/insights/script.js"></script>
@@ -67,34 +47,31 @@
     <script>window.LogRocket && window.LogRocket.init('uudz1c/portfolio');</script>
 </head>
 <body>
-    <!-- Top Navigation -->
-    <nav style="position: relative; padding: 2rem; z-index: 100; background: #fefcf9;">
-        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="text-decoration: none; color: #2d2d2d; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">
-                <span style="width: 28px; height: 28px; background: #2d2d2d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fefcf9; letter-spacing: 0.5px; flex-shrink: 0;">RC</span>
-                <span class="name-slide">Ruobing Chen</span>
+    <div class="site-shell">
+        <aside class="site-sidebar">
+            <a href="index.html" class="sidebar-mark">
+                <span class="mark-badge">RC</span>
+                Ruobing Chen
             </a>
-            <div style="display: flex; gap: 2rem;">
-                <a href="index.html#selected-works" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Work</a>
-                <a href="other-works.html" class="nav-link" style="text-decoration: none; color: #2d2d2d; font-weight: 500; font-size: 1rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d4a373'" onmouseout="this.style.color='#2d2d2d'">Others</a>
-                <a href="about.html" class="nav-link" style="text-decoration: none; color: #d4a373; font-weight: 500; font-size: 1rem;">About</a>
+            <p class="sidebar-title">Senior UX Designer</p>
+            <p class="sidebar-bio">Currently working on the first Agentic AI services to accelerate migration and modernization at Amazon Web Services.</p>
+            <nav class="sidebar-nav">
+                <a href="index.html">Work</a>
+                <a href="other-works.html">Others</a>
+                <a href="about.html" class="active">About</a>
+            </nav>
+            <a href="Resume_Ruobing_Chen_2026.pdf" target="_blank" class="sidebar-resume">View Resume</a>
+            <div class="sidebar-spacer"></div>
+            <div class="sidebar-foot">
+                <div class="sidebar-social">
+                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
+                    <a href="mailto:rchen02@risd.edu">Email</a>
+                </div>
+                &copy; 2026 Ruobing Chen
             </div>
-        </div>
-        <button class="hamburger" aria-label="Toggle menu" style="position: absolute; right: 2rem; top: 2rem;">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-    </div>
+        </aside>
 
-    <main>
-        <section class="fade-in-section" style="max-width: calc(1000px + 4rem); margin: 0 auto; padding: 4rem 2rem;">
+        <main class="site-content fade-in-section" style="max-width: 720px;">
             <!-- My Story Section -->
             <div class="story-grid" style="display: grid; grid-template-columns: 1fr 200px; gap: 3rem; align-items: flex-start; margin-bottom: 4rem;">
                 <div>
@@ -179,77 +156,11 @@
                     </div>
                 </div>
 
-                <div style="margin-top: 2rem;">
-                    <a href="Resume_Ruobing_Chen_2026.pdf" target="_blank" style="display: inline-block; padding: 0.8rem 1.6rem; background-color: #3a3a3a; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s; font-size: 0.95rem;" onmouseover="this.style.backgroundColor='#d4a373'" onmouseout="this.style.backgroundColor='#3a3a3a'">View Resume</a>
-                </div>
             </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div style="max-width: 1000px; width: 100%; display: flex; justify-content: space-between; margin: 0 auto;">
-            <div class="footer-left">
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                </nav>
-                <p class="footer-copyright">Designed and built by Ruobing Chen &copy; 2026</p>
-            </div>
-            
-            <div class="footer-right">
-                <h3>Let's connect</h3>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ruobing-chen/" target="_blank">LinkedIn</a>
-                    <a href="mailto:rchen02@risd.edu">Email me</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </main>
+    </div>
 
     <script>
-        // Hamburger menu toggle
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const menu = document.getElementById('mobileMenu');
-            hamburger.classList.toggle('active');
-            menu.classList.toggle('active');
-        }
-
-        // Add click event to hamburger
-        document.querySelector('.hamburger').addEventListener('click', toggleMenu);
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.hamburger').classList.remove('active');
-                document.getElementById('mobileMenu').classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const hamburger = document.querySelector('.hamburger');
-            const menu = document.getElementById('mobileMenu');
-            
-            if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('active')) {
-                menu.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-        
-        // Show hamburger on scroll for desktop
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            const hamburger = document.querySelector('.hamburger');
-            const navBottom = nav.offsetTop + nav.offsetHeight;
-            
-            if (window.scrollY > navBottom) {
-                hamburger.classList.add('show-on-scroll');
-            } else {
-                hamburger.classList.remove('show-on-scroll');
-            }
-        });
-        
         // Scroll animation for sections
         const observerOptions = {
             threshold: 0.1,
