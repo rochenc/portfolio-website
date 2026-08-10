@@ -8,16 +8,26 @@
 (function () {
     var PASSWORD = '1314';
     var STORE_KEY = 'authenticated';          // shared with login.html
+    var FREE_FRACTION = 0.8;                  // share of the page readable before the gate
     var SCREENS_FREE = 2;                     // fallback if the page has no marker
 
-    // Preferred: an explicit <div data-gate> in the article marks where free
-    // reading ends, so the teaser always closes on the same content regardless
-    // of viewport height. Falls back to SCREENS_FREE when absent.
+    // These case studies are only ~2.5 screens tall, so a fixed screen count
+    // either fires immediately or never. Gate on a fraction of each page's own
+    // scrollable height instead, floored at <div data-gate> so the teaser never
+    // closes before the final-result section.
     var marker = document.querySelector('[data-gate]');
 
+    function triggerPoint() {
+        var vh = window.innerHeight;
+        var maxScroll = document.documentElement.scrollHeight - vh;
+        var byFraction = FREE_FRACTION * maxScroll;
+        if (!marker) return SCREENS_FREE * vh;
+        var byMarker = marker.getBoundingClientRect().top + window.scrollY - vh * 0.6;
+        return Math.max(byMarker, byFraction);
+    }
+
     function reachedGate() {
-        if (marker) return marker.getBoundingClientRect().top <= window.innerHeight * 0.6;
-        return window.scrollY > SCREENS_FREE * window.innerHeight;
+        return window.scrollY >= triggerPoint();
     }
 
     function unlocked() {
